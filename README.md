@@ -41,6 +41,19 @@ One folder per item; the folder name is the item's id.
 - `permissions`: every thing the item can do, said plainly. Adding an item never gives its tools to an agent by itself.
 - `pricing`: only `{ "model": "free" }` today. Paid items come later; the field is there so they fit without changing the format.
 
+## An app's package
+
+An app that Girru can add has a `package/` folder next to its manifest:
+
+```
+apps/<id>/manifest.json
+apps/<id>/package/agentplayer.plugin.json   same id and version as the manifest
+apps/<id>/package/index.js                   its code (the plugin's "main")
+apps/<id>/package/migrations/001_*.sql       its tables, named <id>_... only
+```
+
+`build-index` lists every file of the package with its size and SHA-256 in `index.json`. Girru gets each file, checks it against that list before writing anything, puts the app in the owner's data folder (never in the program), runs only the app's own migrations, and turns it on. An app may only make tables named after itself (`<id>_...`, with `-` as `_`), so removing it never touches Girru's own data. Allowed files: `.js .mjs .json .sql .md .css .svg .png .txt`, at most 300 files and 5 MB.
+
 ## Build the index
 
 ```bash

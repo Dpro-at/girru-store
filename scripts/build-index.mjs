@@ -5,6 +5,7 @@
 // Node 20+, no packages.
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 
 const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 const KINDS = { apps: 'app', mcp: 'mcp', skills: 'skill', specialties: 'specialty' };
@@ -14,6 +15,40 @@ const FIELDS = ['id', 'kind', 'name', 'summary', 'description', 'icon', 'maker',
 const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
 const ICON = /^[a-z][a-z-]{0,39}$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
+// A package: the files Girru downloads for an app (apps/<id>/package/). Plain text and images only.
+const PACKAGE_EXT = /\.(js|mjs|json|sql|md|css|svg|png|txt)$/i;
+const SEGMENT = /^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$/;
+const MAX_FILES = 300, MAX_BYTES = 5 * 1024 * 1024;
+const sha = (b) => createHash('sha256').update(b).digest('hex');
+function readPackage(where, dir) {
+  if (!fs.existsSync(dir)) return null;
+  const files = [];
+  let total = 0;
+  const walk = (rel) => {
+    for (const name of fs.readdirSync(path.join(dir, rel)).sort()) {
+      const r = rel ? `${rel}/${name}` : name;
+      const st = fs.lstatSync(path.join(dir, r));
+      if (st.isSymbolicLink()) fail(where, `package/${r} is a link`);
+      if (!SEGMENT.test(name)) fail(where, `package/${r}: names are letters, digits, . _ - only`);
+      if (st.isDirectory()) { walk(r); continue; }
+      if (!PACKAGE_EXT.test(name)) fail(where, `package/${r}: only .js .mjs .json .sql .md .css .svg .png .txt files`);
+      const bytes = fs.readFileSync(path.join(dir, r));
+      total += bytes.length;
+      files.push({ path: r, sha256: sha(bytes), size: bytes.length });
+    }
+  };
+  walk('');
+  if (!files.some((f) => f.path === 'agentplayer.plugin.json')) fail(where, 'package/agentplayer.plugin.json is missing');
+  // Its tables must be named after it, so removing it never touches Girru's own data.
+  const prefix = `${path.basename(path.dirname(dir)).replace(/-/g, '_')}_`;
+  for (const f of files.filter((x) => x.path.endsWith('.sql'))) {
+    for (const m of fs.readFileSync(path.join(dir, f.path), 'utf8').matchAll(/CREATE\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?["`]?([A-Za-z_][A-Za-z0-9_]*)/gi)) {
+      if (!m[1].toLowerCase().startsWith(prefix)) fail(where, `package/${f.path} makes table ${m[1]}: tables must start with ${prefix}`);
+    }
+  }
+  if (files.length > MAX_FILES || total > MAX_BYTES) fail(where, `a package holds at most ${MAX_FILES} files and 5 MB`);
+  return { files, sha256: sha(JSON.stringify(files)) };
+}
 const CONTROL = /[\u0000-\u001f\u007f‪-‮⁦-⁩]/;
 
 function fail(where, why) { throw new Error(`${where}: ${why}`); }
@@ -38,12 +73,19 @@ function readItem(folder, dir) {
   if (m.version !== null && (typeof m.version !== 'string' || m.version.length > 80)) fail(where, 'version must be text or null');
   if (m.updated !== null && (typeof m.updated !== 'string' || !DATE.test(m.updated))) fail(where, 'updated must be YYYY-MM-DD or null');
   if (!m.pricing || typeof m.pricing !== 'object' || !PRICING.includes(m.pricing.model) || Object.keys(m.pricing).length !== 1) fail(where, 'pricing must be { "model": "free" } (paid apps are not open yet)');
+  const pkg = folder === 'apps' ? readPackage(where, path.join(ROOT, folder, dir, 'package')) : null;
+  if (pkg && (typeof m.version !== 'string' || !/^\d+\.\d+\.\d+$/.test(m.version))) fail(where, 'an app with a package needs a version like 1.0.0');
+  if (pkg) {
+    const plugin = JSON.parse(fs.readFileSync(path.join(ROOT, folder, dir, 'package', 'agentplayer.plugin.json'), 'utf8'));
+    if (plugin.id !== m.id || plugin.version !== m.version) fail(where, 'package/agentplayer.plugin.json must have the same id and version');
+  }
   return {
     id: m.id, kind: m.kind, source: 'girru',
     name: str(m.name, 150, where, 'name'), summary: str(m.summary, 200, where, 'summary'), description: str(m.description, 3000, where, 'description'),
     icon: m.icon, maker: str(m.maker, 150, where, 'maker'), verified: true, version: m.version, updated: m.updated, category: m.category,
     permissions: strs(m.permissions, 60, 200, where, 'permissions'), worksWith: strs(m.worksWith, 20, 120, where, 'worksWith'), languages: strs(m.languages, 20, 60, where, 'languages'),
     pricing: { model: m.pricing.model },
+    ...(pkg ? { package: pkg } : {}),
   };
 }
 
@@ -52,7 +94,7 @@ export function buildIndex() {
   for (const folder of Object.keys(KINDS)) {
     const base = path.join(ROOT, folder);
     for (const dir of fs.readdirSync(base).sort()) {
-      if (dir.startsWith('.')) continue;
+      if (dir.startsWith('.')) continue; // .gitkeep
       if (!fs.statSync(path.join(base, dir)).isDirectory()) fail(`${folder}/${dir}`, 'only item folders belong here');
       items.push(readItem(folder, dir));
     }
