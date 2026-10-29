@@ -1,0 +1,22 @@
+{
+  "id": "data-governance",
+  "kind": "skill",
+  "name": "Data governance",
+  "summary": "Build practical data ownership, classification, lineage, quality and lifecycle controls with evidence-backed responsibilities and reviewable policy gaps.",
+  "description": "Build practical data ownership, classification, lineage, quality and lifecycle controls with evidence-backed responsibilities and reviewable policy gaps. Use for data catalogues, stewardship, access reviews and governance operating models.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

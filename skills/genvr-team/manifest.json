@@ -1,0 +1,22 @@
+{
+  "id": "genvr-team",
+  "kind": "skill",
+  "name": "GenVR team coordination",
+  "summary": "Coordinate assigned agents working on a GenVR space without overlapping edits",
+  "description": "Coordinate assigned agents working on a GenVR space without overlapping edits",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "worlds",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

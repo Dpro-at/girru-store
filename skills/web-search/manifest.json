@@ -1,0 +1,22 @@
+{
+  "id": "web-search",
+  "kind": "skill",
+  "name": "Web Search",
+  "summary": "Search the web and retrieve information from websites",
+  "description": "Search the web and retrieve information from websites",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

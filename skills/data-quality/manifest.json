@@ -1,0 +1,22 @@
+{
+  "id": "data-quality",
+  "kind": "skill",
+  "name": "Data quality",
+  "summary": "Assess and improve dataset fitness for a defined use through grain-aware profiling, source reconciliation, actionable quality checks and verified remediation.",
+  "description": "Assess and improve dataset fitness for a defined use through grain-aware profiling, source reconciliation, actionable quality checks and verified remediation. Use for quality investigations, data acceptance and reliability controls.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

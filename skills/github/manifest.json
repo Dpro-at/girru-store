@@ -1,0 +1,22 @@
+{
+  "id": "github",
+  "kind": "skill",
+  "name": "GitHub",
+  "summary": "Manage GitHub repositories, issues, and pull requests using the gh CLI",
+  "description": "Manage GitHub repositories, issues, and pull requests using the gh CLI",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

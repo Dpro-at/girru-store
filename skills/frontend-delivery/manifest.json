@@ -1,0 +1,22 @@
+{
+  "id": "frontend-delivery",
+  "kind": "skill",
+  "name": "Frontend delivery",
+  "summary": "Implement or refine a real frontend flow using the existing product architecture, design system and data contracts.",
+  "description": "Implement or refine a real frontend flow using the existing product architecture, design system and data contracts. Use for working application interfaces, responsive states and accessible interaction; not merely a visual mockup or an unrequested redesign.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "translation-delivery",
+  "kind": "skill",
+  "name": "Translation delivery",
+  "summary": "Translate and review meaning, terminology and protected tokens, including contextual software localisation/localization and locale QA.",
+  "description": "Translate and review meaning, terminology and protected tokens, including contextual software localisation/localization and locale QA. Text review does not certify rendered behavior or invoke external translation services.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

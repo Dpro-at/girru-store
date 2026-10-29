@@ -1,0 +1,22 @@
+{
+  "id": "test-automation",
+  "kind": "skill",
+  "name": "Test automation",
+  "summary": "Build and maintain meaningful automated tests in the existing runner, choosing the correct boundary, isolated fixtures, useful assertions and diagnosable execution.",
+  "description": "Build and maintain meaningful automated tests in the existing runner, choosing the correct boundary, isolated fixtures, useful assertions and diagnosable execution. Use for regression harnesses, suite reliability and CI test improvements.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

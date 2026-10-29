@@ -1,0 +1,22 @@
+{
+  "id": "analytics-modeling",
+  "kind": "skill",
+  "name": "Analytics modeling",
+  "summary": "Design and change tested analytical models, dimensional structures and reusable metric definitions with explicit grain and downstream compatibility.",
+  "description": "Design and change tested analytical models, dimensional structures and reusable metric definitions with explicit grain and downstream compatibility. Use for warehouse transformations, dbt models, semantic layers and analytics engineering.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

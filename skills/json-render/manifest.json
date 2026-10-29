@@ -1,0 +1,22 @@
+{
+  "id": "json-render",
+  "kind": "skill",
+  "name": "json-render",
+  "summary": "Generate rich interactive UI specs that render as React components in the chat interface.",
+  "description": "Generate rich interactive UI specs that render as React components in the chat interface. Use when the user asks for charts, tables, dashboards, metrics, comparisons, timelines, or any structured data visualization. Output a ```spec block after your text response.",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

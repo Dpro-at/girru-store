@@ -1,0 +1,22 @@
+{
+  "id": "financial-operations",
+  "kind": "skill",
+  "name": "Financial operations",
+  "summary": "Prepare accounting workpapers, budgets and financial reports with explicit entity/period/framework, source reconciliation, traceable calculations and review status.",
+  "description": "Prepare accounting workpapers, budgets and financial reports with explicit entity/period/framework, source reconciliation, traceable calculations and review status. Use for journal preparation, reconciliations, variance analysis and reporting drafts.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

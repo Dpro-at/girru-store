@@ -1,0 +1,22 @@
+{
+  "id": "game-production",
+  "kind": "skill",
+  "name": "Game production",
+  "summary": "Develop and verify a playable game feature in the existing engine, including simulation, input, state, assets and target performance.",
+  "description": "Develop and verify a playable game feature in the existing engine, including simulation, input, state, assets and target performance. Use for gameplay slices, save/load, level interactions and game debugging.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "worlds",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

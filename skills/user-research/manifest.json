@@ -1,0 +1,22 @@
+{
+  "id": "user-research",
+  "kind": "skill",
+  "name": "User research",
+  "summary": "Plan and synthesize decision-focused user research with appropriate methods, traceable observations and explicit sampling and inference limits.",
+  "description": "Plan and synthesize decision-focused user research with appropriate methods, traceable observations and explicit sampling and inference limits. Use for research plans, interview guides, usability studies and evidence-based findings.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

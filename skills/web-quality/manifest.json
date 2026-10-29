@@ -1,0 +1,22 @@
+{
+  "id": "web-quality",
+  "kind": "skill",
+  "name": "Web quality",
+  "summary": "Verify web application behavior through reproducible scenarios, browser observations and state readback.",
+  "description": "Verify web application behavior through reproducible scenarios, browser observations and state readback. Use for feature acceptance, bug reproduction, regression checks and UI defect reports; not for claiming correctness from screenshots or a successful server response alone.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.1",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

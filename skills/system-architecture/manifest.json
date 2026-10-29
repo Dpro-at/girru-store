@@ -1,0 +1,22 @@
+{
+  "id": "system-architecture",
+  "kind": "skill",
+  "name": "System architecture",
+  "summary": "Design or evaluate software architecture using observed system boundaries, measurable requirements, explicit tradeoffs and migration/verification plans.",
+  "description": "Design or evaluate software architecture using observed system boundaries, measurable requirements, explicit tradeoffs and migration/verification plans. Use for system designs and consequential technical decisions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

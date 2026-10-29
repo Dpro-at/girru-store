@@ -1,0 +1,22 @@
+{
+  "id": "language-coaching",
+  "kind": "skill",
+  "name": "Language coaching",
+  "summary": "Teach and practice a learner-selected language through level-appropriate tasks, specific feedback and observed progress.",
+  "description": "Teach and practice a learner-selected language through level-appropriate tasks, specific feedback and observed progress. Use for language lessons, Arabic learning and purposeful conversation practice.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.2.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

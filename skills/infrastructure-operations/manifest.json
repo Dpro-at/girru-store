@@ -1,0 +1,22 @@
+{
+  "id": "infrastructure-operations",
+  "kind": "skill",
+  "name": "Infrastructure operations",
+  "summary": "Plan, review and troubleshoot cloud infrastructure, container platforms, DNS and delivery pipelines.",
+  "description": "Plan, review and troubleshoot cloud infrastructure, container platforms, DNS and delivery pipelines. Use for infrastructure changes, IaC plans, rollout diagnosis, DNS records or CI/CD operations with explicit target and evidence boundaries.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.2.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

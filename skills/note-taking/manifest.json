@@ -1,0 +1,22 @@
+{
+  "id": "note-taking",
+  "kind": "skill",
+  "name": "Note Taking",
+  "summary": "Create, manage, and search personal notes",
+  "description": "Create, manage, and search personal notes",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

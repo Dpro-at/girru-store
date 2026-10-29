@@ -1,0 +1,22 @@
+{
+  "id": "compliance-evidence",
+  "kind": "skill",
+  "name": "Compliance evidence",
+  "summary": "Prepare scoped compliance evidence,requirement mappings,gap findings and owned remediation for authorized human review.",
+  "description": "Prepare scoped compliance evidence,requirement mappings,gap findings and owned remediation for authorized human review. Use for readiness questions,policy/control evidence,initiative triage or evidence-request preparation.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

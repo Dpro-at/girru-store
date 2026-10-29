@@ -1,0 +1,22 @@
+{
+  "id": "recovery-engineering",
+  "kind": "skill",
+  "name": "Recovery engineering",
+  "summary": "Design backup coverage, recovery objectives and evidence-based restore exercises for stateful systems.",
+  "description": "Design backup coverage, recovery objectives and evidence-based restore exercises for stateful systems. Use for backup reviews, restore runbooks, recovery drills or recovery readiness questions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "genvr-character-builder",
+  "kind": "skill",
+  "name": "GenVR agent appearance",
+  "summary": "Plan simple agent avatars and respect the supported GenVR character capabilities",
+  "description": "Plan simple agent avatars and respect the supported GenVR character capabilities",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "worlds",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

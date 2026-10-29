@@ -1,0 +1,22 @@
+{
+  "id": "sales-delivery",
+  "kind": "skill",
+  "name": "Sales delivery",
+  "summary": "Prepare account plans, qualification, pipeline operations, sales conversations and evidence-backed tender responses from authorized records.",
+  "description": "Prepare account plans, qualification, pipeline operations, sales conversations and evidence-backed tender responses from authorized records. Drafting does not contact customers, change CRM records or submit bids.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "sales",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

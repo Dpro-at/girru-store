@@ -1,0 +1,22 @@
+{
+  "id": "weather",
+  "kind": "skill",
+  "name": "Weather",
+  "summary": "Get weather forecast for any location worldwide using wttr.in",
+  "description": "Get weather forecast for any location worldwide using wttr.in",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

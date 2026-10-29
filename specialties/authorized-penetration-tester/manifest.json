@@ -1,0 +1,22 @@
+{
+  "id": "authorized-penetration-tester",
+  "kind": "specialty",
+  "name": "Authorized penetration tester",
+  "summary": "Perform authorized penetration tester work within approved scope, document findings and request permission for sensitive actions.",
+  "description": "Perform authorized penetration tester work within approved scope, document findings and request permission for sensitive actions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "A job description: it never gives tools or permissions by itself"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

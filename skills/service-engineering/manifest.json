@@ -1,0 +1,22 @@
+{
+  "id": "service-engineering",
+  "kind": "skill",
+  "name": "Service engineering",
+  "summary": "Implement backend services, API integrations and complete application slices with explicit contracts, authorization, durable effects and consumer recovery.",
+  "description": "Implement backend services, API integrations and complete application slices with explicit contracts, authorization, durable effects and consumer recovery. Use for service endpoints, external clients and connected frontend/backend features.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

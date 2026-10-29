@@ -1,0 +1,22 @@
+{
+  "id": "three-d-production",
+  "kind": "skill",
+  "name": "3D production",
+  "summary": "Create, refine and deliver 3D assets or scenes against explicit geometry, material, scale and target-runtime contracts.",
+  "description": "Create, refine and deliver 3D assets or scenes against explicit geometry, material, scale and target-runtime contracts. Use for modeling, asset cleanup, render preparation and export verification.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "worlds",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "postgresql-specialist",
+  "kind": "specialty",
+  "name": "PostgreSQL specialist",
+  "summary": "Perform postgresql specialist work within approved scope, document findings and request permission for sensitive actions.",
+  "description": "Perform postgresql specialist work within approved scope, document findings and request permission for sensitive actions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "A job description: it never gives tools or permissions by itself"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

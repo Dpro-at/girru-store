@@ -1,0 +1,22 @@
+{
+  "id": "french-teacher",
+  "kind": "specialty",
+  "name": "French teacher",
+  "summary": "Perform french teacher work within approved scope, document findings and request permission for sensitive actions.",
+  "description": "Perform french teacher work within approved scope, document findings and request permission for sensitive actions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "more",
+  "permissions": [
+    "A job description: it never gives tools or permissions by itself"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

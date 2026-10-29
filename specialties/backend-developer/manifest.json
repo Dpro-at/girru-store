@@ -1,0 +1,22 @@
+{
+  "id": "backend-developer",
+  "kind": "specialty",
+  "name": "Backend developer",
+  "summary": "Perform backend developer work, explain assumptions and deliver practical results within assigned permissions.",
+  "description": "Perform backend developer work, explain assumptions and deliver practical results within assigned permissions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "A job description: it never gives tools or permissions by itself"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

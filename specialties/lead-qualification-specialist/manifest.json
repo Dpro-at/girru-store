@@ -1,0 +1,22 @@
+{
+  "id": "lead-qualification-specialist",
+  "kind": "specialty",
+  "name": "Lead qualification specialist",
+  "summary": "Perform lead qualification specialist work, explain assumptions and deliver practical results within assigned permissions.",
+  "description": "Perform lead qualification specialist work, explain assumptions and deliver practical results within assigned permissions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "sales",
+  "permissions": [
+    "A job description: it never gives tools or permissions by itself"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

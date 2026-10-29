@@ -1,0 +1,22 @@
+{
+  "id": "database-engineering",
+  "kind": "skill",
+  "name": "Database engineering",
+  "summary": "Design and maintain relational database schemas, transactions, recovery procedures and measured query performance.",
+  "description": "Design and maintain relational database schemas, transactions, recovery procedures and measured query performance. Use for database development, administration, migrations and performance investigations in the existing engine.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

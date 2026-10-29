@@ -1,0 +1,22 @@
+{
+  "id": "social-planning",
+  "kind": "skill",
+  "name": "Social planning",
+  "summary": "Plan and maintain evidence-backed social content calendars, channel adaptations and publishing handoffs.",
+  "description": "Plan and maintain evidence-backed social content calendars, channel adaptations and publishing handoffs. Use for campaigns, recurring editorial operations and performance learning across social channels.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.3.0",
+  "updated": "2026-10-29",
+  "category": "marketing",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

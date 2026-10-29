@@ -1,0 +1,22 @@
+{
+  "id": "visual-communication",
+  "kind": "skill",
+  "name": "Visual communication",
+  "summary": "Create and deliver graphic compositions, illustrations and motion pieces with clear message hierarchy, coherent craft and verified output contracts.",
+  "description": "Create and deliver graphic compositions, illustrations and motion pieces with clear message hierarchy, coherent craft and verified output contracts. Use for visual assets, editorial artwork, storyboards and motion-design handoffs.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.2.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

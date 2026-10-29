@@ -16,10 +16,18 @@
       "id": "new",
       "title": "New in the store",
       "items": [
-        "code",
-        "genvr",
-        "terminal",
-        "trading"
+        "3d-artist",
+        "account-manager",
+        "accountant",
+        "activity-and-habits-coach",
+        "activity-coaching",
+        "ai-application-developer",
+        "ai-application-engineering",
+        "analytics-engineer",
+        "analytics-modeling",
+        "animation-specialist",
+        "api-integration-developer",
+        "application-security-specialist"
       ]
     }
   ],
@@ -114,6 +122,4206 @@
       "permissions": [
         "Reads market data",
         "Practice only: never sends real orders"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "activity-coaching",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Activity coaching",
+      "summary": "Plan routine adult activity habits, general fitness and comfortable mobility with user-chosen goals, realistic session detail and evidence-aware progress review.",
+      "description": "Plan routine adult activity habits, general fitness and comfortable mobility with user-chosen goals, realistic session detail and evidence-aware progress review. Use for nonclinical movement planning and everyday activity coaching.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "ai-application-engineering",
+      "kind": "skill",
+      "source": "girru",
+      "name": "AI application engineering",
+      "summary": "Build and evaluate applications that use language models, retrieval and bounded tool calls.",
+      "description": "Build and evaluate applications that use language models, retrieval and bounded tool calls. Use for chat/agent features, provider adapters and grounded assistance with explicit user data, authorization and evaluation boundaries.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "analytics-modeling",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Analytics modeling",
+      "summary": "Design and change tested analytical models, dimensional structures and reusable metric definitions with explicit grain and downstream compatibility.",
+      "description": "Design and change tested analytical models, dimensional structures and reusable metric definitions with explicit grain and downstream compatibility. Use for warehouse transformations, dbt models, semantic layers and analytics engineering.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "audio-production",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Audio production",
+      "summary": "Plan,produce and review podcast episodes and spoken-audio deliverables with source-grounded editorial work,recording/editing contracts and inspected output.",
+      "description": "Plan,produce and review podcast episodes and spoken-audio deliverables with source-grounded editorial work,recording/editing contracts and inspected output. Use for podcast production,episode/interview planning,audio assembly or release handoff.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "brand-identity",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Brand identity",
+      "summary": "Develop and maintain a usable visual/verbal brand identity from approved strategy, assets and real applications.",
+      "description": "Develop and maintain a usable visual/verbal brand identity from approved strategy, assets and real applications. Use for identity creation, refreshes, brand guidelines and rollout-ready asset systems.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "calculator",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Calculator",
+      "summary": "Perform mathematical calculations, unit conversions, and solve math problems",
+      "description": "Perform mathematical calculations, unit conversions, and solve math problems",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "communications-operations",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Communications operations",
+      "summary": "Prepare public-relations and internal-change messages with source-grounded claims, audience boundaries and reviewable release packets.",
+      "description": "Prepare public-relations and internal-change messages with source-grounded claims, audience boundaries and reviewable release packets. Drafting does not send or publish messages.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.2",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "compliance-evidence",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Compliance evidence",
+      "summary": "Prepare scoped compliance evidence,requirement mappings,gap findings and owned remediation for authorized human review.",
+      "description": "Prepare scoped compliance evidence,requirement mappings,gap findings and owned remediation for authorized human review. Use for readiness questions,policy/control evidence,initiative triage or evidence-request preparation.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "content-studio",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Content studio",
+      "summary": "Create and revise brand-specific marketing content for articles, social posts, email, landing pages, announcements and customer stories.",
+      "description": "Create and revise brand-specific marketing content for articles, social posts, email, landing pages, announcements and customer stories. Use when a brief needs audience, evidence, voice and channel decisions; not for publishing or sending content without authorization.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.4.0",
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "course-design",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Course design",
+      "summary": "Design or improve a course with explicit learner outcomes, usable instruction, practice, assessments and delivery evidence.",
+      "description": "Design or improve a course with explicit learner outcomes, usable instruction, practice, assessments and delivery evidence. Use for curricula, module materials, rubrics and course alignment reviews.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.2.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-analysis",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Data analysis",
+      "summary": "Answer data questions with defined metrics, reproducible transformations, checked aggregations and bounded conclusions.",
+      "description": "Answer data questions with defined metrics, reproducible transformations, checked aggregations and bounded conclusions. Use for CSV/table profiling, trend and segment analysis, metric investigation and analytical reports; not for automatically changing source data or training a model without a relevant request.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.2.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-governance",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Data governance",
+      "summary": "Build practical data ownership, classification, lineage, quality and lifecycle controls with evidence-backed responsibilities and reviewable policy gaps.",
+      "description": "Build practical data ownership, classification, lineage, quality and lifecycle controls with evidence-backed responsibilities and reviewable policy gaps. Use for data catalogues, stewardship, access reviews and governance operating models.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-pipelines",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Data pipelines",
+      "summary": "Design, implement and verify bounded ingestion and integration workflows with explicit source contracts, replay semantics, checkpoints and reconciliation.",
+      "description": "Design, implement and verify bounded ingestion and integration workflows with explicit source contracts, replay semantics, checkpoints and reconciliation. Use for batch or streaming ETL/ELT, API synchronization and data integration.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-quality",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Data quality",
+      "summary": "Assess and improve dataset fitness for a defined use through grain-aware profiling, source reconciliation, actionable quality checks and verified remediation.",
+      "description": "Assess and improve dataset fitness for a defined use through grain-aware profiling, source reconciliation, actionable quality checks and verified remediation. Use for quality investigations, data acceptance and reliability controls.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "database-engineering",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Database engineering",
+      "summary": "Design and maintain relational database schemas, transactions, recovery procedures and measured query performance.",
+      "description": "Design and maintain relational database schemas, transactions, recovery procedures and measured query performance. Use for database development, administration, migrations and performance investigations in the existing engine.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "evidence-research",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Evidence research",
+      "summary": "Investigate substantial questions, compare alternatives and verify consequential claims using traceable evidence.",
+      "description": "Investigate substantial questions, compare alternatives and verify consequential claims using traceable evidence. Use for research briefs, technology or supplier comparisons and disputed factual questions; ordinary rewriting does not require a research workflow.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "financial-operations",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Financial operations",
+      "summary": "Prepare accounting workpapers, budgets and financial reports with explicit entity/period/framework, source reconciliation, traceable calculations and review status.",
+      "description": "Prepare accounting workpapers, budgets and financial reports with explicit entity/period/framework, source reconciliation, traceable calculations and review status. Use for journal preparation, reconciliations, variance analysis and reporting drafts.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "frontend-delivery",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Frontend delivery",
+      "summary": "Implement or refine a real frontend flow using the existing product architecture, design system and data contracts.",
+      "description": "Implement or refine a real frontend flow using the existing product architecture, design system and data contracts. Use for working application interfaces, responsive states and accessible interaction; not merely a visual mockup or an unrequested redesign.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "game-production",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Game production",
+      "summary": "Develop and verify a playable game feature in the existing engine, including simulation, input, state, assets and target performance.",
+      "description": "Develop and verify a playable game feature in the existing engine, including simulation, input, state, assets and target performance. Use for gameplay slices, save/load, level interactions and game debugging.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "worlds",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "genvr-character-builder",
+      "kind": "skill",
+      "source": "girru",
+      "name": "GenVR agent appearance",
+      "summary": "Plan simple agent avatars and respect the supported GenVR character capabilities",
+      "description": "Plan simple agent avatars and respect the supported GenVR character capabilities",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "worlds",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "genvr-team",
+      "kind": "skill",
+      "source": "girru",
+      "name": "GenVR team coordination",
+      "summary": "Coordinate assigned agents working on a GenVR space without overlapping edits",
+      "description": "Coordinate assigned agents working on a GenVR space without overlapping edits",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "worlds",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "genvr-world-builder",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Local GenVR space builder",
+      "summary": "Build and verify local GenVR spaces through explicitly granted authoring tools",
+      "description": "Build and verify local GenVR spaces through explicitly granted authoring tools",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "worlds",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "github",
+      "kind": "skill",
+      "source": "girru",
+      "name": "GitHub",
+      "summary": "Manage GitHub repositories, issues, and pull requests using the gh CLI",
+      "description": "Manage GitHub repositories, issues, and pull requests using the gh CLI",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "infrastructure-operations",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Infrastructure operations",
+      "summary": "Plan, review and troubleshoot cloud infrastructure, container platforms, DNS and delivery pipelines.",
+      "description": "Plan, review and troubleshoot cloud infrastructure, container platforms, DNS and delivery pipelines. Use for infrastructure changes, IaC plans, rollout diagnosis, DNS records or CI/CD operations with explicit target and evidence boundaries.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.2.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "json-render",
+      "kind": "skill",
+      "source": "girru",
+      "name": "json-render",
+      "summary": "Generate rich interactive UI specs that render as React components in the chat interface.",
+      "description": "Generate rich interactive UI specs that render as React components in the chat interface. Use when the user asks for charts, tables, dashboards, metrics, comparisons, timelines, or any structured data visualization. Output a ```spec block after your text response.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "language-coaching",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Language coaching",
+      "summary": "Teach and practice a learner-selected language through level-appropriate tasks, specific feedback and observed progress.",
+      "description": "Teach and practice a learner-selected language through level-appropriate tasks, specific feedback and observed progress. Use for language lessons, Arabic learning and purposeful conversation practice.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.2.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "learning-support",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Learning support",
+      "summary": "Coach study and teach mathematics,programming or science through task-specific diagnosis,verified explanations,learner practice and evidence of transfer.",
+      "description": "Coach study and teach mathematics,programming or science through task-specific diagnosis,verified explanations,learner practice and evidence of transfer. Use for learning plans,concept help,worked examples and educational feedback.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "legal-work",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Legal work",
+      "summary": "Prepare source-grounded contract reviews and jurisdiction-aware legal research with traceable issues,drafting and verification limits.",
+      "description": "Prepare source-grounded contract reviews and jurisdiction-aware legal research with traceable issues,drafting and verification limits. Use for agreement analysis,negotiation preparation,authority research or legal memo drafts for responsible review.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "mobile-delivery",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Mobile delivery",
+      "summary": "Implement and verify mobile application features in the existing iOS, Android or cross-platform stack, accounting for lifecycle, device state, connectivity and platform capabilities.",
+      "description": "Implement and verify mobile application features in the existing iOS, Android or cross-platform stack, accounting for lifecycle, device state, connectivity and platform capabilities.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "note-taking",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Note Taking",
+      "summary": "Create, manage, and search personal notes",
+      "description": "Create, manage, and search personal notes",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "observability-engineering",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Observability engineering",
+      "summary": "Design and review service signals, telemetry pipelines, queries, dashboards and actionable alerts.",
+      "description": "Design and review service signals, telemetry pipelines, queries, dashboards and actionable alerts. Use for missing telemetry, noisy alerts, SLI/SLO proposals, metrics/log/trace diagnosis or observability acceptance.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "operations-delivery",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Operations delivery",
+      "summary": "Analyze inventory and processes, coordinate or manage projects, trace business requirements, prepare executive assistance, purchasing and scheduling work with explicit evidence and commitment boundari",
+      "description": "Analyze inventory and processes, coordinate or manage projects, trace business requirements, prepare executive assistance, purchasing and scheduling work with explicit evidence and commitment boundaries.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.2.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "people-operations",
+      "kind": "skill",
+      "source": "girru",
+      "name": "People operations",
+      "summary": "Prepare employee onboarding,people-process work and structured recruitment support using current policy,job-related evidence and scoped private records.",
+      "description": "Prepare employee onboarding,people-process work and structured recruitment support using current policy,job-related evidence and scoped private records. Use for HR checklists,policy cases,candidate workflow and workforce reporting.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "product-management",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Product management",
+      "summary": "Frame product discovery, prioritization and requirements around evidence, outcomes and decision ownership.",
+      "description": "Frame product discovery, prioritization and requirements around evidence, outcomes and decision ownership. Use for product decisions and outcome roadmaps, not automatic tracker updates or releases.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.1",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "recovery-engineering",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Recovery engineering",
+      "summary": "Design backup coverage, recovery objectives and evidence-based restore exercises for stateful systems.",
+      "description": "Design backup coverage, recovery objectives and evidence-based restore exercises for stateful systems. Use for backup reviews, restore runbooks, recovery drills or recovery readiness questions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "sales-delivery",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Sales delivery",
+      "summary": "Prepare account plans, qualification, pipeline operations, sales conversations and evidence-backed tender responses from authorized records.",
+      "description": "Prepare account plans, qualification, pipeline operations, sales conversations and evidence-backed tender responses from authorized records. Drafting does not contact customers, change CRM records or submit bids.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "search-visibility",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Search visibility",
+      "summary": "Audit organic search visibility using traceable crawl, rendering, indexing and query evidence; produce prioritized fixes and measurement plans.",
+      "description": "Audit organic search visibility using traceable crawl, rendering, indexing and query evidence; produce prioritized fixes and measurement plans. Use for technical SEO, content discovery, local or international search diagnosis.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "security-engineering",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Security engineering",
+      "summary": "Review application, cloud, data and cryptographic security with evidence-backed findings, explicit test authority and practical remediation verification.",
+      "description": "Review application, cloud, data and cryptographic security with evidence-backed findings, explicit test authority and practical remediation verification. Use for defensive security assessments and specifically authorized penetration-test planning.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.2.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "service-engineering",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Service engineering",
+      "summary": "Implement backend services, API integrations and complete application slices with explicit contracts, authorization, durable effects and consumer recovery.",
+      "description": "Implement backend services, API integrations and complete application slices with explicit contracts, authorization, durable effects and consumer recovery. Use for service endpoints, external clients and connected frontend/backend features.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "social-planning",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Social planning",
+      "summary": "Plan and maintain evidence-backed social content calendars, channel adaptations and publishing handoffs.",
+      "description": "Plan and maintain evidence-backed social content calendars, channel adaptations and publishing handoffs. Use for campaigns, recurring editorial operations and performance learning across social channels.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.3.0",
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "statistical-modeling",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Statistical modeling",
+      "summary": "Design and evaluate statistical or predictive analyses with explicit estimands, leakage-aware splits, appropriate baselines, uncertainty and reproducible evaluation.",
+      "description": "Design and evaluate statistical or predictive analyses with explicit estimands, leakage-aware splits, appropriate baselines, uncertainty and reproducible evaluation. Use for data science, model comparisons and inferential studies.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "summarize",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Summarize",
+      "summary": "Summarize text, articles, documents, and web pages using AI",
+      "description": "Summarize text, articles, documents, and web pages using AI",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "support-delivery",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Support delivery",
+      "summary": "Prepare customer onboarding, support diagnosis, knowledge-base content and knowledge lifecycle/retrieval plans from scoped evidence.",
+      "description": "Prepare customer onboarding, support diagnosis, knowledge-base content and knowledge lifecycle/retrieval plans from scoped evidence. No account action, source ingestion or publication is implied.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.2.0",
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "system-architecture",
+      "kind": "skill",
+      "source": "girru",
+      "name": "System architecture",
+      "summary": "Design or evaluate software architecture using observed system boundaries, measurable requirements, explicit tradeoffs and migration/verification plans.",
+      "description": "Design or evaluate software architecture using observed system boundaries, measurable requirements, explicit tradeoffs and migration/verification plans. Use for system designs and consequential technical decisions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "technical-documentation",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Technical documentation",
+      "summary": "Create and maintain task-oriented technical documentation grounded in source, observed behavior and a named product version.",
+      "description": "Create and maintain task-oriented technical documentation grounded in source, observed behavior and a named product version. Use for API guides, quickstarts, runbooks, architecture records and documentation migrations.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "test-automation",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Test automation",
+      "summary": "Build and maintain meaningful automated tests in the existing runner, choosing the correct boundary, isolated fixtures, useful assertions and diagnosable execution.",
+      "description": "Build and maintain meaningful automated tests in the existing runner, choosing the correct boundary, isolated fixtures, useful assertions and diagnosable execution. Use for regression harnesses, suite reliability and CI test improvements.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "three-d-production",
+      "kind": "skill",
+      "source": "girru",
+      "name": "3D production",
+      "summary": "Create, refine and deliver 3D assets or scenes against explicit geometry, material, scale and target-runtime contracts.",
+      "description": "Create, refine and deliver 3D assets or scenes against explicit geometry, material, scale and target-runtime contracts. Use for modeling, asset cleanup, render preparation and export verification.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "worlds",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "translation-delivery",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Translation delivery",
+      "summary": "Translate and review meaning, terminology and protected tokens, including contextual software localisation/localization and locale QA.",
+      "description": "Translate and review meaning, terminology and protected tokens, including contextual software localisation/localization and locale QA. Text review does not certify rendered behavior or invoke external translation services.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "user-research",
+      "kind": "skill",
+      "source": "girru",
+      "name": "User research",
+      "summary": "Plan and synthesize decision-focused user research with appropriate methods, traceable observations and explicit sampling and inference limits.",
+      "description": "Plan and synthesize decision-focused user research with appropriate methods, traceable observations and explicit sampling and inference limits. Use for research plans, interview guides, usability studies and evidence-based findings.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "visual-communication",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Visual communication",
+      "summary": "Create and deliver graphic compositions, illustrations and motion pieces with clear message hierarchy, coherent craft and verified output contracts.",
+      "description": "Create and deliver graphic compositions, illustrations and motion pieces with clear message hierarchy, coherent craft and verified output contracts. Use for visual assets, editorial artwork, storyboards and motion-design handoffs.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.2.0",
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "weather",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Weather",
+      "summary": "Get weather forecast for any location worldwide using wttr.in",
+      "description": "Get weather forecast for any location worldwide using wttr.in",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "web-quality",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Web quality",
+      "summary": "Verify web application behavior through reproducible scenarios, browser observations and state readback.",
+      "description": "Verify web application behavior through reproducible scenarios, browser observations and state readback. Use for feature acceptance, bug reproduction, regression checks and UI defect reports; not for claiming correctness from screenshots or a successful server response alone.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.0.1",
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "web-search",
+      "kind": "skill",
+      "source": "girru",
+      "name": "Web Search",
+      "summary": "Search the web and retrieve information from websites",
+      "description": "Search the web and retrieve information from websites",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "Written guidance only: it never gives tools, connections or memory"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "3d-artist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "3D artist",
+      "summary": "Perform 3d artist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform 3d artist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "account-manager",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Account manager",
+      "summary": "Perform account manager work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform account manager work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "accountant",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Accountant",
+      "summary": "Perform accountant work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform accountant work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "activity-and-habits-coach",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Activity and habits coach",
+      "summary": "Perform activity and habits coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform activity and habits coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "ai-application-developer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "AI application developer",
+      "summary": "Perform ai application developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform ai application developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "analytics-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Analytics engineer",
+      "summary": "Perform analytics engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform analytics engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "animation-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Animation specialist",
+      "summary": "Perform animation specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform animation specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "api-integration-developer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "API integration developer",
+      "summary": "Perform api integration developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform api integration developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "application-security-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Application security specialist",
+      "summary": "Perform application security specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform application security specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "arabic-teacher",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Arabic teacher",
+      "summary": "Perform arabic teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform arabic teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "authorized-penetration-tester",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Authorized penetration tester",
+      "summary": "Perform authorized penetration tester work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform authorized penetration tester work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "backend-developer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Backend developer",
+      "summary": "Perform backend developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform backend developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "backup-and-recovery-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Backup and recovery specialist",
+      "summary": "Perform backup and recovery specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform backup and recovery specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "brand-designer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Brand designer",
+      "summary": "Perform brand designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform brand designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "brand-strategist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Brand strategist",
+      "summary": "Perform brand strategist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform brand strategist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "budget-analyst",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Budget analyst",
+      "summary": "Perform budget analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform budget analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "business-intelligence-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Business intelligence specialist",
+      "summary": "Perform business intelligence specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform business intelligence specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "campaign-analyst",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Campaign analyst",
+      "summary": "Perform campaign analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform campaign analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "cloud-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Cloud engineer",
+      "summary": "Perform cloud engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform cloud engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "cloud-security-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Cloud security specialist",
+      "summary": "Perform cloud security specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform cloud security specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "community-manager",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Community manager",
+      "summary": "Perform community manager work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform community manager work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "compliance-assistant",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Compliance assistant",
+      "summary": "Perform compliance assistant work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform compliance assistant work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "container-platform-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Container platform engineer",
+      "summary": "Perform container platform engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform container platform engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "content-creator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Content creator",
+      "summary": "Perform content creator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform content creator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "contract-assistant",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Contract assistant",
+      "summary": "Perform contract assistant work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform contract assistant work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "conversation-tutor",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Conversation tutor",
+      "summary": "Perform conversation tutor work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform conversation tutor work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "copywriter",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Copywriter",
+      "summary": "Perform copywriter work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform copywriter work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "course-designer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Course designer",
+      "summary": "Perform course designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform course designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "customer-onboarding-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Customer onboarding specialist",
+      "summary": "Perform customer onboarding specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform customer onboarding specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "customer-support-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Customer support specialist",
+      "summary": "Perform customer support specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform customer support specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-analyst",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Data analyst",
+      "summary": "Perform data analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform data analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Data engineer",
+      "summary": "Perform data engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform data engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-governance-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Data governance specialist",
+      "summary": "Perform data governance specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform data governance specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-integration-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Data integration specialist",
+      "summary": "Perform data integration specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform data integration specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-quality-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Data quality specialist",
+      "summary": "Perform data quality specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform data quality specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-scientist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Data scientist",
+      "summary": "Perform data scientist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform data scientist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "data-security-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Data security specialist",
+      "summary": "Perform data security specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform data security specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "database-administrator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Database administrator",
+      "summary": "Perform database administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform database administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "database-developer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Database developer",
+      "summary": "Perform database developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform database developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "database-performance-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Database performance specialist",
+      "summary": "Perform database performance specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform database performance specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "devops-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "DevOps engineer",
+      "summary": "Perform devops engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform devops engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "disaster-recovery-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Disaster recovery specialist",
+      "summary": "Perform disaster recovery specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform disaster recovery specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "dns-administrator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "DNS administrator",
+      "summary": "Perform dns administrator work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform dns administrator work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "editor",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Editor",
+      "summary": "Perform editor work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform editor work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "email-marketing-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Email marketing specialist",
+      "summary": "Perform email marketing specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform email marketing specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "employee-onboarding-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Employee onboarding specialist",
+      "summary": "Perform employee onboarding specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform employee onboarding specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "encryption-and-key-management-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Encryption and key management specialist",
+      "summary": "Perform encryption and key management specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform encryption and key management specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "english-teacher",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "English teacher",
+      "summary": "Perform english teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform english teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "fact-checker",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Fact checker",
+      "summary": "Perform fact checker work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform fact checker work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "financial-reporting-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Financial reporting specialist",
+      "summary": "Perform financial reporting specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform financial reporting specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "fitness-coach",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Fitness coach",
+      "summary": "Perform fitness coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform fitness coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "french-teacher",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "French teacher",
+      "summary": "Perform french teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform french teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "frontend-developer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Frontend developer",
+      "summary": "Perform frontend developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform frontend developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "full-stack-developer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Full-stack developer",
+      "summary": "Perform full-stack developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform full-stack developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "game-developer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Game developer",
+      "summary": "Perform game developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform game developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "german-teacher",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "German teacher",
+      "summary": "Perform german teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform german teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "graphic-designer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Graphic designer",
+      "summary": "Perform graphic designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform graphic designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "identity-and-access-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Identity and access specialist",
+      "summary": "Perform identity and access specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform identity and access specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "illustrator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Illustrator",
+      "summary": "Perform illustrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform illustrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "incident-response-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Incident response specialist",
+      "summary": "Perform incident response specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform incident response specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "inventory-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Inventory specialist",
+      "summary": "Perform inventory specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform inventory specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "invoicing-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Invoicing specialist",
+      "summary": "Perform invoicing specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform invoicing specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "knowledge-base-editor",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Knowledge base editor",
+      "summary": "Perform knowledge base editor work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform knowledge base editor work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "language-teacher",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Language teacher",
+      "summary": "Perform language teacher work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform language teacher work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "lead-qualification-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Lead qualification specialist",
+      "summary": "Perform lead qualification specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform lead qualification specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "learning-coach",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Learning coach",
+      "summary": "Perform learning coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform learning coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "legal-research-assistant",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Legal research assistant",
+      "summary": "Perform legal research assistant work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform legal research assistant work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "linux-administrator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Linux administrator",
+      "summary": "Perform linux administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform linux administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "machine-learning-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Machine learning engineer",
+      "summary": "Perform machine learning engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform machine learning engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "mathematics-tutor",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Mathematics tutor",
+      "summary": "Perform mathematics tutor work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform mathematics tutor work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "mobile-developer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Mobile developer",
+      "summary": "Perform mobile developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform mobile developer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "mobility-coach",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Mobility coach",
+      "summary": "Perform mobility coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform mobility coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "motion-designer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Motion designer",
+      "summary": "Perform motion designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform motion designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "mysql-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "MySQL specialist",
+      "summary": "Perform mysql specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform mysql specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "network-administrator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Network administrator",
+      "summary": "Perform network administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform network administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "network-security-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Network security specialist",
+      "summary": "Perform network security specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform network security specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "observability-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Observability engineer",
+      "summary": "Perform observability engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform observability engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "people-operations-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "People operations specialist",
+      "summary": "Perform people operations specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform people operations specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "podcast-producer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Podcast producer",
+      "summary": "Perform podcast producer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform podcast producer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "postgresql-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "PostgreSQL specialist",
+      "summary": "Perform postgresql specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform postgresql specialist work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "privacy-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Privacy specialist",
+      "summary": "Perform privacy specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform privacy specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "process-analyst",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Process analyst",
+      "summary": "Perform process analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform process analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "professional-skills-trainer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Professional skills trainer",
+      "summary": "Perform professional skills trainer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform professional skills trainer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "programming-teacher",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Programming teacher",
+      "summary": "Perform programming teacher work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform programming teacher work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "project-coordinator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Project coordinator",
+      "summary": "Perform project coordinator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform project coordinator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "purchasing-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Purchasing specialist",
+      "summary": "Perform purchasing specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform purchasing specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "qa-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "QA engineer",
+      "summary": "Perform qa engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform qa engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "recruitment-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Recruitment specialist",
+      "summary": "Perform recruitment specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform recruitment specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "research-analyst",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Research analyst",
+      "summary": "Perform research analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform research analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "sales-operations-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Sales operations specialist",
+      "summary": "Perform sales operations specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform sales operations specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "sales-representative",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Sales representative",
+      "summary": "Perform sales representative work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform sales representative work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "scheduling-coordinator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Scheduling coordinator",
+      "summary": "Perform scheduling coordinator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform scheduling coordinator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "science-tutor",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Science tutor",
+      "summary": "Perform science tutor work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform science tutor work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "scriptwriter",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Scriptwriter",
+      "summary": "Perform scriptwriter work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform scriptwriter work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "security-auditor",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Security auditor",
+      "summary": "Perform security auditor work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform security auditor work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "security-awareness-trainer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Security awareness trainer",
+      "summary": "Perform security awareness trainer work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform security awareness trainer work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "security-operations-analyst",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Security operations analyst",
+      "summary": "Perform security operations analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform security operations analyst work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "seo-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "SEO specialist",
+      "summary": "Perform seo specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform seo specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "server-administrator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Server administrator",
+      "summary": "Perform server administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform server administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "site-reliability-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Site reliability engineer",
+      "summary": "Perform site reliability engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform site reliability engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "social-media-manager",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Social media manager",
+      "summary": "Perform social media manager work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform social media manager work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "software-architect",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Software architect",
+      "summary": "Perform software architect work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform software architect work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "sound-editor",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Sound editor",
+      "summary": "Perform sound editor work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform sound editor work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "spanish-teacher",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Spanish teacher",
+      "summary": "Perform spanish teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform spanish teacher work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "staff-training-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Staff training specialist",
+      "summary": "Perform staff training specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform staff training specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "storage-administrator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Storage administrator",
+      "summary": "Perform storage administrator work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform storage administrator work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "strength-training-coach",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Strength training coach",
+      "summary": "Perform strength training coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform strength training coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "technical-support-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Technical support specialist",
+      "summary": "Perform technical support specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform technical support specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "sales",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "technical-writer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Technical writer",
+      "summary": "Perform technical writer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform technical writer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "test-automation-engineer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Test automation engineer",
+      "summary": "Perform test automation engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform test automation engineer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "translator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Translator",
+      "summary": "Perform translator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform translator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "ui-designer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "UI designer",
+      "summary": "Perform ui designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform ui designer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "ux-researcher",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "UX researcher",
+      "summary": "Perform ux researcher work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform ux researcher work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "video-editor",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Video editor",
+      "summary": "Perform video editor work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform video editor work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "virtual-actor",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Virtual actor",
+      "summary": "Perform virtual actor work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform virtual actor work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "virtual-influencer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Virtual influencer",
+      "summary": "Perform virtual influencer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform virtual influencer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "marketing",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "virtual-presenter",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Virtual presenter",
+      "summary": "Perform virtual presenter work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform virtual presenter work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "voice-performer",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Voice performer",
+      "summary": "Perform voice performer work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform voice performer work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "productivity",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "vulnerability-management-specialist",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Vulnerability management specialist",
+      "summary": "Perform vulnerability management specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform vulnerability management specialist work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "web-hosting-administrator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Web hosting administrator",
+      "summary": "Perform web hosting administrator work within approved scope, document findings and request permission for sensitive actions.",
+      "description": "Perform web hosting administrator work within approved scope, document findings and request permission for sensitive actions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "windows-administrator",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Windows administrator",
+      "summary": "Perform windows administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform windows administrator work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "yoga-coach",
+      "kind": "specialty",
+      "source": "girru",
+      "name": "Yoga coach",
+      "summary": "Perform yoga coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "description": "Perform yoga coach work, explain assumptions and deliver practical results within assigned permissions.",
+      "icon": null,
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "more",
+      "permissions": [
+        "A job description: it never gives tools or permissions by itself"
       ],
       "worksWith": [],
       "languages": [

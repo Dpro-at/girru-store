@@ -1,0 +1,22 @@
+{
+  "id": "people-operations",
+  "kind": "skill",
+  "name": "People operations",
+  "summary": "Prepare employee onboarding,people-process work and structured recruitment support using current policy,job-related evidence and scoped private records.",
+  "description": "Prepare employee onboarding,people-process work and structured recruitment support using current policy,job-related evidence and scoped private records. Use for HR checklists,policy cases,candidate workflow and workforce reporting.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

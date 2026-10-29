@@ -1,0 +1,22 @@
+{
+  "id": "support-delivery",
+  "kind": "skill",
+  "name": "Support delivery",
+  "summary": "Prepare customer onboarding, support diagnosis, knowledge-base content and knowledge lifecycle/retrieval plans from scoped evidence.",
+  "description": "Prepare customer onboarding, support diagnosis, knowledge-base content and knowledge lifecycle/retrieval plans from scoped evidence. No account action, source ingestion or publication is implied.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.2.0",
+  "updated": "2026-10-29",
+  "category": "sales",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

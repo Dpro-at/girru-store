@@ -1,0 +1,22 @@
+{
+  "id": "product-management",
+  "kind": "skill",
+  "name": "Product management",
+  "summary": "Frame product discovery, prioritization and requirements around evidence, outcomes and decision ownership.",
+  "description": "Frame product discovery, prioritization and requirements around evidence, outcomes and decision ownership. Use for product decisions and outcome roadmaps, not automatic tracker updates or releases.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.1",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

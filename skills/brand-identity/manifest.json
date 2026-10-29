@@ -1,0 +1,22 @@
+{
+  "id": "brand-identity",
+  "kind": "skill",
+  "name": "Brand identity",
+  "summary": "Develop and maintain a usable visual/verbal brand identity from approved strategy, assets and real applications.",
+  "description": "Develop and maintain a usable visual/verbal brand identity from approved strategy, assets and real applications. Use for identity creation, refreshes, brand guidelines and rollout-ready asset systems.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "marketing",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "communications-operations",
+  "kind": "skill",
+  "name": "Communications operations",
+  "summary": "Prepare public-relations and internal-change messages with source-grounded claims, audience boundaries and reviewable release packets.",
+  "description": "Prepare public-relations and internal-change messages with source-grounded claims, audience boundaries and reviewable release packets. Drafting does not send or publish messages.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.2",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

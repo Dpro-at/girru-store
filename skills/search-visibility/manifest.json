@@ -1,0 +1,22 @@
+{
+  "id": "search-visibility",
+  "kind": "skill",
+  "name": "Search visibility",
+  "summary": "Audit organic search visibility using traceable crawl, rendering, indexing and query evidence; produce prioritized fixes and measurement plans.",
+  "description": "Audit organic search visibility using traceable crawl, rendering, indexing and query evidence; produce prioritized fixes and measurement plans. Use for technical SEO, content discovery, local or international search diagnosis.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "marketing",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

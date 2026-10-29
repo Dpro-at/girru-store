@@ -1,0 +1,22 @@
+{
+  "id": "calculator",
+  "kind": "skill",
+  "name": "Calculator",
+  "summary": "Perform mathematical calculations, unit conversions, and solve math problems",
+  "description": "Perform mathematical calculations, unit conversions, and solve math problems",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

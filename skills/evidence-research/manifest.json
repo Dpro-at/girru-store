@@ -1,0 +1,22 @@
+{
+  "id": "evidence-research",
+  "kind": "skill",
+  "name": "Evidence research",
+  "summary": "Investigate substantial questions, compare alternatives and verify consequential claims using traceable evidence.",
+  "description": "Investigate substantial questions, compare alternatives and verify consequential claims using traceable evidence. Use for research briefs, technology or supplier comparisons and disputed factual questions; ordinary rewriting does not require a research workflow.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

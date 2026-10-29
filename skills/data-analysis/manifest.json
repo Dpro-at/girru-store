@@ -1,0 +1,22 @@
+{
+  "id": "data-analysis",
+  "kind": "skill",
+  "name": "Data analysis",
+  "summary": "Answer data questions with defined metrics, reproducible transformations, checked aggregations and bounded conclusions.",
+  "description": "Answer data questions with defined metrics, reproducible transformations, checked aggregations and bounded conclusions. Use for CSV/table profiling, trend and segment analysis, metric investigation and analytical reports; not for automatically changing source data or training a model without a relevant request.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.2.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "legal-work",
+  "kind": "skill",
+  "name": "Legal work",
+  "summary": "Prepare source-grounded contract reviews and jurisdiction-aware legal research with traceable issues,drafting and verification limits.",
+  "description": "Prepare source-grounded contract reviews and jurisdiction-aware legal research with traceable issues,drafting and verification limits. Use for agreement analysis,negotiation preparation,authority research or legal memo drafts for responsible review.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

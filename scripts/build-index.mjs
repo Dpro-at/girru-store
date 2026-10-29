@@ -106,7 +106,8 @@ export function buildIndex() {
     schema: 1,
     featured: ids.has('genvr') ? 'genvr' : null,
     collections: [
-      { id: 'made-by-girru', title: 'Made by Girru', items: items.filter((i) => i.maker === 'Girru').map((i) => i.id) },
+      // A collection lists at most 60 items (Girru refuses more): Girru's own apps here; its skills and specialties have their own places.
+      { id: 'made-by-girru', title: 'Made by Girru', items: items.filter((i) => i.maker === 'Girru' && i.kind === 'app').slice(0, 60).map((i) => i.id) },
       { id: 'new', title: 'New in the store', items: byNew.slice(0, 12).map((i) => i.id) },
     ],
     items,
@@ -115,7 +116,10 @@ export function buildIndex() {
 
 if (import.meta.url === `file://${process.argv[1]}`) {
   try {
-    const text = JSON.stringify(buildIndex(), null, 2) + '\n';
+    const built = buildIndex();
+    // Girru's own limits: past them the Store refuses the whole index.
+    if (built.items.length > 2000 || built.collections.length > 20 || built.collections.some((c) => c.items.length > 60)) throw new Error('index.json is over Girru\'s limits (2000 items, 20 collections, 60 items each)');
+    const text = JSON.stringify(built, null, 2) + '\n';
     const file = path.join(ROOT, 'index.json');
     if (process.argv.includes('--check')) {
       const now = fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '';

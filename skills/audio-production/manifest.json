@@ -1,0 +1,22 @@
+{
+  "id": "audio-production",
+  "kind": "skill",
+  "name": "Audio production",
+  "summary": "Plan,produce and review podcast episodes and spoken-audio deliverables with source-grounded editorial work,recording/editing contracts and inspected output.",
+  "description": "Plan,produce and review podcast episodes and spoken-audio deliverables with source-grounded editorial work,recording/editing contracts and inspected output. Use for podcast production,episode/interview planning,audio assembly or release handoff.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

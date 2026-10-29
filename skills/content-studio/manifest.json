@@ -1,0 +1,22 @@
+{
+  "id": "content-studio",
+  "kind": "skill",
+  "name": "Content studio",
+  "summary": "Create and revise brand-specific marketing content for articles, social posts, email, landing pages, announcements and customer stories.",
+  "description": "Create and revise brand-specific marketing content for articles, social posts, email, landing pages, announcements and customer stories. Use when a brief needs audience, evidence, voice and channel decisions; not for publishing or sending content without authorization.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.4.0",
+  "updated": "2026-10-29",
+  "category": "marketing",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

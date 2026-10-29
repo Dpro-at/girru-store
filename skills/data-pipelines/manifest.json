@@ -1,0 +1,22 @@
+{
+  "id": "data-pipelines",
+  "kind": "skill",
+  "name": "Data pipelines",
+  "summary": "Design, implement and verify bounded ingestion and integration workflows with explicit source contracts, replay semantics, checkpoints and reconciliation.",
+  "description": "Design, implement and verify bounded ingestion and integration workflows with explicit source contracts, replay semantics, checkpoints and reconciliation. Use for batch or streaming ETL/ELT, API synchronization and data integration.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

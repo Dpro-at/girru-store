@@ -1,0 +1,22 @@
+{
+  "id": "security-engineering",
+  "kind": "skill",
+  "name": "Security engineering",
+  "summary": "Review application, cloud, data and cryptographic security with evidence-backed findings, explicit test authority and practical remediation verification.",
+  "description": "Review application, cloud, data and cryptographic security with evidence-backed findings, explicit test authority and practical remediation verification. Use for defensive security assessments and specifically authorized penetration-test planning.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.2.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

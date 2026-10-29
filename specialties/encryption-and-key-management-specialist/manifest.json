@@ -1,0 +1,22 @@
+{
+  "id": "encryption-and-key-management-specialist",
+  "kind": "specialty",
+  "name": "Encryption and key management specialist",
+  "summary": "Perform encryption and key management specialist work within approved scope, document findings and request permission for sensitive actions.",
+  "description": "Perform encryption and key management specialist work within approved scope, document findings and request permission for sensitive actions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "A job description: it never gives tools or permissions by itself"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

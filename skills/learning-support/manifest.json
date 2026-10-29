@@ -1,0 +1,22 @@
+{
+  "id": "learning-support",
+  "kind": "skill",
+  "name": "Learning support",
+  "summary": "Coach study and teach mathematics,programming or science through task-specific diagnosis,verified explanations,learner practice and evidence of transfer.",
+  "description": "Coach study and teach mathematics,programming or science through task-specific diagnosis,verified explanations,learner practice and evidence of transfer. Use for learning plans,concept help,worked examples and educational feedback.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

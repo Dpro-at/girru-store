@@ -1,0 +1,22 @@
+{
+  "id": "genvr-world-builder",
+  "kind": "skill",
+  "name": "Local GenVR space builder",
+  "summary": "Build and verify local GenVR spaces through explicitly granted authoring tools",
+  "description": "Build and verify local GenVR spaces through explicitly granted authoring tools",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "worlds",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "summarize",
+  "kind": "skill",
+  "name": "Summarize",
+  "summary": "Summarize text, articles, documents, and web pages using AI",
+  "description": "Summarize text, articles, documents, and web pages using AI",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

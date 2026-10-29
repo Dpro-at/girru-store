@@ -1,0 +1,22 @@
+{
+  "id": "operations-delivery",
+  "kind": "skill",
+  "name": "Operations delivery",
+  "summary": "Analyze inventory and processes, coordinate or manage projects, trace business requirements, prepare executive assistance, purchasing and scheduling work with explicit evidence and commitment boundari",
+  "description": "Analyze inventory and processes, coordinate or manage projects, trace business requirements, prepare executive assistance, purchasing and scheduling work with explicit evidence and commitment boundaries.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.2.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

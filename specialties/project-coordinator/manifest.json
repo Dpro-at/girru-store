@@ -1,0 +1,22 @@
+{
+  "id": "project-coordinator",
+  "kind": "specialty",
+  "name": "Project coordinator",
+  "summary": "Perform project coordinator work, explain assumptions and deliver practical results within assigned permissions.",
+  "description": "Perform project coordinator work, explain assumptions and deliver practical results within assigned permissions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "A job description: it never gives tools or permissions by itself"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

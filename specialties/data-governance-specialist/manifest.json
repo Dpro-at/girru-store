@@ -1,0 +1,22 @@
+{
+  "id": "data-governance-specialist",
+  "kind": "specialty",
+  "name": "Data governance specialist",
+  "summary": "Perform data governance specialist work, explain assumptions and deliver practical results within assigned permissions.",
+  "description": "Perform data governance specialist work, explain assumptions and deliver practical results within assigned permissions.",
+  "icon": null,
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "A job description: it never gives tools or permissions by itself"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

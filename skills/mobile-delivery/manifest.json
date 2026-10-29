@@ -1,0 +1,22 @@
+{
+  "id": "mobile-delivery",
+  "kind": "skill",
+  "name": "Mobile delivery",
+  "summary": "Implement and verify mobile application features in the existing iOS, Android or cross-platform stack, accounting for lifecycle, device state, connectivity and platform capabilities.",
+  "description": "Implement and verify mobile application features in the existing iOS, Android or cross-platform stack, accounting for lifecycle, device state, connectivity and platform capabilities.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

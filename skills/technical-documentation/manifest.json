@@ -1,0 +1,22 @@
+{
+  "id": "technical-documentation",
+  "kind": "skill",
+  "name": "Technical documentation",
+  "summary": "Create and maintain task-oriented technical documentation grounded in source, observed behavior and a named product version.",
+  "description": "Create and maintain task-oriented technical documentation grounded in source, observed behavior and a named product version. Use for API guides, quickstarts, runbooks, architecture records and documentation migrations.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.0.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

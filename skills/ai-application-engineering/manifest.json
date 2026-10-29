@@ -1,0 +1,22 @@
+{
+  "id": "ai-application-engineering",
+  "kind": "skill",
+  "name": "AI application engineering",
+  "summary": "Build and evaluate applications that use language models, retrieval and bounded tool calls.",
+  "description": "Build and evaluate applications that use language models, retrieval and bounded tool calls. Use for chat/agent features, provider adapters and grounded assistance with explicit user data, authorization and evaluation boundaries.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "course-design",
+  "kind": "skill",
+  "name": "Course design",
+  "summary": "Design or improve a course with explicit learner outcomes, usable instruction, practice, assessments and delivery evidence.",
+  "description": "Design or improve a course with explicit learner outcomes, usable instruction, practice, assessments and delivery evidence. Use for curricula, module materials, rubrics and course alignment reviews.",
+  "icon": null,
+  "maker": "Girru",
+  "version": "1.2.0",
+  "updated": "2026-10-29",
+  "category": "productivity",
+  "permissions": [
+    "Written guidance only: it never gives tools, connections or memory"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}
