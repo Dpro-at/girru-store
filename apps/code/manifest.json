@@ -1,0 +1,16 @@
+{
+  "id": "code",
+  "kind": "app",
+  "name": "Code",
+  "summary": "The project editor beside your chats.",
+  "description": "A full code editor inside the Girru desktop app: open a project folder, edit its files and switch back to your chats without losing what is open.",
+  "icon": "code",
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": ["Opens only in the Girru desktop app", "Edits files in the project folder you open"],
+  "worksWith": [],
+  "languages": ["English"],
+  "pricing": { "model": "free" }
+}

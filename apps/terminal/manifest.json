@@ -1,0 +1,16 @@
+{
+  "id": "terminal",
+  "kind": "app",
+  "name": "Terminal",
+  "summary": "Your shell next to your agents.",
+  "description": "A terminal inside Girru for the owner, next to the chats and the task board. Agents never get it by adding the app.",
+  "icon": "terminal",
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "developer",
+  "permissions": ["Runs commands you type, on this computer, as you"],
+  "worksWith": [],
+  "languages": ["English"],
+  "pricing": { "model": "free" }
+}

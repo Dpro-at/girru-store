@@ -1,0 +1,16 @@
+{
+  "id": "trading",
+  "kind": "app",
+  "name": "Trading",
+  "summary": "Practice trading with an agent team.",
+  "description": "Practice trading with fictional money and an agent team: watch the market, test ideas on past charts and see what your agents would do. No real orders are sent.",
+  "icon": "chart",
+  "maker": "Girru",
+  "version": null,
+  "updated": "2026-10-29",
+  "category": "trading",
+  "permissions": ["Reads market data", "Practice only: never sends real orders"],
+  "worksWith": [],
+  "languages": ["English"],
+  "pricing": { "model": "free" }
+}

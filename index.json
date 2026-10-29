@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "featured": "genvr",
+  "collections": [
+    {
+      "id": "made-by-girru",
+      "title": "Made by Girru",
+      "items": [
+        "code",
+        "genvr",
+        "terminal",
+        "trading"
+      ]
+    },
+    {
+      "id": "new",
+      "title": "New in the store",
+      "items": [
+        "code",
+        "genvr",
+        "terminal",
+        "trading"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "code",
+      "kind": "app",
+      "source": "girru",
+      "name": "Code",
+      "summary": "The project editor beside your chats.",
+      "description": "A full code editor inside the Girru desktop app: open a project folder, edit its files and switch back to your chats without losing what is open.",
+      "icon": "code",
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Opens only in the Girru desktop app",
+        "Edits files in the project folder you open"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "genvr",
+      "kind": "app",
+      "source": "girru",
+      "name": "GenVR",
+      "summary": "3D worlds for your agents.",
+      "description": "Give your agents a place to live and work: build 3D spaces, walk through them with your team and publish them when you are ready. Uses your GenVR account connection.",
+      "icon": "globe",
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "worlds",
+      "permissions": [
+        "Uses your GenVR account connection",
+        "Publishes a space only when you choose to"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "terminal",
+      "kind": "app",
+      "source": "girru",
+      "name": "Terminal",
+      "summary": "Your shell next to your agents.",
+      "description": "A terminal inside Girru for the owner, next to the chats and the task board. Agents never get it by adding the app.",
+      "icon": "terminal",
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "developer",
+      "permissions": [
+        "Runs commands you type, on this computer, as you"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
+    {
+      "id": "trading",
+      "kind": "app",
+      "source": "girru",
+      "name": "Trading",
+      "summary": "Practice trading with an agent team.",
+      "description": "Practice trading with fictional money and an agent team: watch the market, test ideas on past charts and see what your agents would do. No real orders are sent.",
+      "icon": "chart",
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-10-29",
+      "category": "trading",
+      "permissions": [
+        "Reads market data",
+        "Practice only: never sends real orders"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    }
+  ]
+}
