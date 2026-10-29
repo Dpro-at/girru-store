@@ -12,11 +12,11 @@ const KINDS = { apps: 'app', mcp: 'mcp', skills: 'skill', specialties: 'specialt
 const CATEGORIES = ['marketing', 'sales', 'developer', 'worlds', 'trading', 'productivity', 'more'];
 const PRICING = ['free']; // later: 'one-time', 'subscription' (paid apps, not open yet)
 const FIELDS = ['id', 'kind', 'name', 'summary', 'description', 'icon', 'maker', 'version', 'updated', 'category', 'permissions', 'worksWith', 'languages', 'pricing'];
-const ID = /^[a-z0-9][a-z0-9-]{0,63}$/;
+const ID = /^(?=[a-z0-9-]{1,64}$)[a-z0-9]+(?:-[a-z0-9]+)*$/; // no "--": app table prefixes never overlap
 const ICON = /^[a-z][a-z-]{0,39}$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
 // A package: the files Girru downloads for an app (apps/<id>/package/). Plain text and images only.
-const PACKAGE_EXT = /\.(js|mjs|json|sql|md|css|svg|png|txt)$/i;
+const PACKAGE_EXT = /\.(js|mjs|json|sql|md|css|svg|png|txt)$/; // lower case only, so the SQL check sees every .sql file
 const SEGMENT = /^[A-Za-z0-9][A-Za-z0-9._-]{0,99}$/;
 const MAX_FILES = 300, MAX_BYTES = 5 * 1024 * 1024;
 const sha = (b) => createHash('sha256').update(b).digest('hex');
@@ -39,16 +39,39 @@ function readPackage(where, dir) {
   };
   walk('');
   if (!files.some((f) => f.path === 'agentplayer.plugin.json')) fail(where, 'package/agentplayer.plugin.json is missing');
-  // Its tables must be named after it, so removing it never touches Girru's own data.
-  const prefix = `${path.basename(path.dirname(dir)).replace(/-/g, '_')}_`;
+  // Deny by default, the same rule Girru applies when it installs: a migration only makes
+  // the app's own tables and indexes (app_<id>__...), never touches anything else.
+  const prefix = `app_${path.basename(path.dirname(dir)).replace(/-/g, '_')}__`;
   for (const f of files.filter((x) => x.path.endsWith('.sql'))) {
-    for (const m of fs.readFileSync(path.join(dir, f.path), 'utf8').matchAll(/CREATE\s+TABLE\s+(?:IF\s+NOT\s+EXISTS\s+)?["`]?([A-Za-z_][A-Za-z0-9_]*)/gi)) {
-      if (!m[1].toLowerCase().startsWith(prefix)) fail(where, `package/${f.path} makes table ${m[1]}: tables must start with ${prefix}`);
+    for (const st of statements(fs.readFileSync(path.join(dir, f.path), 'utf8'), where)) {
+      const t = CREATE_TABLE.exec(st), x = t ? null : CREATE_INDEX.exec(st);
+      if (!t && !x) fail(where, `package/${f.path}: only CREATE TABLE IF NOT EXISTS / CREATE INDEX IF NOT EXISTS are allowed (${st.slice(0, 40)}…)`);
+      const names = t ? [nameOf(t, 1)] : [nameOf(x, 1), nameOf(x, 5)];
+      for (const n of names) if (!n.startsWith(prefix)) fail(where, `package/${f.path} uses ${n}: names must start with ${prefix}`);
     }
   }
   if (files.length > MAX_FILES || total > MAX_BYTES) fail(where, `a package holds at most ${MAX_FILES} files and 5 MB`);
   return { files, sha256: sha(JSON.stringify(files)) };
 }
+function statements(sql, where) {
+  const out = []; let cur = '', quote = null;
+  for (let i = 0; i < sql.length; i++) {
+    const c = sql[i];
+    if (quote) { cur += c; if (c === quote) quote = null; continue; }
+    if (c === '-' && sql[i + 1] === '-') { while (i < sql.length && sql[i] !== '\n') i++; cur += ' '; continue; }
+    if (c === '/' && sql[i + 1] === '*') { const end = sql.indexOf('*/', i + 2); i = end < 0 ? sql.length : end + 1; cur += ' '; continue; }
+    if (c === "'" || c === '"' || c === '`' || c === '[') { quote = c === '[' ? ']' : c; cur += c; continue; }
+    if (c === ';') { if (cur.trim()) out.push(cur.trim()); cur = ''; continue; }
+    cur += c;
+  }
+  if (quote) fail(where, 'a migration has an unclosed quote');
+  if (cur.trim()) out.push(cur.trim());
+  return out;
+}
+const NAME = String.raw`(?:"([A-Za-z_][A-Za-z0-9_]*)"|\x60([A-Za-z_][A-Za-z0-9_]*)\x60|\[([A-Za-z_][A-Za-z0-9_]*)\]|([A-Za-z_][A-Za-z0-9_]*))`;
+const CREATE_TABLE = new RegExp(String.raw`^CREATE\s+TABLE\s+IF\s+NOT\s+EXISTS\s+${NAME}\s*\(`, 'i');
+const CREATE_INDEX = new RegExp(String.raw`^CREATE\s+(?:UNIQUE\s+)?INDEX\s+IF\s+NOT\s+EXISTS\s+${NAME}\s+ON\s+${NAME}\s*\(`, 'i');
+const nameOf = (m, at) => (m[at] ?? m[at + 1] ?? m[at + 2] ?? m[at + 3]).toLowerCase();
 const CONTROL = /[\u0000-\u001f\u007f‪-‮⁦-⁩]/;
 
 function fail(where, why) { throw new Error(`${where}: ${why}`); }

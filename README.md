@@ -49,10 +49,10 @@ An app that Girru can add has a `package/` folder next to its manifest:
 apps/<id>/manifest.json
 apps/<id>/package/agentplayer.plugin.json   same id and version as the manifest
 apps/<id>/package/index.js                   its code (the plugin's "main")
-apps/<id>/package/migrations/001_*.sql       its tables, named <id>_... only
+apps/<id>/package/migrations/001_*.sql       its tables, named app_<id>__... only
 ```
 
-`build-index` lists every file of the package with its size and SHA-256 in `index.json`. Girru gets each file, checks it against that list before writing anything, puts the app in the owner's data folder (never in the program), runs only the app's own migrations, and turns it on. An app may only make tables named after itself (`<id>_...`, with `-` as `_`), so removing it never touches Girru's own data. Allowed files: `.js .mjs .json .sql .md .css .svg .png .txt`, at most 300 files and 5 MB.
+`build-index` lists every file of the package with its size and SHA-256 in `index.json`. Girru gets each file, checks it against that list before writing anything, puts the app in the owner's data folder (never in the program), runs only the app's own migrations, and turns it on. A migration may only contain `CREATE TABLE IF NOT EXISTS` and `CREATE [UNIQUE] INDEX IF NOT EXISTS` for the app's own tables, named `app_<id>__...` (with `-` as `_`; ids never contain `--`), so an app can never change, read into or remove Girru's own data. Allowed files (lower-case extensions): `.js .mjs .json .sql .md .css .svg .png .txt`, at most 300 files and 5 MB.
 
 ## Build the index
 
