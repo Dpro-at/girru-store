@@ -10,7 +10,8 @@
         "genvr",
         "seo",
         "terminal",
-        "trading"
+        "trading",
+        "waf-security"
       ]
     },
     {
@@ -18,6 +19,7 @@
       "title": "New in the store",
       "items": [
         "seo",
+        "waf-security",
         "3d-artist",
         "account-manager",
         "accountant",
@@ -27,8 +29,7 @@
         "ai-application-engineering",
         "analytics-engineer",
         "analytics-modeling",
-        "animation-specialist",
-        "api-integration-developer"
+        "animation-specialist"
       ]
     }
   ],
@@ -290,6 +291,130 @@
       ],
       "pricing": {
         "model": "free"
+      }
+    },
+    {
+      "id": "waf-security",
+      "kind": "app",
+      "source": "girru",
+      "name": "WAF Security",
+      "summary": "Test how a website's firewall handles common attacks.",
+      "description": "Sends a set of harmless test requests that look like common attacks (SQL injection, cross-site scripting, path traversal and eight more groups) to a website you name, and shows which ones its firewall (WAF) blocked and which got through. It also tries to tell which firewall the site uses. Campaigns repeat the test in four stages, now or on a daily, weekly or monthly schedule, and compare each run with the one before. A self-audit checks this Girru's own security headers, sign-in protection and rate limits. Only test sites you own or may test.",
+      "icon": "shield",
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-30",
+      "category": "developer",
+      "permissions": [
+        "Sends attack-like test requests to the websites you enter, when you start a scan or a campaign runs",
+        "Refuses local and private network addresses unless you allow them in its settings",
+        "Runs your scheduled campaigns in the background, checked once an hour",
+        "Sends requests to this Girru's own address when you run a self-audit",
+        "Keeps scans, campaigns and its test library in its own tables",
+        "Adds a waf_scan tool that agents can use once you allow them"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "README.md",
+            "sha256": "c3e7256883352db0b16eeb2934681a24cf79bdd02c32469d539af10f40dea705",
+            "size": 3220
+          },
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "9ec534b51ff6f25ac05ae3bca7a645faefca1cfa443620b58ec21472a2c4d9eb",
+            "size": 533
+          },
+          {
+            "path": "index.js",
+            "sha256": "16cae9352e7d40c8e0f118a6a370c56a1acbb40690d8e423fd996a2650e426b1",
+            "size": 1665
+          },
+          {
+            "path": "migrations/001_waf_scans.sql",
+            "sha256": "76f323cb4418aa247c3368f2f3428b9a152a682cfffa456d77d9d8f4ce807cbe",
+            "size": 1125
+          },
+          {
+            "path": "migrations/002_waf_rate_limits.sql",
+            "sha256": "6056ee1a9dc566fd0c673c719ca4f7abd94efeab98fd709bc4940456fe128eb9",
+            "size": 509
+          },
+          {
+            "path": "migrations/003_waf_payload_library.sql",
+            "sha256": "3b99c7699515bb91ac27260f4e0c017f3e720681d754c4491acefa8fd9c394ad",
+            "size": 987
+          },
+          {
+            "path": "migrations/004_waf_campaigns.sql",
+            "sha256": "22008b3a24352a38d159a664fa7612026db7b5427329cc45d22c98abf93313df",
+            "size": 5330
+          },
+          {
+            "path": "src/campaign-service.js",
+            "sha256": "77c97e9e0dc33006ab27b75f8ef8b94871aac869e74c4eae5cc91c23e92b7d42",
+            "size": 22351
+          },
+          {
+            "path": "src/engine.js",
+            "sha256": "53190fc1d07243e71a45a76b7012bbf186ffbd194472a54e45f5b502d8f90b5e",
+            "size": 23473
+          },
+          {
+            "path": "src/library.js",
+            "sha256": "6da7e552db3210a915d472ffe74bf0330effb5cf5fbf30128a338ae496c4f221",
+            "size": 19413
+          },
+          {
+            "path": "src/rate-limiter.js",
+            "sha256": "531d41304ec270ce2e1d7c6ef4d5624ef079b029aee64749ccffd3450750b483",
+            "size": 3630
+          },
+          {
+            "path": "src/routes.js",
+            "sha256": "1449dff6290c160ce4796997136b7fc5e78d159dec5efd2b8b9b31f27a1a60cc",
+            "size": 11290
+          },
+          {
+            "path": "src/scanner.js",
+            "sha256": "f7f72a3e6290baf5722af523b7415e1e2d178a3391ae98211b4dde4c680855cd",
+            "size": 4066
+          },
+          {
+            "path": "src/scoring.js",
+            "sha256": "8b06ef4ba534ffc21cd4063a23d5dada7d9948b9b9a347cf40b00881b3c0aa2c",
+            "size": 12747
+          },
+          {
+            "path": "src/seed.js",
+            "sha256": "17f385228d2c1101c8575e870507f8d3a4a739df3fa46c8406faf088d3002a72",
+            "size": 1302
+          },
+          {
+            "path": "src/settings.js",
+            "sha256": "338bfcce29874bf58eac25a2a98acc6c1ee0970defe397d052c02ea079401e52",
+            "size": 2037
+          },
+          {
+            "path": "src/target.js",
+            "sha256": "f3bc58bedec42638680718d7a213abde81755a9be68537f5dfc43c0455e421bb",
+            "size": 6266
+          },
+          {
+            "path": "src/tool.js",
+            "sha256": "25db779e82a1d920313ea6ca12c43995cea6ab7eb261543ea83f61eb1ef470ba",
+            "size": 5247
+          }
+        ],
+        "sha256": "e29715213a9581838a85b9ecc1202b8ae4bf8b69d171355b3bc46419728267fd"
       }
     },
     {

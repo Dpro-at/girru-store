@@ -1,0 +1,23 @@
+{
+  "id": "waf-security",
+  "kind": "app",
+  "name": "WAF Security",
+  "summary": "Test how a website's firewall handles common attacks.",
+  "description": "Sends a set of harmless test requests that look like common attacks (SQL injection, cross-site scripting, path traversal and eight more groups) to a website you name, and shows which ones its firewall (WAF) blocked and which got through. It also tries to tell which firewall the site uses. Campaigns repeat the test in four stages, now or on a daily, weekly or monthly schedule, and compare each run with the one before. A self-audit checks this Girru's own security headers, sign-in protection and rate limits. Only test sites you own or may test.",
+  "icon": "shield",
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-30",
+  "category": "developer",
+  "permissions": [
+    "Sends attack-like test requests to the websites you enter, when you start a scan or a campaign runs",
+    "Refuses local and private network addresses unless you allow them in its settings",
+    "Runs your scheduled campaigns in the background, checked once an hour",
+    "Sends requests to this Girru's own address when you run a self-audit",
+    "Keeps scans, campaigns and its test library in its own tables",
+    "Adds a waf_scan tool that agents can use once you allow them"
+  ],
+  "worksWith": [],
+  "languages": ["English"],
+  "pricing": { "model": "free" }
+}
