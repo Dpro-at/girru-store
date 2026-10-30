@@ -7,34 +7,30 @@
       "title": "Made by Girru",
       "items": [
         "code",
-        "discord",
         "genvr",
         "seo",
         "server-monitor",
-        "slack",
-        "telegram",
         "terminal",
         "trading",
-        "waf-security",
-        "whatsapp"
+        "waf-security"
       ]
     },
     {
       "id": "new",
       "title": "New in the store",
       "items": [
-        "discord",
         "seo",
         "server-monitor",
-        "slack",
-        "telegram",
         "waf-security",
-        "whatsapp",
         "3d-artist",
         "account-manager",
         "accountant",
         "activity-and-habits-coach",
-        "activity-coaching"
+        "activity-coaching",
+        "ai-application-developer",
+        "ai-application-engineering",
+        "analytics-engineer",
+        "analytics-modeling"
       ]
     }
   ],
@@ -62,66 +58,6 @@
       ],
       "pricing": {
         "model": "free"
-      }
-    },
-    {
-      "id": "discord",
-      "kind": "app",
-      "source": "girru",
-      "name": "Discord",
-      "summary": "Talk to your agent in the Discord channels you choose.",
-      "description": "Connects a Discord bot to Girru. Messages from the people you allow, in the server channels you allow, reach your primary agent, which can answer them when you turn on automatic replies; your agents can also send messages through the bot. Girru keeps the connection (the Discord Gateway, no public address needed), the lists of allowed senders and channels and the message log. Text in server channels only; the bot never mentions anyone.",
-      "icon": "message",
-      "maker": "Girru",
-      "verified": true,
-      "version": "2.2.0",
-      "updated": "2026-10-30",
-      "category": "productivity",
-      "permissions": [
-        "Connects to Discord with the bot token you save, and stays connected while it is on",
-        "Lets only the sender IDs and channel IDs you list reach your agent; an empty list lets no one in",
-        "Answers with your primary agent only when you turn on automatic replies, and that agent gets a restricted set of tools",
-        "Keeps the messages in Girru's channel log, and the tables older Girru versions made for it",
-        "Adds a discord_send tool that agents can use once you allow them"
-      ],
-      "worksWith": [
-        "Discord"
-      ],
-      "languages": [
-        "English"
-      ],
-      "pricing": {
-        "model": "free"
-      },
-      "package": {
-        "files": [
-          {
-            "path": "README.md",
-            "sha256": "8bbca60600dcd810439e53fdc553a267eab3826cad7d321e34e26ae12946abef",
-            "size": 1945
-          },
-          {
-            "path": "agentplayer.plugin.json",
-            "sha256": "57e792533568e31cafb336e489aded98b0d273c244d2380c7de6b353b7022fb4",
-            "size": 1956
-          },
-          {
-            "path": "index.js",
-            "sha256": "5a20d6268f93ad04309863f4995eab708e5449db3bcb85e144e63a0e880b7d2d",
-            "size": 1088
-          },
-          {
-            "path": "migrations/001_discord_messages.sql",
-            "sha256": "2c29898286b576f3c1716144635425446d5c45d2ff5b796d4b14083b9728f873",
-            "size": 990
-          },
-          {
-            "path": "src/tool.js",
-            "sha256": "5641accdbc30e711d0d26eb7a4a7af85cd5777eea878b2f7ddd19508030e4de4",
-            "size": 1400
-          }
-        ],
-        "sha256": "4bff36ebf7ec58bd6e87d17e9a402443ad333e408425e372b6f5caf57ab91663"
       }
     },
     {
@@ -366,141 +302,6 @@
       }
     },
     {
-      "id": "slack",
-      "kind": "app",
-      "source": "girru",
-      "name": "Slack",
-      "summary": "Preview: receive Slack messages in Girru and keep a log.",
-      "description": "A first step for Slack in Girru. It receives the messages your Slack app sends to Girru's address, only when Slack signed them with your signing secret, and keeps them in a log you can read. Your agents can log a message for a Slack channel, but sending to Slack itself is not built yet: nothing leaves Girru. It does not answer messages by itself.",
-      "icon": "message",
-      "maker": "Girru",
-      "verified": true,
-      "version": "2.1.0",
-      "updated": "2026-10-30",
-      "category": "productivity",
-      "permissions": [
-        "Opens one public address (/api/ext/slack/webhook) that accepts only requests Slack signed with your signing secret",
-        "Keeps the Slack settings you save; the tokens are never sent back to the page",
-        "Keeps the messages it receives and logs in its own tables",
-        "Sends nothing to Slack or anywhere else yet",
-        "Adds a slack_send tool (it logs only) that agents can use once you allow them"
-      ],
-      "worksWith": [
-        "Slack"
-      ],
-      "languages": [
-        "English"
-      ],
-      "pricing": {
-        "model": "free"
-      },
-      "package": {
-        "files": [
-          {
-            "path": "README.md",
-            "sha256": "f53c796af4ce3cac3e539c39a7acf159583b02ab9dafb1af8b7cc914401a3e69",
-            "size": 1715
-          },
-          {
-            "path": "agentplayer.plugin.json",
-            "sha256": "fdb309474fd4ec63b3279574946338b509a1e221d2ee2b87c5dc4e80bf74f011",
-            "size": 1710
-          },
-          {
-            "path": "index.js",
-            "sha256": "ab50d7b7ff5a0c170a1ae96e5300d2c623a8ee58dfda9f8e9c32f41bf98f80e8",
-            "size": 745
-          },
-          {
-            "path": "migrations/001_slack_messages.sql",
-            "sha256": "ba76f6e85e2b6d5ff0e9d20a0a74da00d646b7408d9a9a0bb6a764fc3e874748",
-            "size": 1039
-          },
-          {
-            "path": "src/messages.js",
-            "sha256": "261a335635903f0bd90d8745f6d6a512a8e62ef46e3a98f1134383c2935f7916",
-            "size": 1867
-          },
-          {
-            "path": "src/routes.js",
-            "sha256": "6662a3ad3b97e3f083335aa7bb24b04389abb6c09a3cdd6e8a59218369f49902",
-            "size": 6302
-          },
-          {
-            "path": "src/tool.js",
-            "sha256": "be70d3a3cdcc8a289109f9c35c1277c953df4bfb8889c5ccf448b6bb02aca916",
-            "size": 1899
-          },
-          {
-            "path": "src/verify.js",
-            "sha256": "cbc004c0f11d3dcd66a606069df75919221de2cfff1fa3ff72ae0edded50f18c",
-            "size": 2504
-          }
-        ],
-        "sha256": "8fa1f393f67a71f7dddd7384834086b3535521fbe9f718ffbfa196d1f2898763"
-      }
-    },
-    {
-      "id": "telegram",
-      "kind": "app",
-      "source": "girru",
-      "name": "Telegram",
-      "summary": "Talk to your agent through a Telegram bot.",
-      "description": "Connects a Telegram bot you made with @BotFather to Girru. Messages from the people you allow reach your primary agent, which can answer them when you turn on automatic replies; your agents can also send messages through the bot. Girru keeps the connection (long polling, no public address needed), the list of allowed senders and the message log. Text only.",
-      "icon": "send",
-      "maker": "Girru",
-      "verified": true,
-      "version": "2.2.0",
-      "updated": "2026-10-30",
-      "category": "productivity",
-      "permissions": [
-        "Connects to Telegram with the bot token you save, and stays connected while it is on",
-        "Lets only the sender IDs you list reach your agent; an empty list lets no one in",
-        "Answers with your primary agent only when you turn on automatic replies, and that agent gets a restricted set of tools",
-        "Keeps the messages in Girru's channel log, and the tables older Girru versions made for it",
-        "Adds a telegram_send tool that agents can use once you allow them"
-      ],
-      "worksWith": [
-        "Telegram"
-      ],
-      "languages": [
-        "English"
-      ],
-      "pricing": {
-        "model": "free"
-      },
-      "package": {
-        "files": [
-          {
-            "path": "README.md",
-            "sha256": "c977f4594561b46fe18e9d4845242ce0819cfd2d6c9a92ebc67894d2a0c42053",
-            "size": 1800
-          },
-          {
-            "path": "agentplayer.plugin.json",
-            "sha256": "29540eb9cc654f34c0ab729942e588f88c16da15ab181268fb19f633cd14b672",
-            "size": 1250
-          },
-          {
-            "path": "index.js",
-            "sha256": "b8d097bc90c7230b6325709e9f48106af5d8c091077f61c5ec8517f1bf8fca17",
-            "size": 1078
-          },
-          {
-            "path": "migrations/001_telegram_messages.sql",
-            "sha256": "684a7574ae15ea43ccd09781ae41f2815d5176b30d851a73bbf12d72fcd67631",
-            "size": 957
-          },
-          {
-            "path": "src/tool.js",
-            "sha256": "a10d0e3e1277405ba126fb445fb0de40a242e07aa7ba219e697df4b0786a5d9c",
-            "size": 1365
-          }
-        ],
-        "sha256": "396afb67effbf1a187cb98baf2cc94c0a3808a61cc0a39398597dcdc991a0e08"
-      }
-    },
-    {
       "id": "terminal",
       "kind": "app",
       "source": "girru",
@@ -671,82 +472,6 @@
           }
         ],
         "sha256": "e29715213a9581838a85b9ecc1202b8ae4bf8b69d171355b3bc46419728267fd"
-      }
-    },
-    {
-      "id": "whatsapp",
-      "kind": "app",
-      "source": "girru",
-      "name": "WhatsApp",
-      "summary": "Preview: receive WhatsApp messages through Twilio and keep a log.",
-      "description": "A first step for WhatsApp in Girru, through a Twilio WhatsApp number. It receives the messages Twilio sends to Girru's address, only when Twilio signed them with your auth token, and keeps them in a log you can read; you can limit it to the numbers you list. Your agents can log a message for a number, but sending through Twilio is not built yet: nothing leaves Girru. It does not answer messages by itself.",
-      "icon": "phone",
-      "maker": "Girru",
-      "verified": true,
-      "version": "2.1.0",
-      "updated": "2026-10-30",
-      "category": "productivity",
-      "permissions": [
-        "Opens one public address (/api/ext/whatsapp/webhook) that accepts only requests Twilio signed with your auth token",
-        "Keeps the Twilio settings you save; the auth token is never sent back to the page",
-        "Keeps the messages it receives and logs in its own tables, with the sender's phone number",
-        "Sends nothing to Twilio or anywhere else yet",
-        "Adds a whatsapp_send tool (it logs only) that agents can use once you allow them"
-      ],
-      "worksWith": [
-        "Twilio",
-        "WhatsApp"
-      ],
-      "languages": [
-        "English"
-      ],
-      "pricing": {
-        "model": "free"
-      },
-      "package": {
-        "files": [
-          {
-            "path": "README.md",
-            "sha256": "580c682e6f5f029ad9414bd7cb7fed3b46bfd8493b5c853d25a499c6c0f6961c",
-            "size": 2008
-          },
-          {
-            "path": "agentplayer.plugin.json",
-            "sha256": "cb3c04d5f50236a36f30e542e877d2fb03b1a0ee48db93421ade75dd8a00a06c",
-            "size": 2021
-          },
-          {
-            "path": "index.js",
-            "sha256": "82b47440119a5cace6d6199d0ad781fd816431e010f9678b62d8595d69e9408d",
-            "size": 779
-          },
-          {
-            "path": "migrations/001_whatsapp_messages.sql",
-            "sha256": "95f90dcf83561891884fcd42e1c69260033ae577f72a821ee5af97bd9825f069",
-            "size": 1049
-          },
-          {
-            "path": "src/messages.js",
-            "sha256": "4ee826d483fd259d38ffc96a03c0f57f4f178b6410ed0beadce30205999c8ef5",
-            "size": 2455
-          },
-          {
-            "path": "src/routes.js",
-            "sha256": "f3be4fbaef673ecdeb26a718d391d6d605228d55c2fe80a9dc4c7d92b2fc359e",
-            "size": 6699
-          },
-          {
-            "path": "src/tool.js",
-            "sha256": "3ad43e0c2f37fc501ed881fd5aea75fd4ff5994c9b9c431706683e052dd4e2ad",
-            "size": 1870
-          },
-          {
-            "path": "src/verify.js",
-            "sha256": "2a7a19fdfaf70ce9bb2321e74e546be736ba882f77f729415180c8c44dc76051",
-            "size": 2772
-          }
-        ],
-        "sha256": "019bc49357f9d2d81b1c0e74644b7fb5c23857458a42c8de4b241d3fa98b6294"
       }
     },
     {
