@@ -7,10 +7,12 @@
       "title": "Made by Girru",
       "items": [
         "code",
+        "discord",
         "genvr",
         "seo",
         "server-monitor",
         "slack",
+        "telegram",
         "terminal",
         "trading",
         "waf-security"
@@ -20,18 +22,18 @@
       "id": "new",
       "title": "New in the store",
       "items": [
+        "discord",
         "seo",
         "server-monitor",
         "slack",
+        "telegram",
         "waf-security",
         "3d-artist",
         "account-manager",
         "accountant",
         "activity-and-habits-coach",
         "activity-coaching",
-        "ai-application-developer",
-        "ai-application-engineering",
-        "analytics-engineer"
+        "ai-application-developer"
       ]
     }
   ],
@@ -59,6 +61,66 @@
       ],
       "pricing": {
         "model": "free"
+      }
+    },
+    {
+      "id": "discord",
+      "kind": "app",
+      "source": "girru",
+      "name": "Discord",
+      "summary": "Talk to your agent in the Discord channels you choose.",
+      "description": "Connects a Discord bot to Girru. Messages from the people you allow, in the server channels you allow, reach your primary agent, which can answer them when you turn on automatic replies; your agents can also send messages through the bot. Girru keeps the connection (the Discord Gateway, no public address needed), the lists of allowed senders and channels and the message log. Text in server channels only; the bot never mentions anyone.",
+      "icon": "message",
+      "maker": "Girru",
+      "verified": true,
+      "version": "2.2.0",
+      "updated": "2026-10-30",
+      "category": "productivity",
+      "permissions": [
+        "Connects to Discord with the bot token you save, and stays connected while it is on",
+        "Lets only the sender IDs and channel IDs you list reach your agent; an empty list lets no one in",
+        "Answers with your primary agent only when you turn on automatic replies, and that agent gets a restricted set of tools",
+        "Keeps the messages in Girru's channel log, and the tables older Girru versions made for it",
+        "Adds a discord_send tool that agents can use once you allow them"
+      ],
+      "worksWith": [
+        "Discord"
+      ],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "README.md",
+            "sha256": "8bbca60600dcd810439e53fdc553a267eab3826cad7d321e34e26ae12946abef",
+            "size": 1945
+          },
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "57e792533568e31cafb336e489aded98b0d273c244d2380c7de6b353b7022fb4",
+            "size": 1956
+          },
+          {
+            "path": "index.js",
+            "sha256": "5a20d6268f93ad04309863f4995eab708e5449db3bcb85e144e63a0e880b7d2d",
+            "size": 1088
+          },
+          {
+            "path": "migrations/001_discord_messages.sql",
+            "sha256": "2c29898286b576f3c1716144635425446d5c45d2ff5b796d4b14083b9728f873",
+            "size": 990
+          },
+          {
+            "path": "src/tool.js",
+            "sha256": "5641accdbc30e711d0d26eb7a4a7af85cd5777eea878b2f7ddd19508030e4de4",
+            "size": 1400
+          }
+        ],
+        "sha256": "4bff36ebf7ec58bd6e87d17e9a402443ad333e408425e372b6f5caf57ab91663"
       }
     },
     {
@@ -375,6 +437,66 @@
           }
         ],
         "sha256": "8fa1f393f67a71f7dddd7384834086b3535521fbe9f718ffbfa196d1f2898763"
+      }
+    },
+    {
+      "id": "telegram",
+      "kind": "app",
+      "source": "girru",
+      "name": "Telegram",
+      "summary": "Talk to your agent through a Telegram bot.",
+      "description": "Connects a Telegram bot you made with @BotFather to Girru. Messages from the people you allow reach your primary agent, which can answer them when you turn on automatic replies; your agents can also send messages through the bot. Girru keeps the connection (long polling, no public address needed), the list of allowed senders and the message log. Text only.",
+      "icon": "send",
+      "maker": "Girru",
+      "verified": true,
+      "version": "2.2.0",
+      "updated": "2026-10-30",
+      "category": "productivity",
+      "permissions": [
+        "Connects to Telegram with the bot token you save, and stays connected while it is on",
+        "Lets only the sender IDs you list reach your agent; an empty list lets no one in",
+        "Answers with your primary agent only when you turn on automatic replies, and that agent gets a restricted set of tools",
+        "Keeps the messages in Girru's channel log, and the tables older Girru versions made for it",
+        "Adds a telegram_send tool that agents can use once you allow them"
+      ],
+      "worksWith": [
+        "Telegram"
+      ],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "README.md",
+            "sha256": "c977f4594561b46fe18e9d4845242ce0819cfd2d6c9a92ebc67894d2a0c42053",
+            "size": 1800
+          },
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "29540eb9cc654f34c0ab729942e588f88c16da15ab181268fb19f633cd14b672",
+            "size": 1250
+          },
+          {
+            "path": "index.js",
+            "sha256": "b8d097bc90c7230b6325709e9f48106af5d8c091077f61c5ec8517f1bf8fca17",
+            "size": 1078
+          },
+          {
+            "path": "migrations/001_telegram_messages.sql",
+            "sha256": "684a7574ae15ea43ccd09781ae41f2815d5176b30d851a73bbf12d72fcd67631",
+            "size": 957
+          },
+          {
+            "path": "src/tool.js",
+            "sha256": "a10d0e3e1277405ba126fb445fb0de40a242e07aa7ba219e697df4b0786a5d9c",
+            "size": 1365
+          }
+        ],
+        "sha256": "396afb67effbf1a187cb98baf2cc94c0a3808a61cc0a39398597dcdc991a0e08"
       }
     },
     {
