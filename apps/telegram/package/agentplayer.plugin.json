@@ -1,0 +1,42 @@
+{
+  "id": "telegram",
+  "name": "Telegram",
+  "description": "Telegram bot for Girru: allowed senders reach your agent, and agents can send messages through the bot",
+  "version": "2.2.0",
+  "type": "channel",
+  "author": "Girru",
+  "main": "index.js",
+  "permissions": ["network", "database", "tools"],
+  "settingsUI": {
+    "type": "form",
+    "title": "Telegram Bot Configuration",
+    "description": "Manage this channel in Settings, Channels. Restart Girru after turning the app on.",
+    "fields": [
+      {
+        "type": "input",
+        "name": "bot_token",
+        "label": "Bot Token",
+        "placeholder": "Enter Telegram Bot Token",
+        "helpText": "Get from @BotFather on Telegram - /newbot command",
+        "inputType": "password",
+        "required": true
+      },
+      {
+        "type": "input",
+        "name": "allowed_users",
+        "label": "Allowed Sender IDs",
+        "helpText": "Comma-separated IDs. An empty list blocks incoming messages."
+      },
+      {
+        "type": "checkbox",
+        "name": "auto_reply",
+        "label": "Enable automatic agent replies",
+        "defaultValue": false
+      }
+    ],
+    "submitButton": {
+      "label": "Save Telegram Settings",
+      "variant": "default"
+    }
+  }
+}

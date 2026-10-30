@@ -10,6 +10,7 @@
         "genvr",
         "seo",
         "server-monitor",
+        "telegram",
         "terminal",
         "trading",
         "waf-security"
@@ -21,6 +22,7 @@
       "items": [
         "seo",
         "server-monitor",
+        "telegram",
         "waf-security",
         "3d-artist",
         "account-manager",
@@ -29,8 +31,7 @@
         "activity-coaching",
         "ai-application-developer",
         "ai-application-engineering",
-        "analytics-engineer",
-        "analytics-modeling"
+        "analytics-engineer"
       ]
     }
   ],
@@ -299,6 +300,66 @@
           }
         ],
         "sha256": "170e92e6b097880428fa94422ac7e9cd2c872c2a28ff35954496669be6b155c3"
+      }
+    },
+    {
+      "id": "telegram",
+      "kind": "app",
+      "source": "girru",
+      "name": "Telegram",
+      "summary": "Talk to your agent through a Telegram bot.",
+      "description": "Connects a Telegram bot you made with @BotFather to Girru. Messages from the people you allow reach your primary agent, which can answer them when you turn on automatic replies; your agents can also send messages through the bot. Girru keeps the connection (long polling, no public address needed), the list of allowed senders and the message log. Text only.",
+      "icon": "send",
+      "maker": "Girru",
+      "verified": true,
+      "version": "2.2.0",
+      "updated": "2026-10-30",
+      "category": "productivity",
+      "permissions": [
+        "Connects to Telegram with the bot token you save, and stays connected while it is on",
+        "Lets only the sender IDs you list reach your agent; an empty list lets no one in",
+        "Answers with your primary agent only when you turn on automatic replies, and that agent gets a restricted set of tools",
+        "Keeps the messages in Girru's channel log, and the tables older Girru versions made for it",
+        "Adds a telegram_send tool that agents can use once you allow them"
+      ],
+      "worksWith": [
+        "Telegram"
+      ],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "README.md",
+            "sha256": "c977f4594561b46fe18e9d4845242ce0819cfd2d6c9a92ebc67894d2a0c42053",
+            "size": 1800
+          },
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "29540eb9cc654f34c0ab729942e588f88c16da15ab181268fb19f633cd14b672",
+            "size": 1250
+          },
+          {
+            "path": "index.js",
+            "sha256": "b8d097bc90c7230b6325709e9f48106af5d8c091077f61c5ec8517f1bf8fca17",
+            "size": 1078
+          },
+          {
+            "path": "migrations/001_telegram_messages.sql",
+            "sha256": "684a7574ae15ea43ccd09781ae41f2815d5176b30d851a73bbf12d72fcd67631",
+            "size": 957
+          },
+          {
+            "path": "src/tool.js",
+            "sha256": "a10d0e3e1277405ba126fb445fb0de40a242e07aa7ba219e697df4b0786a5d9c",
+            "size": 1365
+          }
+        ],
+        "sha256": "396afb67effbf1a187cb98baf2cc94c0a3808a61cc0a39398597dcdc991a0e08"
       }
     },
     {
