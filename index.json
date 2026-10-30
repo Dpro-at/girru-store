@@ -7,6 +7,7 @@
       "title": "Made by Girru",
       "items": [
         "code",
+        "discord",
         "genvr",
         "seo",
         "server-monitor",
@@ -19,6 +20,7 @@
       "id": "new",
       "title": "New in the store",
       "items": [
+        "discord",
         "seo",
         "server-monitor",
         "waf-security",
@@ -29,8 +31,7 @@
         "activity-coaching",
         "ai-application-developer",
         "ai-application-engineering",
-        "analytics-engineer",
-        "analytics-modeling"
+        "analytics-engineer"
       ]
     }
   ],
@@ -58,6 +59,66 @@
       ],
       "pricing": {
         "model": "free"
+      }
+    },
+    {
+      "id": "discord",
+      "kind": "app",
+      "source": "girru",
+      "name": "Discord",
+      "summary": "Talk to your agent in the Discord channels you choose.",
+      "description": "Connects a Discord bot to Girru. Messages from the people you allow, in the server channels you allow, reach your primary agent, which can answer them when you turn on automatic replies; your agents can also send messages through the bot. Girru keeps the connection (the Discord Gateway, no public address needed), the lists of allowed senders and channels and the message log. Text in server channels only; the bot never mentions anyone.",
+      "icon": "message",
+      "maker": "Girru",
+      "verified": true,
+      "version": "2.2.0",
+      "updated": "2026-10-30",
+      "category": "productivity",
+      "permissions": [
+        "Connects to Discord with the bot token you save, and stays connected while it is on",
+        "Lets only the sender IDs and channel IDs you list reach your agent; an empty list lets no one in",
+        "Answers with your primary agent only when you turn on automatic replies, and that agent gets a restricted set of tools",
+        "Keeps the messages in Girru's channel log, and the tables older Girru versions made for it",
+        "Adds a discord_send tool that agents can use once you allow them"
+      ],
+      "worksWith": [
+        "Discord"
+      ],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "README.md",
+            "sha256": "8bbca60600dcd810439e53fdc553a267eab3826cad7d321e34e26ae12946abef",
+            "size": 1945
+          },
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "57e792533568e31cafb336e489aded98b0d273c244d2380c7de6b353b7022fb4",
+            "size": 1956
+          },
+          {
+            "path": "index.js",
+            "sha256": "5a20d6268f93ad04309863f4995eab708e5449db3bcb85e144e63a0e880b7d2d",
+            "size": 1088
+          },
+          {
+            "path": "migrations/001_discord_messages.sql",
+            "sha256": "2c29898286b576f3c1716144635425446d5c45d2ff5b796d4b14083b9728f873",
+            "size": 990
+          },
+          {
+            "path": "src/tool.js",
+            "sha256": "5641accdbc30e711d0d26eb7a4a7af85cd5777eea878b2f7ddd19508030e4de4",
+            "size": 1400
+          }
+        ],
+        "sha256": "4bff36ebf7ec58bd6e87d17e9a402443ad333e408425e372b6f5caf57ab91663"
       }
     },
     {
