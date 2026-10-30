@@ -20,7 +20,7 @@ import {
   deleteCampaign,
 } from './campaign-service.js';
 import { calculateSecurityScore, generateRecommendations } from './scoring.js';
-import { allowPrivateTargets, saveSettings } from './settings.js';
+import { allowPrivateTargets, saveSettings, SettingsError } from './settings.js';
 
 /**
  * User of this request, as verified by Girru's route guard.
@@ -90,9 +90,12 @@ export function createWafRoutes(api) {
     fastify.get('/settings', async () => ({ allowPrivateTargets: allowPrivateTargets(api) }));
 
     fastify.put('/settings', async (request, reply) => {
-      const value = request.body?.allowPrivateTargets;
-      if (typeof value !== 'boolean') return reply.status(400).send({ error: 'allowPrivateTargets must be true or false' });
-      return saveSettings(api, { allowPrivateTargets: value });
+      try {
+        return saveSettings(api, getUserIdFromRequest(request), { allowPrivateTargets: request.body?.allowPrivateTargets });
+      } catch (err) {
+        if (err instanceof SettingsError) return reply.status(err.message.startsWith('Only') ? 403 : 400).send({ error: err.message });
+        return reply.status(statusOf(err, 500)).send({ error: err.message });
+      }
     });
 
     /**
@@ -261,6 +264,7 @@ export function createWafRoutes(api) {
       try {
         const campaign = ownCampaign(request, reply);
         if (!campaign) return reply;
+        if (campaign.status === 'running') return reply.status(409).send({ error: 'Campaign is already running' });
         const allowPrivate = allowPrivateTargets(api);
         await checkTarget(campaign.target_domain, { allowPrivate });
         runCampaign(db, campaign.id, { allowPrivate }).catch(err => {

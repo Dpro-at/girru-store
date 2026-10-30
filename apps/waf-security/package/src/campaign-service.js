@@ -6,6 +6,10 @@
 import { randomUUID } from 'crypto';
 import { detectWAF, testPayload, getPayloadsFromDatabase } from './engine.js';
 import { checkTarget } from './target.js';
+import { WafRateLimiter } from './rate-limiter.js';
+
+/** Campaigns one user may have. */
+export const MAX_CAMPAIGNS_PER_USER = 50;
 import { calculateSecurityScore, generateRecommendations, calculateSeverityDistribution } from './scoring.js';
 
 /**
@@ -41,6 +45,8 @@ export async function createCampaign(db, userId, config, { allowPrivate = false 
     if (scheduleDayOfWeek != null && !(Number.isInteger(scheduleDayOfWeek) && scheduleDayOfWeek >= 0 && scheduleDayOfWeek <= 6)) throw new Error('Invalid schedule: day of week must be 0-6');
     if (scheduleDayOfMonth != null && !(Number.isInteger(scheduleDayOfMonth) && scheduleDayOfMonth >= 1 && scheduleDayOfMonth <= 31)) throw new Error('Invalid schedule: day of month must be 1-31');
   }
+  const owned = db.prepare('SELECT COUNT(*) AS n FROM app_waf_security__waf_campaigns WHERE user_id = ?').get(userId).n;
+  if (owned >= MAX_CAMPAIGNS_PER_USER) throw new Error(`Rate limit exceeded: at most ${MAX_CAMPAIGNS_PER_USER} campaigns per user`);
   const target = await checkTarget(targetDomain, { allowPrivate });
 
   const campaignId = randomUUID();
@@ -156,11 +162,15 @@ export async function runCampaign(db, campaignId, { allowPrivate = false } = {})
   const runNumber = campaign.total_runs + 1;
   const now = new Date().toISOString();
 
-  db.prepare(`
+  // One run at a time: the switch to 'running' is the lock.
+  const claimed = db.prepare(`
     UPDATE app_waf_security__waf_campaigns
     SET status = 'running', total_runs = ?, last_run_at = ?, updated_at = ?
-    WHERE id = ?
+    WHERE id = ? AND status IS NOT 'running'
   `).run(runNumber, now, now, campaignId);
+  if (claimed.changes === 0) {
+    throw new Error('Campaign is already running');
+  }
 
   try {
     // Get stage definitions
@@ -258,20 +268,25 @@ async function runCampaignStage(db, campaign, stage, runNumber, allowPrivate) {
     stageCategories = null;
   }
 
-  // Create scan record
-  db.prepare(`
-    INSERT INTO app_waf_security__waf_scans (id, target_url, scan_type, status, started_at, user_id)
-    VALUES (?, ?, ?, ?, ?, ?)
-  `).run(scanId, campaign.target_domain, 'external', 'running', now, campaign.user_id);
-
-  // Create campaign scan link
-  db.prepare(`
-    INSERT INTO app_waf_security__waf_campaign_scans (
-      id, campaign_id, scan_id, run_number, stage, stage_name, stage_status, started_at
-    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-  `).run(campaignScanId, campaign.id, scanId, runNumber, stage.stage_number, stage.stage_name, 'running', now);
+  // Each stage is a scan and counts against the owner's scan limits like any other;
+  // over a limit, the run stops here (runCampaign marks it failed).
+  const rateLimiter = new WafRateLimiter(db);
+  await rateLimiter.checkLimit(campaign.user_id);
 
   try {
+    // Create scan record
+    db.prepare(`
+      INSERT INTO app_waf_security__waf_scans (id, target_url, scan_type, status, started_at, user_id)
+      VALUES (?, ?, ?, ?, ?, ?)
+    `).run(scanId, campaign.target_domain, 'external', 'running', now, campaign.user_id);
+
+    // Create campaign scan link
+    db.prepare(`
+      INSERT INTO app_waf_security__waf_campaign_scans (
+        id, campaign_id, scan_id, run_number, stage, stage_name, stage_status, started_at
+      ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    `).run(campaignScanId, campaign.id, scanId, runNumber, stage.stage_number, stage.stage_name, 'running', now);
+
     // Run scan
     const scanResults = await runScan(db, campaign.target_domain, stageCategories, stage.default_mode, allowPrivate);
 
@@ -362,6 +377,8 @@ async function runCampaignStage(db, campaign, stage, runNumber, allowPrivate) {
       stage_status: 'failed',
       error: error.message,
     };
+  } finally {
+    await rateLimiter.releaseScan(campaign.user_id);
   }
 }
 

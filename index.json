@@ -325,8 +325,8 @@
         "files": [
           {
             "path": "README.md",
-            "sha256": "8e69a76782ed9356aabd89140bc98f2d3e7cf70c81279fe595a3bf54113acd31",
-            "size": 2927
+            "sha256": "c3e7256883352db0b16eeb2934681a24cf79bdd02c32469d539af10f40dea705",
+            "size": 3220
           },
           {
             "path": "agentplayer.plugin.json",
@@ -335,8 +335,8 @@
           },
           {
             "path": "index.js",
-            "sha256": "146176df5c5058c40b99381f5354768e4bfb3ac0b76cf8370a9aa9896e6ec604",
-            "size": 1828
+            "sha256": "16cae9352e7d40c8e0f118a6a370c56a1acbb40690d8e423fd996a2650e426b1",
+            "size": 1665
           },
           {
             "path": "migrations/001_waf_scans.sql",
@@ -360,8 +360,8 @@
           },
           {
             "path": "src/campaign-service.js",
-            "sha256": "27331e85cdcc763fbafcddd5aa894d985a5a4ce42918f3226ce8273a4ac7f755",
-            "size": 21434
+            "sha256": "77c97e9e0dc33006ab27b75f8ef8b94871aac869e74c4eae5cc91c23e92b7d42",
+            "size": 22351
           },
           {
             "path": "src/engine.js",
@@ -380,8 +380,8 @@
           },
           {
             "path": "src/routes.js",
-            "sha256": "edff1ab2515d6668af75782ad24ac0efa356bef89582597f9256f2cf0e4e0f6a",
-            "size": 11022
+            "sha256": "1449dff6290c160ce4796997136b7fc5e78d159dec5efd2b8b9b31f27a1a60cc",
+            "size": 11290
           },
           {
             "path": "src/scanner.js",
@@ -400,8 +400,8 @@
           },
           {
             "path": "src/settings.js",
-            "sha256": "951334c24c3b911a5ef3d0dacdce287c58c50198a15cf4e58a6a9148bc3b66d1",
-            "size": 644
+            "sha256": "338bfcce29874bf58eac25a2a98acc6c1ee0970defe397d052c02ea079401e52",
+            "size": 2037
           },
           {
             "path": "src/target.js",
@@ -410,11 +410,11 @@
           },
           {
             "path": "src/tool.js",
-            "sha256": "5a4a84035d5e58789d66e361844e7a5967afdefc043d653ee77c639707740586",
-            "size": 4898
+            "sha256": "25db779e82a1d920313ea6ca12c43995cea6ab7eb261543ea83f61eb1ef470ba",
+            "size": 5247
           }
         ],
-        "sha256": "8f7603230e262815961ee9475db5035ca9962c20cbcc9f1265849d33b62204f2"
+        "sha256": "e29715213a9581838a85b9ecc1202b8ae4bf8b69d171355b3bc46419728267fd"
       }
     },
     {

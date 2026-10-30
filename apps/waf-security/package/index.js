@@ -7,7 +7,7 @@ import { createWafRoutes } from './src/routes.js';
 import { createWafScanTool } from './src/tool.js';
 import { seedLibrary } from './src/seed.js';
 import { processScheduledCampaigns } from './src/campaign-service.js';
-import { allowPrivateTargets } from './src/settings.js';
+import { allowPrivateTargets, mayUseApp } from './src/settings.js';
 
 export default {
   id: 'waf-security',
@@ -30,11 +30,7 @@ export default {
     api.registerCronJob('0 * * * *', async () => {
       const executed = await processScheduledCampaigns(api.db, {
         allowPrivate: allowPrivateTargets(api),
-        mayRun: (userId) => {
-          if (typeof api.authorizeChannelUser !== 'function') return false;
-          api.authorizeChannelUser(userId); // throws unless an active owner or admin
-          return true;
-        },
+        mayRun: (userId) => mayUseApp(api, userId),
       });
       if (executed > 0) api.log('info', `Executed ${executed} scheduled WAF campaigns`);
     }, 'campaign-scheduler');

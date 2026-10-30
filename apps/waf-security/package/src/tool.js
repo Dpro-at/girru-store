@@ -1,15 +1,16 @@
 /**
  * WAF Scan AI Tool - Pure JavaScript
  * Lets an agent test a site's WAF, or audit this Girru, for the user who called it.
- * Without a signed-in user it does nothing; the same target rules and limits as the page apply.
+ * Only for an active owner or admin (the page's rule); the same target rules and limits as the page apply.
  */
 
 import { selfAudit } from './engine.js';
 import { startScan } from './scanner.js';
-import { allowPrivateTargets } from './settings.js';
+import { allowPrivateTargets, mayUseApp } from './settings.js';
 import { ownBackendUrl } from './routes.js';
 
 const NO_USER = Object.freeze({ content: [{ type: 'text', text: 'Error: this tool needs a signed-in user.' }], is_error: true });
+const NOT_ALLOWED = Object.freeze({ content: [{ type: 'text', text: 'Error: only an active owner or admin of this Girru can run WAF scans.' }], is_error: true });
 const text = (t, isError = false) => ({ content: [{ type: 'text', text: t }], ...(isError ? { is_error: true } : {}) });
 
 export function createWafScanTool(api) {
@@ -40,6 +41,8 @@ export function createWafScanTool(api) {
     async execute(params, context) {
       const userId = context?.userId;
       if (!userId) return NO_USER;
+      // The same check as the page's routes and the scheduler: an active owner or admin, else nothing runs.
+      if (!mayUseApp(api, userId)) return NOT_ALLOWED;
       const { url, mode, categories } = params || {};
 
       try {

@@ -14,8 +14,9 @@ Only test sites you own or have permission to test.
 
 ## Limits
 
-- Local and private network addresses (localhost, 10.x, 192.168.x, 169.254.x and the like) are refused, for every request and every redirect, unless the owner turns on `allowPrivateTargets` in its settings.
-- 10 scans running at once and 100 scans a day per user.
+- Local and private network addresses (localhost, 10.x, 192.168.x, 169.254.x and the like) are refused, for every request and every redirect, unless the owner turns on `allowPrivateTargets` in its settings. Only Girru's owner can change that setting; each change is logged with who made it.
+- 10 scans running at once and 100 scans a day per user; each campaign stage counts as a scan. At most 50 campaigns per user, and a campaign runs once at a time.
+- The `waf_scan` tool works only for an active owner or admin, like the page.
 - A scheduled campaign runs only while the person who made it is still an active owner or admin of this Girru.
 
 ## What it reaches
@@ -35,7 +36,7 @@ Its own tables only, all named `app_waf_security__...`:
 ## API
 
 Under `/api/ext/waf-security/`, for an active owner or admin; each user sees only their own scans and campaigns:
-`GET /payloads`, `GET/PUT /settings`, `POST /detect`, `POST /scan`, `GET /scan/:id`, `GET /scans`, `DELETE /scans/:id`, `POST /self`, `GET/POST /campaigns`, `GET/DELETE /campaigns/:id`, `POST /campaigns/:id/run`, `GET /campaigns/:id/score`.
+`GET /payloads`, `GET /settings`, `PUT /settings` (owner only), `POST /detect`, `POST /scan`, `GET /scan/:id`, `GET /scans`, `DELETE /scans/:id`, `POST /self`, `GET/POST /campaigns`, `GET/DELETE /campaigns/:id`, `POST /campaigns/:id/run`, `GET /campaigns/:id/score`.
 
 ## Licence
 
