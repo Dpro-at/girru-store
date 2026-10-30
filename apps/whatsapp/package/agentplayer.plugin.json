@@ -1,0 +1,62 @@
+{
+  "id": "whatsapp",
+  "name": "WhatsApp",
+  "description": "WhatsApp for Girru through Twilio: receives the messages Twilio signs and sends to it, and keeps a log; sending is not built yet",
+  "version": "2.1.0",
+  "type": "channel",
+  "author": "Girru",
+  "main": "index.js",
+  "publicRoutes": ["/webhook"],
+  "permissions": ["database", "tools"],
+  "settingsUI": {
+    "type": "form",
+    "title": "WhatsApp Business Configuration",
+    "description": "Configure WhatsApp via Twilio Business API",
+    "fields": [
+      {
+        "type": "input",
+        "name": "account_sid",
+        "label": "Twilio Account SID",
+        "placeholder": "ACxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "helpText": "Get from Twilio Console → Account Info → Account SID",
+        "inputType": "password",
+        "required": true
+      },
+      {
+        "type": "input",
+        "name": "auth_token",
+        "label": "Twilio Auth Token",
+        "placeholder": "Enter Auth Token",
+        "helpText": "Get from Twilio Console → Account Info → Auth Token",
+        "inputType": "password",
+        "required": true
+      },
+      {
+        "type": "input",
+        "name": "from_number",
+        "label": "WhatsApp Business Number",
+        "placeholder": "+14155552671",
+        "helpText": "Your Twilio WhatsApp-enabled number (E.164 format)",
+        "required": true
+      },
+      {
+        "type": "input",
+        "name": "webhook_url",
+        "label": "Webhook URL",
+        "placeholder": "https://yourdomain.com/api/ext/whatsapp/webhook",
+        "helpText": "The exact public URL Twilio calls; its signature is checked against it"
+      },
+      {
+        "type": "input",
+        "name": "allowed_numbers",
+        "label": "Allowed Numbers (Optional)",
+        "placeholder": "+14155552671,+14155552672",
+        "helpText": "Comma-separated. When set, messages from other numbers are not kept"
+      }
+    ],
+    "submitButton": {
+      "label": "Save WhatsApp Settings",
+      "variant": "default"
+    }
+  }
+}

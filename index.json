@@ -15,7 +15,8 @@
         "telegram",
         "terminal",
         "trading",
-        "waf-security"
+        "waf-security",
+        "whatsapp"
       ]
     },
     {
@@ -28,12 +29,12 @@
         "slack",
         "telegram",
         "waf-security",
+        "whatsapp",
         "3d-artist",
         "account-manager",
         "accountant",
         "activity-and-habits-coach",
-        "activity-coaching",
-        "ai-application-developer"
+        "activity-coaching"
       ]
     }
   ],
@@ -670,6 +671,82 @@
           }
         ],
         "sha256": "e29715213a9581838a85b9ecc1202b8ae4bf8b69d171355b3bc46419728267fd"
+      }
+    },
+    {
+      "id": "whatsapp",
+      "kind": "app",
+      "source": "girru",
+      "name": "WhatsApp",
+      "summary": "Preview: receive WhatsApp messages through Twilio and keep a log.",
+      "description": "A first step for WhatsApp in Girru, through a Twilio WhatsApp number. It receives the messages Twilio sends to Girru's address, only when Twilio signed them with your auth token, and keeps them in a log you can read; you can limit it to the numbers you list. Your agents can log a message for a number, but sending through Twilio is not built yet: nothing leaves Girru. It does not answer messages by itself.",
+      "icon": "phone",
+      "maker": "Girru",
+      "verified": true,
+      "version": "2.1.0",
+      "updated": "2026-10-30",
+      "category": "productivity",
+      "permissions": [
+        "Opens one public address (/api/ext/whatsapp/webhook) that accepts only requests Twilio signed with your auth token",
+        "Keeps the Twilio settings you save; the auth token is never sent back to the page",
+        "Keeps the messages it receives and logs in its own tables, with the sender's phone number",
+        "Sends nothing to Twilio or anywhere else yet",
+        "Adds a whatsapp_send tool (it logs only) that agents can use once you allow them"
+      ],
+      "worksWith": [
+        "Twilio",
+        "WhatsApp"
+      ],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "README.md",
+            "sha256": "580c682e6f5f029ad9414bd7cb7fed3b46bfd8493b5c853d25a499c6c0f6961c",
+            "size": 2008
+          },
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "cb3c04d5f50236a36f30e542e877d2fb03b1a0ee48db93421ade75dd8a00a06c",
+            "size": 2021
+          },
+          {
+            "path": "index.js",
+            "sha256": "82b47440119a5cace6d6199d0ad781fd816431e010f9678b62d8595d69e9408d",
+            "size": 779
+          },
+          {
+            "path": "migrations/001_whatsapp_messages.sql",
+            "sha256": "95f90dcf83561891884fcd42e1c69260033ae577f72a821ee5af97bd9825f069",
+            "size": 1049
+          },
+          {
+            "path": "src/messages.js",
+            "sha256": "4ee826d483fd259d38ffc96a03c0f57f4f178b6410ed0beadce30205999c8ef5",
+            "size": 2455
+          },
+          {
+            "path": "src/routes.js",
+            "sha256": "f3be4fbaef673ecdeb26a718d391d6d605228d55c2fe80a9dc4c7d92b2fc359e",
+            "size": 6699
+          },
+          {
+            "path": "src/tool.js",
+            "sha256": "3ad43e0c2f37fc501ed881fd5aea75fd4ff5994c9b9c431706683e052dd4e2ad",
+            "size": 1870
+          },
+          {
+            "path": "src/verify.js",
+            "sha256": "2a7a19fdfaf70ce9bb2321e74e546be736ba882f77f729415180c8c44dc76051",
+            "size": 2772
+          }
+        ],
+        "sha256": "019bc49357f9d2d81b1c0e74644b7fb5c23857458a42c8de4b241d3fa98b6294"
       }
     },
     {
