@@ -13,9 +13,9 @@ import { randomBytes } from 'crypto';
 import { scraperRegistry } from '../scrapers/index.js';
 
 export class ScraperService {
-  constructor(api) {
+  constructor(api, db) {
     this.api = api;
-    this.db = api.db || api.getDatabase();
+    this.db = db || api.db || api.getDatabase();
   }
 
   /**
@@ -276,8 +276,8 @@ export class ScraperService {
         return await this.api.getCredentialValue(credential.id);
       }
 
-      // Fallback: return encrypted value (will need manual decryption)
-      return credential.value;
+      // No way to decrypt it here: treat it as no key, never send the stored (encrypted) value.
+      return null;
     } catch (error) {
       this.api.log('error', `[SEO] Failed to get credential ${name}: ${error.message}`);
       return null;

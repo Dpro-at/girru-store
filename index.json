@@ -126,8 +126,8 @@
           },
           {
             "path": "index.js",
-            "sha256": "0ed8167434d6788059aa10d751a09a63b3a54bb5c9a6d46e4c7ee3e9d77475df",
-            "size": 2550
+            "sha256": "bf47b4229276f12e138ae7a2739856145deee380ef7225327b856c365959af39",
+            "size": 2600
           },
           {
             "path": "migrations/001_seo_core.sql",
@@ -221,8 +221,8 @@
           },
           {
             "path": "src/services/scraper-service.js",
-            "sha256": "bb7482c9358f5cdca4133639951c5d3377e1a3e7a84494b3063b545a9c52789a",
-            "size": 10337
+            "sha256": "3e08802243850807f2375e9c1b2c80bff846a41da68e4d167137fac77ec02971",
+            "size": 10360
           },
           {
             "path": "src/services/wordpress-service.js",
@@ -231,8 +231,8 @@
           },
           {
             "path": "src/tools.js",
-            "sha256": "7ba045dce5590fcf637bf8229930bbdc8f51baedd5530cbf9349ae9ee6211e49",
-            "size": 12905
+            "sha256": "39fd9924ac4ff4e465c160f38bcf072a14c9ef47e5cbaa34b1a14f9a8323d1bf",
+            "size": 14026
           },
           {
             "path": "src/utils/countries.js",
@@ -240,7 +240,7 @@
             "size": 1790
           }
         ],
-        "sha256": "a410aca2e7a23068cecbdf63fba53bdc266838534533881225794a7891a491d9"
+        "sha256": "b44a589e61937e34f7b08c2f3db32dab71073edd9be1a860d82288e1515c5c3a"
       }
     },
     {

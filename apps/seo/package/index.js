@@ -49,7 +49,8 @@ export default {
 
       // 3. Register AI tools
       api.log('info', '[SEO] Registering AI tools...');
-      const { seoTools } = await import('./src/tools.js');
+      const { createSeoTools } = await import('./src/tools.js');
+      const seoTools = createSeoTools(api);
       for (const tool of seoTools) {
         api.registerTool(tool);
       }
