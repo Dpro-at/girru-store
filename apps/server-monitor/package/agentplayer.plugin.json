@@ -1,0 +1,18 @@
+{
+  "id": "server-monitor",
+  "name": "Server Monitor",
+  "version": "1.1.0",
+  "type": "app",
+  "description": "Preview of a server monitoring dashboard for WHM/cPanel, Linux, AWS S3 and SSH servers; it shows sample data and does not connect to servers yet",
+  "author": "Girru",
+  "main": "index.js",
+  "permissions": [],
+  "frontendRoutes": [
+    {
+      "path": "/dashboard/ext/server-monitor",
+      "name": "Server Monitor",
+      "icon": "Server",
+      "position": "main"
+    }
+  ]
+}

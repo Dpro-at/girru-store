@@ -9,6 +9,7 @@
         "code",
         "genvr",
         "seo",
+        "server-monitor",
         "terminal",
         "trading"
       ]
@@ -18,6 +19,7 @@
       "title": "New in the store",
       "items": [
         "seo",
+        "server-monitor",
         "3d-artist",
         "account-manager",
         "accountant",
@@ -27,8 +29,7 @@
         "ai-application-engineering",
         "analytics-engineer",
         "analytics-modeling",
-        "animation-specialist",
-        "api-integration-developer"
+        "animation-specialist"
       ]
     }
   ],
@@ -241,6 +242,62 @@
           }
         ],
         "sha256": "b44a589e61937e34f7b08c2f3db32dab71073edd9be1a860d82288e1515c5c3a"
+      }
+    },
+    {
+      "id": "server-monitor",
+      "kind": "app",
+      "source": "girru",
+      "name": "Server Monitor",
+      "summary": "Preview: a dashboard for your servers, with sample data.",
+      "description": "A preview of a monitoring dashboard for WHM/cPanel, Linux, AWS S3 and SSH servers: load, disk, accounts, services, SSL, email, backups, DNS, uptime and more. Today every figure is sample data. It does not connect to any server, and the server entries you save are kept in memory only, until Girru restarts. Saved passwords and tokens are never sent back to the page.",
+      "icon": "server",
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-30",
+      "category": "developer",
+      "permissions": [
+        "Shows sample monitoring data; makes no connection to any server",
+        "Keeps the server entries you save in memory only, until Girru restarts",
+        "Has no tables, no agent tools and no background jobs"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "README.md",
+            "sha256": "52e739395a1a2b51eb7a75a3857b56aa35648665dc81e37637123548a1b9f4ca",
+            "size": 1688
+          },
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "aa13448158dcdb213f26853d6476426171cb951facd1dae162beac9df977175e",
+            "size": 492
+          },
+          {
+            "path": "index.js",
+            "sha256": "f24418d96f6bde2a1217e5daabd342f8e226f9a7f47eb32fc8336220ac542c90",
+            "size": 32359
+          },
+          {
+            "path": "src/secret-mask.js",
+            "sha256": "23d73ce7f60e73be11f531e15fc621ed7b5c8d8e6673024fe0d85f4a2ff86232",
+            "size": 1901
+          },
+          {
+            "path": "src/server-config.js",
+            "sha256": "bf7bc3ab500bab5981f0b5371c0b5c637f61bdd983cb1d9c0ca37b83fc5978e5",
+            "size": 4211
+          }
+        ],
+        "sha256": "170e92e6b097880428fa94422ac7e9cd2c872c2a28ff35954496669be6b155c3"
       }
     },
     {
