@@ -1,0 +1,22 @@
+{
+  "id": "discord",
+  "kind": "app",
+  "name": "Discord",
+  "summary": "Talk to your agent in the Discord channels you choose.",
+  "description": "Connects a Discord bot to Girru. Messages from the people you allow, in the server channels you allow, reach your primary agent, which can answer them when you turn on automatic replies; your agents can also send messages through the bot. Girru keeps the connection (the Discord Gateway, no public address needed), the lists of allowed senders and channels and the message log. Text in server channels only; the bot never mentions anyone.",
+  "icon": "message",
+  "maker": "Girru",
+  "version": "2.2.0",
+  "updated": "2026-10-30",
+  "category": "productivity",
+  "permissions": [
+    "Connects to Discord with the bot token you save, and stays connected while it is on",
+    "Lets only the sender IDs and channel IDs you list reach your agent; an empty list lets no one in",
+    "Answers with your primary agent only when you turn on automatic replies, and that agent gets a restricted set of tools",
+    "Keeps the messages in Girru's channel log, and the tables older Girru versions made for it",
+    "Adds a discord_send tool that agents can use once you allow them"
+  ],
+  "worksWith": ["Discord"],
+  "languages": ["English"],
+  "pricing": { "model": "free" }
+}

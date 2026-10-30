@@ -1,0 +1,22 @@
+{
+  "id": "slack",
+  "kind": "app",
+  "name": "Slack",
+  "summary": "Preview: receive Slack messages in Girru and keep a log.",
+  "description": "A first step for Slack in Girru. It receives the messages your Slack app sends to Girru's address, only when Slack signed them with your signing secret, and keeps them in a log you can read. Your agents can log a message for a Slack channel, but sending to Slack itself is not built yet: nothing leaves Girru. It does not answer messages by itself.",
+  "icon": "message",
+  "maker": "Girru",
+  "version": "2.1.0",
+  "updated": "2026-10-30",
+  "category": "productivity",
+  "permissions": [
+    "Opens one public address (/api/ext/slack/webhook) that accepts only requests Slack signed with your signing secret",
+    "Keeps the Slack settings you save; the tokens are never sent back to the page",
+    "Keeps the messages it receives and logs in its own tables",
+    "Sends nothing to Slack or anywhere else yet",
+    "Adds a slack_send tool (it logs only) that agents can use once you allow them"
+  ],
+  "worksWith": ["Slack"],
+  "languages": ["English"],
+  "pricing": { "model": "free" }
+}
