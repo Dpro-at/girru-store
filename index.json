@@ -11,6 +11,7 @@
         "genvr",
         "seo",
         "server-monitor",
+        "slack",
         "telegram",
         "terminal",
         "trading",
@@ -24,6 +25,7 @@
         "discord",
         "seo",
         "server-monitor",
+        "slack",
         "telegram",
         "waf-security",
         "3d-artist",
@@ -31,8 +33,7 @@
         "accountant",
         "activity-and-habits-coach",
         "activity-coaching",
-        "ai-application-developer",
-        "ai-application-engineering"
+        "ai-application-developer"
       ]
     }
   ],
@@ -361,6 +362,81 @@
           }
         ],
         "sha256": "170e92e6b097880428fa94422ac7e9cd2c872c2a28ff35954496669be6b155c3"
+      }
+    },
+    {
+      "id": "slack",
+      "kind": "app",
+      "source": "girru",
+      "name": "Slack",
+      "summary": "Preview: receive Slack messages in Girru and keep a log.",
+      "description": "A first step for Slack in Girru. It receives the messages your Slack app sends to Girru's address, only when Slack signed them with your signing secret, and keeps them in a log you can read. Your agents can log a message for a Slack channel, but sending to Slack itself is not built yet: nothing leaves Girru. It does not answer messages by itself.",
+      "icon": "message",
+      "maker": "Girru",
+      "verified": true,
+      "version": "2.1.0",
+      "updated": "2026-10-30",
+      "category": "productivity",
+      "permissions": [
+        "Opens one public address (/api/ext/slack/webhook) that accepts only requests Slack signed with your signing secret",
+        "Keeps the Slack settings you save; the tokens are never sent back to the page",
+        "Keeps the messages it receives and logs in its own tables",
+        "Sends nothing to Slack or anywhere else yet",
+        "Adds a slack_send tool (it logs only) that agents can use once you allow them"
+      ],
+      "worksWith": [
+        "Slack"
+      ],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "README.md",
+            "sha256": "f53c796af4ce3cac3e539c39a7acf159583b02ab9dafb1af8b7cc914401a3e69",
+            "size": 1715
+          },
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "fdb309474fd4ec63b3279574946338b509a1e221d2ee2b87c5dc4e80bf74f011",
+            "size": 1710
+          },
+          {
+            "path": "index.js",
+            "sha256": "ab50d7b7ff5a0c170a1ae96e5300d2c623a8ee58dfda9f8e9c32f41bf98f80e8",
+            "size": 745
+          },
+          {
+            "path": "migrations/001_slack_messages.sql",
+            "sha256": "ba76f6e85e2b6d5ff0e9d20a0a74da00d646b7408d9a9a0bb6a764fc3e874748",
+            "size": 1039
+          },
+          {
+            "path": "src/messages.js",
+            "sha256": "261a335635903f0bd90d8745f6d6a512a8e62ef46e3a98f1134383c2935f7916",
+            "size": 1867
+          },
+          {
+            "path": "src/routes.js",
+            "sha256": "6662a3ad3b97e3f083335aa7bb24b04389abb6c09a3cdd6e8a59218369f49902",
+            "size": 6302
+          },
+          {
+            "path": "src/tool.js",
+            "sha256": "be70d3a3cdcc8a289109f9c35c1277c953df4bfb8889c5ccf448b6bb02aca916",
+            "size": 1899
+          },
+          {
+            "path": "src/verify.js",
+            "sha256": "cbc004c0f11d3dcd66a606069df75919221de2cfff1fa3ff72ae0edded50f18c",
+            "size": 2504
+          }
+        ],
+        "sha256": "8fa1f393f67a71f7dddd7384834086b3535521fbe9f718ffbfa196d1f2898763"
       }
     },
     {
