@@ -1,0 +1,20 @@
+{
+  "id": "seo",
+  "name": "SEO Keyword Tracker & Analytics",
+  "description": "Keyword tracking, search result checks through the search APIs you add, Google Search Console reports and competitor tracking",
+  "version": "1.1.0",
+  "type": "tool",
+  "author": "Girru",
+  "main": "index.js",
+  "routeAccess": "authenticated",
+  "publicRoutes": ["/oauth/google/callback"],
+  "permissions": ["network", "database", "tools", "credentials"],
+  "frontendRoutes": [
+    {
+      "path": "/dashboard/ext/seo",
+      "name": "SEO Tools",
+      "icon": "Search",
+      "position": "main"
+    }
+  ]
+}

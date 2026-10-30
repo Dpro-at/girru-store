@@ -1,0 +1,22 @@
+{
+  "id": "seo",
+  "kind": "app",
+  "name": "SEO",
+  "summary": "Track your keyword rankings and competitors.",
+  "description": "Track where your sites rank for the keywords you choose, per device and country, and follow your competitors' positions. Search results come from the search APIs you add a key for (Serper, SerpApi and seven others). Connect Google Search Console with a read-only Google sign-in. Gives your agents SEO tools when you allow them.",
+  "icon": "search",
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-10-30",
+  "category": "marketing",
+  "permissions": [
+    "Sends the keywords you track to the search APIs you add a key for",
+    "Reads the search API keys you save in Girru's credentials",
+    "Connects Google Search Console with read-only access, only when you choose to",
+    "Keeps your sites, keywords and rankings in its own tables",
+    "Adds SEO tools that agents can use once you allow them"
+  ],
+  "worksWith": ["Google Search Console"],
+  "languages": ["English"],
+  "pricing": { "model": "free" }
+}
