@@ -8,6 +8,7 @@
       "items": [
         "code",
         "genvr",
+        "seo",
         "terminal",
         "trading"
       ]
@@ -16,6 +17,7 @@
       "id": "new",
       "title": "New in the store",
       "items": [
+        "seo",
         "3d-artist",
         "account-manager",
         "accountant",
@@ -26,8 +28,7 @@
         "analytics-engineer",
         "analytics-modeling",
         "animation-specialist",
-        "api-integration-developer",
-        "application-security-specialist"
+        "api-integration-developer"
       ]
     }
   ],
@@ -80,6 +81,166 @@
       ],
       "pricing": {
         "model": "free"
+      }
+    },
+    {
+      "id": "seo",
+      "kind": "app",
+      "source": "girru",
+      "name": "SEO",
+      "summary": "Track your keyword rankings and competitors.",
+      "description": "Track where your sites rank for the keywords you choose, per device and country, and follow your competitors' positions. Search results come from the search APIs you add a key for (Serper, SerpApi and seven others). Connect Google Search Console with a read-only Google sign-in. Gives your agents SEO tools when you allow them.",
+      "icon": "search",
+      "maker": "Girru",
+      "verified": true,
+      "version": "1.1.0",
+      "updated": "2026-10-30",
+      "category": "marketing",
+      "permissions": [
+        "Sends the keywords you track to the search APIs you add a key for",
+        "Reads the search API keys you save in Girru's credentials",
+        "Connects Google Search Console with read-only access, only when you choose to",
+        "Keeps your sites, keywords and rankings in its own tables",
+        "Adds SEO tools that agents can use once you allow them"
+      ],
+      "worksWith": [
+        "Google Search Console"
+      ],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "README.md",
+            "sha256": "2ccf509f0fdb38e4dfe3b05e893826acb490724e90fb78c33ad6dada00b12bf1",
+            "size": 2498
+          },
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "558b7bca22c330d6ec4283b97b22d8a90e8d81503e64000fa81708aa2f5abc97",
+            "size": 589
+          },
+          {
+            "path": "index.js",
+            "sha256": "0ed8167434d6788059aa10d751a09a63b3a54bb5c9a6d46e4c7ee3e9d77475df",
+            "size": 2550
+          },
+          {
+            "path": "migrations/001_seo_core.sql",
+            "sha256": "ee078ee16d60b6a0532cffcf6cc9e72364996efe97736ce1cccfa19e706c77ea",
+            "size": 3242
+          },
+          {
+            "path": "migrations/002_search_console.sql",
+            "sha256": "056347229fe40a13a7350e0418739c766c09071202601e446d151c854f149177",
+            "size": 1587
+          },
+          {
+            "path": "migrations/003_settings.sql",
+            "sha256": "54182d62e6eb4500e61170b8fdba83b74aabab90269ab0c310d0d71b334e454e",
+            "size": 968
+          },
+          {
+            "path": "src/oauth.js",
+            "sha256": "6568fc51b17235d40a76857dba4327841aca31228b1a396053f8f4ee3e1b57ee",
+            "size": 9484
+          },
+          {
+            "path": "src/routes.js",
+            "sha256": "1506d382a4a94c0074d9ee696fa1fa0cd127e6b6bafb900bd559e93842fbb978",
+            "size": 13153
+          },
+          {
+            "path": "src/scrapers/base.js",
+            "sha256": "db6c9d26a3383785f37a07f411d3e143999d00cc139272968a2d2936874229ec",
+            "size": 2502
+          },
+          {
+            "path": "src/scrapers/hasdata.js",
+            "sha256": "fe92d65dbd978e373f69695e49578c928d7632a8e05158a4c2828f9a70d96ca7",
+            "size": 1205
+          },
+          {
+            "path": "src/scrapers/index.js",
+            "sha256": "bbb5739f7db380c351de0fc7c4e4eee7b03feffef633c98250a148c10abadc0d",
+            "size": 3111
+          },
+          {
+            "path": "src/scrapers/scrapingant.js",
+            "sha256": "2d4354364fd9d5b61a6d9946b11ef23680f5c3d536204031475194399168b53d",
+            "size": 1314
+          },
+          {
+            "path": "src/scrapers/scrapingrobot.js",
+            "sha256": "0632d8614f4b9c61bdf9fd016e2ce4bfd1151a8ef8c811e01743891877cd40a3",
+            "size": 1374
+          },
+          {
+            "path": "src/scrapers/searchapi.js",
+            "sha256": "4ef655a9e6780d7214ef45f1df65f11580b4a749eda8c9d213f1a4cd2b9c2d04",
+            "size": 1128
+          },
+          {
+            "path": "src/scrapers/serpapi.js",
+            "sha256": "e863570f4e8bae2bfd4fc394ad67246dc5922267c713ca7486dda28f75c72ba0",
+            "size": 1090
+          },
+          {
+            "path": "src/scrapers/serper.js",
+            "sha256": "539a5d76891ad482caf34df71b296a0ccc4580da8daa847f277a86ee7037baf2",
+            "size": 1112
+          },
+          {
+            "path": "src/scrapers/serply.js",
+            "sha256": "816bc4dac4fc10bfb87b289b1eac6acc8fc1f6944cc7cab6b2f89428d7ca955e",
+            "size": 1074
+          },
+          {
+            "path": "src/scrapers/spaceserp.js",
+            "sha256": "2ad4b40d7467f6df2eb7319a6383ae5fc95dac372b2d2480e4948a443d8486e0",
+            "size": 1036
+          },
+          {
+            "path": "src/scrapers/valueserp.js",
+            "sha256": "3f084a494379e101eb5777e54fb07439dbac38696ea0ffcd5b1e41d5e327e8f3",
+            "size": 1078
+          },
+          {
+            "path": "src/services/ai-service.js",
+            "sha256": "47e8500c436e7f69db60a14b94903466b59a44df67716a73f04e772ce0acfd11",
+            "size": 2328
+          },
+          {
+            "path": "src/services/gsc-service.js",
+            "sha256": "bd201518092d3c0d41e41214c1f1ed84dc20ca16970248e82833306d1e9a2318",
+            "size": 2278
+          },
+          {
+            "path": "src/services/scraper-service.js",
+            "sha256": "bb7482c9358f5cdca4133639951c5d3377e1a3e7a84494b3063b545a9c52789a",
+            "size": 10337
+          },
+          {
+            "path": "src/services/wordpress-service.js",
+            "sha256": "28be3f9405a36255e4ee399aa61760385f3c9b4abfd748463f7d7f6d3c0332e0",
+            "size": 1467
+          },
+          {
+            "path": "src/tools.js",
+            "sha256": "7ba045dce5590fcf637bf8229930bbdc8f51baedd5530cbf9349ae9ee6211e49",
+            "size": 12905
+          },
+          {
+            "path": "src/utils/countries.js",
+            "sha256": "ed4fc01c16230e33765e180b69fd5fa93b887c643f66ca2772165c2557f9fbdb",
+            "size": 1790
+          }
+        ],
+        "sha256": "a410aca2e7a23068cecbdf63fba53bdc266838534533881225794a7891a491d9"
       }
     },
     {
