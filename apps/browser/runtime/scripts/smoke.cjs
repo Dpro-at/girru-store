@@ -1,0 +1,21 @@
+const fs=require('node:fs/promises'),http=require('node:http'),assert=require('node:assert/strict'),path=require('node:path');
+const {Client}=require('@modelcontextprotocol/sdk/client/index.js'),{StdioClientTransport}=require('@modelcontextprotocol/sdk/client/stdio.js');
+(async()=>{
+ const fixture=http.createServer((req,res)=>{if(!['/alpha','/beta'].includes(req.url)){res.writeHead(404);return res.end();}const name=req.url.includes('alpha')?'Alpha':'Beta';res.setHeader('Content-Type','text/html');res.setHeader('Set-Cookie','agent='+name+'; SameSite=Lax');res.end(`<title>${name} private test</title><h1>${name} work</h1><label>Message<input aria-label="Message"></label><button onclick="document.querySelector('p').textContent=document.querySelector('input').value+' '+document.cookie">Save</button><p>Waiting</p><div>Cookie: ${req.headers.cookie||'none'}</div>`);});await new Promise(r=>fixture.listen(0,'127.0.0.1',r));
+ try{
+  const file=process.env.GIRRU_BROWSER_OWNER_CONNECTION;if(!file)throw Error('Set GIRRU_BROWSER_OWNER_CONNECTION to the local preview owner connection file.');const admin=JSON.parse(await fs.readFile(file,'utf8'));
+  const request=async(c,p,b)=>{const r=await fetch(c.url+p,{method:'POST',headers:{Authorization:'Bearer '+c.token,'Content-Type':'application/json'},body:JSON.stringify(b),signal:AbortSignal.timeout(45000)});if(!r.ok)throw Error('Broker '+p+' '+r.status);return r.json();};
+  const agents=await Promise.all(['alpha','beta'].map(async name=>{const registered=await request(admin,'/agents',{id:'test-'+name,name:'Test '+name,department:'Local acceptance'});return {...JSON.parse(await fs.readFile(registered.connectionFile,'utf8')),file:registered.connectionFile};}));
+  const tools=await request(agents[0],'/tools',{});assert.ok(tools.tools.some(t=>t.name==='browser_snapshot'));assert.ok(tools.tools.every(t=>!t.name.includes('unsafe')&&!t.name.includes('evaluate')));
+  const results=await Promise.all(agents.map((a,i)=>request(a,'/call',{name:'browser_navigate',arguments:{url:`http://127.0.0.1:${fixture.address().port}/${i?'beta':'alpha'}`}})));
+  for(let i=0;i<2;i++){const text=JSON.stringify(results[i]);assert.ok(!results[i].isError,text);assert.match(text,i?/Beta work/:/Alpha work/);assert.doesNotMatch(text,i?/Alpha work/:/Beta work/);}
+  const snapshots=await Promise.all(agents.map(a=>request(a,'/call',{name:'browser_snapshot',arguments:{}})));
+  for(let i=0;i<2;i++){const text=JSON.stringify(snapshots[i]);assert.match(text,i?/Beta work/:/Alpha work/);assert.doesNotMatch(text,i?/Alpha work/:/Beta work/);}
+  for(let i=0;i<2;i++){const refreshed=await request(agents[i],'/call',{name:'browser_navigate',arguments:{url:`http://127.0.0.1:${fixture.address().port}/${i?'beta':'alpha'}`}});assert.match(JSON.stringify(refreshed),i?/Cookie: agent=Beta/:/Cookie: agent=Alpha/);assert.doesNotMatch(JSON.stringify(refreshed),i?/Cookie: agent=Alpha/:/Cookie: agent=Beta/);}
+  const client=new Client({name:'native-acceptance',version:'0.1.0'});try{await client.connect(new StdioClientTransport({command:process.execPath,args:[path.join(__dirname,'mcp.mjs')],env:{...process.env,GIRRU_BROWSER_CONNECTION:agents[0].file},stderr:'pipe'}));assert.ok((await client.listTools()).tools.length>5);const result=await client.callTool({name:'browser_snapshot',arguments:{}});assert.match(JSON.stringify(result),/Alpha work/);assert.doesNotMatch(JSON.stringify(result),/Beta work/);}finally{await client.close();}
+  const tabs=await request(agents[0],'/call',{name:'browser_tabs',arguments:{action:'list'}});assert.doesNotMatch(JSON.stringify(tabs),/Beta private test/);
+  const newTab=await request(agents[0],'/call',{name:'browser_tabs',arguments:{action:'new'}});assert.ok(!newTab.isError,JSON.stringify(newTab));
+  assert.equal((await fetch(admin.url+'/agents',{method:'POST',headers:{Authorization:'Bearer '+agents[0].token,'Content-Type':'application/json'},body:'{}'})).status,404);
+  console.log(JSON.stringify({result:'PASS',agents:2,concurrentNavigation:true,isolatedSnapshots:true,ownTabsOnly:true,officialMCP:true,isolatedCookies:true,standardStdioMCP:true}));
+ }finally{fixture.closeAllConnections();await new Promise(r=>fixture.close(r));}
+})().catch(e=>{console.error(e.message);process.exitCode=1;});

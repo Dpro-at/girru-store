@@ -1,0 +1,11 @@
+{
+  "id":"browser",
+  "name":"Browser",
+  "version":"0.1.0",
+  "type":"tool",
+  "description":"Use the Girru Chromium browser with a separate tab for each authorized agent. Requires the native Browser runtime on this computer.",
+  "author":"Mohamed Alarade",
+  "license":"MIT",
+  "main":"index.js",
+  "permissions":["tools","network","database","filesystem"]
+}
