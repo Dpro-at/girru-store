@@ -24,7 +24,7 @@ async function createBroker({registry,automation,directory,createTab,ownerOrigin
  });
  server.requestTimeout=10000;server.headersTimeout=10000;
  await new Promise(r=>server.listen(0,'127.0.0.1',r));await fs.mkdir(directory,{recursive:true,mode:0o700});
- const file=path.join(directory,'owner-runtime.json');await fs.writeFile(file,JSON.stringify({schema:1,presentation,url:`http://127.0.0.1:${server.address().port}`,token:admin}),{mode:0o600});
- return {file,close:async()=>{server.closeAllConnections();await new Promise(r=>server.close(r));await fs.unlink(file).catch(()=>{});}};
+ const connection={schema:1,presentation,url:`http://127.0.0.1:${server.address().port}`,token:admin};const file=path.join(directory,'owner-runtime.json');await fs.writeFile(file,JSON.stringify(connection),{mode:0o600});
+ return {file,connection,close:async()=>{server.closeAllConnections();await new Promise(r=>server.close(r));await fs.unlink(file).catch(()=>{});}};
 }
 module.exports={createBroker};

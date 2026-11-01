@@ -2,10 +2,10 @@ name: Browser security
 
 on:
   pull_request:
-    paths: ['apps/browser/**', '.github/workflows/browser-security.yml']
+    paths: ['apps/browser/**', '.github/workflows/browser-security.yml', '.gitleaks.toml']
   push:
     branches: [main]
-    paths: ['apps/browser/**', '.github/workflows/browser-security.yml']
+    paths: ['apps/browser/**', '.github/workflows/browser-security.yml', '.gitleaks.toml']
   workflow_dispatch:
 
 permissions:

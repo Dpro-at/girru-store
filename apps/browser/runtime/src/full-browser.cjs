@@ -63,7 +63,7 @@ async function startFullBrowser({profile,executable,extensionSource,embedded=fal
  }
  automation=createAutomation({registry,context:contextFor,createTab,outputDir:id=>path.join(profile,'output',id)});
  const broker=await createBroker({registry,automation,createTab,ui,presentation:embedded?'embedded':'standalone',ownerOrigin:'chrome-extension://'+id,directory:path.join(profile,'connections')});
- const connection=JSON.parse(await fs.readFile(broker.file,'utf8'));await fs.writeFile(path.join(extension,'config.json'),JSON.stringify({...connection,theme:'dark'}),{mode:0o600});
+ const connection=broker.connection;await fs.writeFile(path.join(extension,'config.json'),JSON.stringify({...connection,theme:'dark'}),{mode:0o600});
  const prefsFile=path.join(profile,'Default','Preferences');let prefs={};try{prefs=JSON.parse(await fs.readFile(prefsFile,'utf8'));}catch{}prefs.extensions={...prefs.extensions,pinned_extensions:[...new Set([...(prefs.extensions?.pinned_extensions||[]),id])]};await fs.mkdir(path.dirname(prefsFile),{recursive:true,mode:0o700});await fs.writeFile(prefsFile,JSON.stringify(prefs),{mode:0o600});
  let first=true;try{first=!JSON.parse(await fs.readFile(path.join(profile,'girru-first-run.json'),'utf8')).complete;}catch{}
  const port=await freePort(),url=first?`chrome-extension://${id}/welcome.html`:`chrome-extension://${id}/newtab.html`;
