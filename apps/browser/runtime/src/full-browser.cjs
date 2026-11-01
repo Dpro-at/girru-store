@@ -5,9 +5,9 @@ const {createCefTransport}=require('./cef-transport.cjs');
 const {Registry}=require('./registry.cjs'),{createAutomation}=require('./mcp.cjs'),{createBroker}=require('./broker.cjs'),{createChromeImport}=require('./chrome-import.cjs');
 const wait=ms=>new Promise(r=>setTimeout(r,ms));
 async function freePort(){const s=net.createServer();await new Promise(r=>s.listen(0,'127.0.0.1',r));const p=s.address().port;await new Promise(r=>s.close(r));return p;}
-async function startFullBrowser({profile,executable,extensionSource,embedded=false}){
+async function startFullBrowser({profile,executable,extensionSource,embedded=false,onStage=()=>{}}){
  await fs.mkdir(profile,{recursive:true,mode:0o700});
- const registry=new Registry(),targetPages=new Map(),viewportSessions=new Map(),importer=createChromeImport();let browser,child,automation,closing=false,browserCDP,transport,suppressOwnerPages=0;const pendingOwnerPages=[],nativeContexts=new Map(),streams=new Map();let sequence=0;let creationQueue=Promise.resolve();
+ const registry=new Registry(),targetPages=new Map(),viewportSessions=new Map(),importer=createChromeImport();let browser,child,automation,closing=false,browserCDP,transport,registerOwnerPage,suppressOwnerPages=0;const pendingOwnerPages=[],nativeContexts=new Map(),streams=new Map();let sequence=0,ready=false;let creationQueue=Promise.resolve();
  const manifest=JSON.parse(await fs.readFile(path.join(extensionSource,'manifest.json'),'utf8'));
  const id=createHash('sha256').update(Buffer.from(manifest.key,'base64')).digest('hex').slice(0,32).split('').map(c=>String.fromCharCode(97+parseInt(c,16))).join('');
  const extension=path.join(profile,'.girru-extension');await fs.cp(extensionSource,extension,{recursive:true});await fs.chmod(extension,0o700);
@@ -27,9 +27,11 @@ async function startFullBrowser({profile,executable,extensionSource,embedded=fal
  }
  async function createTab(agentId,url){const tab=registry.add(agentId);try{const ctx=await contextFor(agentId);suppressOwnerPages++;let page;try{page=await nativePage(ctx,tab);await attach(tab,page);}finally{suppressOwnerPages--;if(!suppressOwnerPages)for(const p of pendingOwnerPages.splice(0))void registerOwnerPage(p);}if(agentId!=='owner'){const a=registry.agent(agentId);await page.addInitScript(label=>{document.addEventListener('DOMContentLoaded',()=>{document.title=label+' · '+document.title;},{once:true});},a.name+(a.department?' · '+a.department:''));}automation.notifyPage(agentId,page);if(url)await page.goto(url);return tab;}catch(e){if(registry.tabs.has(tab.id))registry.remove(agentId,tab.id);throw e;}}
  async function ui(body){
-  if(body.action==='state'){await Promise.all([...registry.tabs.values()].map(async t=>{if(t.page&&!t.page.isClosed())t.title=(await t.page.title().catch(()=>t.title)).slice(0,200);}));return registry.snapshot();}
+  if(body.action==='state'){if(!ready)throw Error('Browser is starting.');await Promise.all([...registry.tabs.values()].map(async t=>{if(t.page&&!t.page.isClosed())t.title=(await t.page.title().catch(()=>t.title)).slice(0,200);}));return registry.snapshot();}
   if(body.action==='new'){const tab=await createTab('owner',body.url||`chrome-extension://${id}/newtab.html`);registry.active=tab.id;registry.changed();if(!embedded)await tab.page.bringToFront();return {ok:true};}
   if(body.action==='onboard'){const tab=registry.tabs.get(registry.active)||registry.tabs.values().next().value;if(!tab?.page||tab.agentId!=='owner'){const next=await createTab('owner',`chrome-extension://${id}/welcome.html`);registry.active=next.id;}else await tab.page.goto(`chrome-extension://${id}/welcome.html`);registry.changed();return {ok:true};}
+  if(body.action==='prompts')return nativeCommand({action:'native-prompts'});
+  if(body.action==='respond-prompt'){if(!/^[A-Fa-f0-9-]{36}$/.test(body.prompt)||!/^[A-Fa-f0-9-]{36}$/.test(body.button))throw Error('Invalid browser request.');const result=await nativeCommand({action:'respond-prompt',prompt:body.prompt,button:body.button});if(!result.ok)throw Error('Browser request expired.');return result;}
   if(body.action==='profiles')return {profiles:await importer.list()};
   if(body.action==='import')return importer.preview(body);
   if(body.action==='preferences')return nativeCommand({action:'preferences',settings:body.settings||{}});
@@ -66,12 +68,16 @@ async function startFullBrowser({profile,executable,extensionSource,embedded=fal
  let first=true;try{first=!JSON.parse(await fs.readFile(path.join(profile,'girru-first-run.json'),'utf8')).complete;}catch{}
  const port=await freePort(),url=first?`chrome-extension://${id}/welcome.html`:`chrome-extension://${id}/newtab.html`;
  child=spawn(executable,[`--cache-path=${profile}`,`--url=${url}`,`--remote-debugging-port=${port}`,`--load-extension=${extension}`,`--girru-extension-id=${id}`,`--girru-control-dir=${nativeDir}`,'--force-renderer-accessibility',...(embedded?['--girru-embedded','--disable-background-timer-throttling','--disable-renderer-backgrounding','--disable-backgrounding-occluded-windows']:[])],{stdio:['ignore','ignore','pipe']});let error='';child.stderr.on('data',b=>{error=(error+b).slice(-4000);});
- child.once('error',()=>{closing=true;});child.once('exit',()=>{closing=true;void broker.close().catch(()=>{});});
- for(let i=0;i<100;i++){try{const version=await(await fetch(`http://127.0.0.1:${port}/json/version`)).json();transport=await createCefTransport(version.webSocketDebuggerUrl);browser=await chromium.connectOverCDP(transport.url);break;}catch{await transport?.close().catch(()=>{});transport=null;if(closing)throw Error('Chromium could not start.');await wait(100);}}
- if(!browser)throw Error('Chromium did not become ready.');browserCDP=await browser.newBrowserCDPSession();
- const owner=browser.contexts()[0];
- async function registerOwnerPage(page){if([...registry.tabs.values()].some(t=>t.page===page))return;try{const cdp=await owner.newCDPSession(page);let info;try{info=(await cdp.send('Target.getTargetInfo')).targetInfo;}finally{await cdp.detach();}const opener=targetPages.get(info.openerId);if(opener){await attach(registry.add(opener.agentId),page);automation.notifyPage(opener.agentId,page);}else if(!nativeContexts.has('owner')||nativeContexts.get('owner')===info.browserContextId){nativeContexts.set('owner',info.browserContextId);await attach(registry.add('owner'),page);}}catch{}}
- for(const page of owner.pages())await registerOwnerPage(page);owner.on('page',page=>{if(suppressOwnerPages)pendingOwnerPages.push(page);else void registerOwnerPage(page);});
+ const terminateChild=()=>child.kill('SIGTERM');process.once('exit',terminateChild);
+ child.once('error',()=>{process.removeListener('exit',terminateChild);closing=true;});child.once('exit',()=>{process.removeListener('exit',terminateChild);closing=true;void broker.close().catch(()=>{});});
+ try{onStage('connect');const startupDeadline=Date.now()+45000;while(Date.now()<startupDeadline){try{const version=await(await fetch(`http://127.0.0.1:${port}/json/version`,{signal:AbortSignal.timeout(1000)})).json();transport=await createCefTransport(version.webSocketDebuggerUrl);const refresh=setInterval(()=>transport?.refresh(),100);try{browser=await chromium.connectOverCDP(transport.url,{timeout:8000});}finally{clearInterval(refresh);}break;}catch{await transport?.close().catch(()=>{});transport=null;if(closing)throw Error('Chromium could not start.');await wait(100);}}
+ onStage('connected');if(!browser)throw Error('Chromium did not become ready.');browserCDP=await browser.newBrowserCDPSession();
+ onStage('root-session');const owner=browser.contexts()[0];
+ registerOwnerPage=async function(page){if([...registry.tabs.values()].some(t=>t.page===page))return;try{onStage('register-page');const cdp=await owner.newCDPSession(page);let info;try{info=(await cdp.send('Target.getTargetInfo')).targetInfo;}finally{await cdp.detach();}const opener=targetPages.get(info.openerId);if(opener){await attach(registry.add(opener.agentId),page);automation.notifyPage(opener.agentId,page);}else if((!nativeContexts.has('owner')&&page.url().startsWith(`chrome-extension://${id}/`))||(nativeContexts.has('owner')&&nativeContexts.get('owner')===info.browserContextId)){nativeContexts.set('owner',info.browserContextId);await attach(registry.add('owner'),page);}}catch{}}
+ owner.on('page',page=>{if(suppressOwnerPages)pendingOwnerPages.push(page);else void registerOwnerPage(page);});
+ for(let attempt=0;attempt<50&&!registry.tabs.size;attempt++){transport.refresh();for(const page of [...owner.pages()].sort((a,b)=>Number(b.url().startsWith(`chrome-extension://${id}/`))-Number(a.url().startsWith(`chrome-extension://${id}/`))))await registerOwnerPage(page);if(!registry.tabs.size)await wait(100);}
+ if(!registry.tabs.size){await broker.close();await transport.close();child.kill('SIGTERM');throw Error('The initial browser tab did not attach.');}ready=true;onStage('ready');
  return {registry,broker,child,port,async close(){closing=true;await broker.close().catch(()=>{});await automation.close();await browser?.close().catch(()=>{});await transport?.close().catch(()=>{});child.kill('SIGTERM');}};
+ }catch(error){closing=true;await broker.close().catch(()=>{});await transport?.close().catch(()=>{});await browser?.close().catch(()=>{});await automation.close().catch(()=>{});child.kill('SIGTERM');throw error;}
 }
 module.exports={startFullBrowser};

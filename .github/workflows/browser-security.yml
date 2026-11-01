@@ -1,0 +1,30 @@
+name: Browser security
+
+on:
+  pull_request:
+    paths: ['apps/browser/**', '.github/workflows/browser-security.yml']
+  push:
+    branches: [main]
+    paths: ['apps/browser/**', '.github/workflows/browser-security.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  codeql:
+    name: Browser CodeQL
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      security-events: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v4
+        with:
+          languages: javascript-typescript
+          queries: security-extended
+      - uses: github/codeql-action/analyze@v4
+        with:
+          category: /language:javascript-typescript

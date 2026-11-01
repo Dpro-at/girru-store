@@ -15,7 +15,7 @@
 - (void)terminate:(id)sender{CloseGirruBrowsers();}
 @end
 void HideGirruBrowser(CefWindowHandle handle){
- @autoreleasepool{NSView* view=(NSView*)handle;NSWindow* window=[view window];if(window){[window setAlphaValue:0];[window orderOut:nil];}}
+ @autoreleasepool{NSView* view=(NSView*)handle;NSWindow* window=[view window];if(window){[window setAlphaValue:0];[window setIgnoresMouseEvents:YES];if(![window isVisible])[window orderBack:nil];}}
 }
 int main(int argc,char* argv[]){
  CefScopedLibraryLoader library;if(!library.LoadInMain())return 1;
