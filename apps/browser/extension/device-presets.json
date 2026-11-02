@@ -1,0 +1,479 @@
+[
+  {
+    "id": "iphone-se",
+    "name": "iPhone SE",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 320,
+    "height": 568,
+    "mobile": true
+  },
+  {
+    "id": "iphone-13-mini",
+    "name": "iPhone 13 Mini",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 375,
+    "height": 812,
+    "mobile": true
+  },
+  {
+    "id": "iphone-14",
+    "name": "iPhone 14",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 390,
+    "height": 844,
+    "mobile": true
+  },
+  {
+    "id": "iphone-14-plus",
+    "name": "iPhone 14 Plus",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 428,
+    "height": 926,
+    "mobile": true
+  },
+  {
+    "id": "iphone-15",
+    "name": "iPhone 15",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 393,
+    "height": 852,
+    "mobile": true
+  },
+  {
+    "id": "iphone-15-pro-max",
+    "name": "iPhone 15 Pro Max",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 430,
+    "height": 932,
+    "mobile": true
+  },
+  {
+    "id": "iphone-16",
+    "name": "iPhone 16",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 393,
+    "height": 852,
+    "mobile": true
+  },
+  {
+    "id": "iphone-16-pro",
+    "name": "iPhone 16 Pro",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 402,
+    "height": 874,
+    "mobile": true
+  },
+  {
+    "id": "iphone-16-pro-max",
+    "name": "iPhone 16 Pro Max",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 440,
+    "height": 956,
+    "mobile": true
+  },
+  {
+    "id": "iphone-17",
+    "name": "iPhone 17",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 402,
+    "height": 874,
+    "mobile": true
+  },
+  {
+    "id": "iphone-17-pro",
+    "name": "iPhone 17 Pro",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 402,
+    "height": 874,
+    "mobile": true
+  },
+  {
+    "id": "iphone-17-pro-max",
+    "name": "iPhone 17 Pro Max",
+    "group": "iPhone",
+    "kind": "phone",
+    "width": 440,
+    "height": 956,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-s8",
+    "name": "Galaxy S8",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 360,
+    "height": 740,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-s24",
+    "name": "Galaxy S24",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 360,
+    "height": 780,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-a55",
+    "name": "Galaxy A55",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 480,
+    "height": 1040,
+    "mobile": true
+  },
+  {
+    "id": "pixel-5",
+    "name": "Pixel 5",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 393,
+    "height": 851,
+    "mobile": true
+  },
+  {
+    "id": "pixel-7",
+    "name": "Pixel 7",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 412,
+    "height": 915,
+    "mobile": true
+  },
+  {
+    "id": "pixel-8",
+    "name": "Pixel 8",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 412,
+    "height": 915,
+    "mobile": true
+  },
+  {
+    "id": "pixel-9",
+    "name": "Pixel 9",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 360,
+    "height": 808,
+    "mobile": true
+  },
+  {
+    "id": "pixel-9-pro",
+    "name": "Pixel 9 Pro",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 427,
+    "height": 952,
+    "mobile": true
+  },
+  {
+    "id": "pixel-9-pro-xl",
+    "name": "Pixel 9 Pro XL",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 448,
+    "height": 997,
+    "mobile": true
+  },
+  {
+    "id": "pixel-10",
+    "name": "Pixel 10",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 360,
+    "height": 808,
+    "mobile": true
+  },
+  {
+    "id": "pixel-10-pro",
+    "name": "Pixel 10 Pro",
+    "group": "Android phones",
+    "kind": "phone",
+    "width": 427,
+    "height": 952,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-z-fold-6",
+    "name": "Galaxy Z Fold 6",
+    "group": "Foldable phones",
+    "kind": "foldable",
+    "width": 928,
+    "height": 1080,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-z-fold-6-cover",
+    "name": "Galaxy Z Fold 6 Cover",
+    "group": "Foldable phones",
+    "kind": "foldable",
+    "width": 484,
+    "height": 1188,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-z-fold-7",
+    "name": "Galaxy Z Fold 7",
+    "group": "Foldable phones",
+    "kind": "foldable",
+    "width": 984,
+    "height": 1092,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-z-fold-7-cover",
+    "name": "Galaxy Z Fold 7 Cover",
+    "group": "Foldable phones",
+    "kind": "foldable",
+    "width": 360,
+    "height": 840,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-z-flip-7",
+    "name": "Galaxy Z Flip 7",
+    "group": "Foldable phones",
+    "kind": "foldable",
+    "width": 360,
+    "height": 840,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-z-flip-7-cover",
+    "name": "Galaxy Z Flip 7 Cover",
+    "group": "Foldable phones",
+    "kind": "foldable",
+    "width": 474,
+    "height": 524,
+    "mobile": true
+  },
+  {
+    "id": "ipad-mini",
+    "name": "iPad Mini",
+    "group": "Tablets",
+    "kind": "tablet",
+    "width": 768,
+    "height": 1024,
+    "mobile": true
+  },
+  {
+    "id": "ipad-gen-11",
+    "name": "iPad (gen 11)",
+    "group": "Tablets",
+    "kind": "tablet",
+    "width": 656,
+    "height": 944,
+    "mobile": true
+  },
+  {
+    "id": "ipad-pro-11",
+    "name": "iPad Pro 11",
+    "group": "Tablets",
+    "kind": "tablet",
+    "width": 834,
+    "height": 1194,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-tab-s4",
+    "name": "Galaxy Tab S4",
+    "group": "Tablets",
+    "kind": "tablet",
+    "width": 712,
+    "height": 1138,
+    "mobile": true
+  },
+  {
+    "id": "galaxy-tab-s9",
+    "name": "Galaxy Tab S9",
+    "group": "Tablets",
+    "kind": "tablet",
+    "width": 640,
+    "height": 1024,
+    "mobile": true
+  },
+  {
+    "id": "nexus-10",
+    "name": "Nexus 10",
+    "group": "Tablets",
+    "kind": "tablet",
+    "width": 800,
+    "height": 1280,
+    "mobile": true
+  },
+  {
+    "id": "compact-laptop",
+    "name": "Compact laptop",
+    "group": "Laptops",
+    "kind": "laptop",
+    "width": 1280,
+    "height": 720,
+    "mobile": false
+  },
+  {
+    "id": "laptop-hd",
+    "name": "Laptop HD",
+    "group": "Laptops",
+    "kind": "laptop",
+    "width": 1366,
+    "height": 768,
+    "mobile": false
+  },
+  {
+    "id": "laptop-16-10",
+    "name": "Laptop 16:10",
+    "group": "Laptops",
+    "kind": "laptop",
+    "width": 1440,
+    "height": 900,
+    "mobile": false
+  },
+  {
+    "id": "laptop-scaled",
+    "name": "Laptop scaled",
+    "group": "Laptops",
+    "kind": "laptop",
+    "width": 1536,
+    "height": 864,
+    "mobile": false
+  },
+  {
+    "id": "laptop-full-hd",
+    "name": "Laptop Full HD",
+    "group": "Laptops",
+    "kind": "laptop",
+    "width": 1920,
+    "height": 1080,
+    "mobile": false
+  },
+  {
+    "id": "laptop-16-10-full-hd",
+    "name": "Laptop 16:10 Full HD",
+    "group": "Laptops",
+    "kind": "laptop",
+    "width": 1920,
+    "height": 1200,
+    "mobile": false
+  },
+  {
+    "id": "compact-display",
+    "name": "Compact display",
+    "group": "Computer displays",
+    "kind": "desktop",
+    "width": 1280,
+    "height": 1024,
+    "mobile": false
+  },
+  {
+    "id": "full-hd-display",
+    "name": "Full HD display",
+    "group": "Computer displays",
+    "kind": "desktop",
+    "width": 1920,
+    "height": 1080,
+    "mobile": false
+  },
+  {
+    "id": "qhd-display",
+    "name": "QHD display",
+    "group": "Computer displays",
+    "kind": "desktop",
+    "width": 2560,
+    "height": 1440,
+    "mobile": false
+  },
+  {
+    "id": "4k-display",
+    "name": "4K display",
+    "group": "Computer displays",
+    "kind": "desktop",
+    "width": 3840,
+    "height": 2160,
+    "mobile": false
+  },
+  {
+    "id": "ultrawide-full-hd",
+    "name": "Ultrawide Full HD",
+    "group": "Computer displays",
+    "kind": "desktop",
+    "width": 2560,
+    "height": 1080,
+    "mobile": false
+  },
+  {
+    "id": "ultrawide-qhd",
+    "name": "Ultrawide QHD",
+    "group": "Computer displays",
+    "kind": "desktop",
+    "width": 3440,
+    "height": 1440,
+    "mobile": false
+  },
+  {
+    "id": "super-ultrawide",
+    "name": "Super ultrawide",
+    "group": "Computer displays",
+    "kind": "desktop",
+    "width": 5120,
+    "height": 1440,
+    "mobile": false
+  },
+  {
+    "id": "5k-display",
+    "name": "5K display",
+    "group": "Computer displays",
+    "kind": "desktop",
+    "width": 5120,
+    "height": 2880,
+    "mobile": false
+  },
+  {
+    "id": "tv-hd",
+    "name": "TV HD",
+    "group": "TVs",
+    "kind": "tv",
+    "width": 1280,
+    "height": 720,
+    "mobile": false
+  },
+  {
+    "id": "tv-full-hd",
+    "name": "TV Full HD",
+    "group": "TVs",
+    "kind": "tv",
+    "width": 1920,
+    "height": 1080,
+    "mobile": false
+  },
+  {
+    "id": "tv-4k",
+    "name": "TV 4K",
+    "group": "TVs",
+    "kind": "tv",
+    "width": 3840,
+    "height": 2160,
+    "mobile": false
+  },
+  {
+    "id": "tv-8k",
+    "name": "TV 8K",
+    "group": "TVs",
+    "kind": "tv",
+    "width": 7680,
+    "height": 4320,
+    "mobile": false
+  }
+]

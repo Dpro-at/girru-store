@@ -25,6 +25,12 @@ Build `native/` with CMake, specifying `CEF_ROOT`, then run `npm run stage:nativ
 
 The Girru desktop integration uses trusted `DPRO_BROWSER_ROOT` and optional `DPRO_BROWSER_PROFILE` settings. Opening Browser starts the sidecar; `/api/browser/app` is answered by the local UI bridge only after the backend verifies the caller is the owner. Connection tokens and native paths are never returned to the page. The agent extension uses the host-selected `DPRO_BROWSER_CONNECTION_FILE`.
 
+## Start page and device sizes
+
+The new-tab page searches Google on submission or opens an entered HTTP(S) address. Optional shortcuts are saved in the local browser profile, can be removed with Undo, and use local letter icons rather than contacting third-party favicon services.
+
+The embedded Girru toolbar offers 53 named viewport presets with device icons, search, portrait/landscape controls, Fit window and a custom size (240–8192 CSS pixels per dimension). Phone, foldable and tablet examples come from the installed Playwright device catalogue; laptop, monitor and TV entries are labelled viewport presets. The shared catalogue is `extension/device-presets.json`. These are CSS viewport sizes, not physical display resolutions or full device/OS/user-agent emulation. Rotation retains the mobile layout/touch flag. Device selection is kept separately for each open tab.
+
 ## Chrome data
 
 The first-run import page discovers actual Chrome profile names from the operating system's standard Chrome data root. Imports happen only after selecting a profile and fields. Bookmarks, bounded history and whitelisted homepage/bookmark-bar settings are supported by the importer. An extension list opens the original store entries for individual installation.
