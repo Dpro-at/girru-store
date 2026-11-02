@@ -30,6 +30,7 @@ async function startFullBrowser({profile,executable,extensionSource,embedded=fal
   if(body.action==='state'){if(!ready)throw Error('Browser is starting.');await Promise.all([...registry.tabs.values()].map(async t=>{if(t.page&&!t.page.isClosed())t.title=(await t.page.title().catch(()=>t.title)).slice(0,200);}));return registry.snapshot();}
   if(body.action==='new'){const tab=await createTab('owner',body.url||`chrome-extension://${id}/newtab.html`);registry.active=tab.id;registry.changed();if(!embedded)await tab.page.bringToFront();return {ok:true};}
   if(body.action==='onboard'){const tab=registry.tabs.get(registry.active)||registry.tabs.values().next().value;if(!tab?.page||tab.agentId!=='owner'){const next=await createTab('owner',`chrome-extension://${id}/welcome.html`);registry.active=next.id;}else await tab.page.goto(`chrome-extension://${id}/welcome.html`);registry.changed();return {ok:true};}
+  if(body.action==='devices')return {presets:require('../../extension/device-presets.json')};
   if(body.action==='prompts')return nativeCommand({action:'native-prompts'});
   if(body.action==='respond-prompt'){if(!/^[A-Fa-f0-9-]{36}$/.test(body.prompt)||!/^[A-Fa-f0-9-]{36}$/.test(body.button))throw Error('Invalid browser request.');const result=await nativeCommand({action:'respond-prompt',prompt:body.prompt,button:body.button});if(!result.ok)throw Error('Browser request expired.');return result;}
   if(body.action==='profiles')return {profiles:await importer.list()};

@@ -1,1 +1,15 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Girru Browser</title><link rel="stylesheet" href="style.css"><main><div class="brand"><img class="mark" src="girru-mark.svg" alt="">Girru Browser</div><h1>Where are we working?</h1><form id="search" class="search"><input id="query" aria-label="Search or enter an address" placeholder="Search or enter an address" autofocus><button class="primary">Go</button></form><section><div class="row"><span>Your browser data<small>Bring bookmarks, history and settings from Chrome.</small></span><a href="welcome.html">Import from Chrome</a></div><div class="row"><span>Extensions<small>Install and manage Chrome Web Store extensions.</small></span><button id="extensions">Manage extensions</button></div><div class="row"><span>Agent tabs<small>See who is browsing and bring a tab to the front.</small></span><button id="refresh">Refresh</button></div><ul id="tabs"></ul></section><div id="status" role="status"></div></main><script type="module" src="newtab.js"></script></html>
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Girru Browser</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="newtab.css"></head>
+<body class="newtab">
+<nav class="start-tools" aria-label="Browser tools"><a href="welcome.html">Import from Chrome</a><button id="extensions">Extensions</button></nav>
+<main class="newtab-home">
+ <div class="newtab-brand"><img src="girru-mark.svg" alt=""><h1>Girru</h1></div>
+ <form id="search" class="newtab-search" role="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><input id="query" type="search" maxlength="4096" aria-label="Search Google or enter an address" placeholder="Search Google or enter an address" autocomplete="off" spellcheck="false" autofocus></form>
+ <div id="shortcuts" class="newtab-shortcuts" aria-label="Shortcuts"></div>
+ <button id="add-shortcut" class="add-shortcut"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></span>Add shortcut</button>
+ <div id="status" class="newtab-status" role="status"></div><button id="undo-shortcut" class="shortcut-undo" hidden>Undo</button>
+</main>
+<dialog id="shortcut-dialog" aria-labelledby="shortcut-title"><form id="shortcut-form"><h2 id="shortcut-title">Add shortcut</h2><label>Name<input id="shortcut-name" maxlength="80" required autocomplete="off"></label><label>Website<input id="shortcut-url" maxlength="4096" required placeholder="https://example.com" autocomplete="off" spellcheck="false"></label><p id="shortcut-error" role="alert"></p><div class="actions"><button id="shortcut-cancel" type="button">Cancel</button><button class="primary" type="submit">Add shortcut</button></div></form></dialog>
+<script type="module" src="newtab.js"></script>
+</body></html>
