@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Girru Browser",
+  "version": "0.1.0",
+  "description": "Device sizes and local Chrome-data import for Girru Browser.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtgQnh238LEpFfghCyqqnbUU0k9qvFftEjl5GnU39kVCdDitrtV2aLJD8EhCWbmipk8s8e7zjHScEc9kjlnWjiU1A3bF4L7NMjpd9QpdqkehKb2Ux03QSInj68aYfR6DSpThPkl6DHrljHooqO/23WyZpXrrjqmWyEOCOGuj/XWH/6hNug5qRiqPdK4XHbqZszgxq//VaZrrnbvcwypJqMhX5gUSE07lwkSAp8PeuPlRkvGtOo8/6iglo9/XHAR40y+wCVxUg28TaRjgxYsNKjk+OAXBe+yD3Y+ca93G7k9p4B9Iwi8K2UQFcyB5DcnvxZq5ywXvdp0FTuVOlzXY4QwIDAQAB",
+  "permissions": [
+    "bookmarks",
+    "history",
+    "tabs",
+    "cookies",
+    "debugger",
+    "storage"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Device size",
+    "default_popup": "devices.html",
+    "default_icon": {
+      "16": "device.png",
+      "32": "device.png"
+    }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'none'; connect-src http://127.0.0.1:*"
+  }
+}

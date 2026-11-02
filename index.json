@@ -6,6 +6,7 @@
       "id": "made-by-girru",
       "title": "Made by Girru",
       "items": [
+        "browser",
         "code",
         "genvr",
         "seo",
@@ -19,6 +20,7 @@
       "id": "new",
       "title": "New in the store",
       "items": [
+        "browser",
         "seo",
         "server-monitor",
         "waf-security",
@@ -29,12 +31,37 @@
         "activity-coaching",
         "ai-application-developer",
         "ai-application-engineering",
-        "analytics-engineer",
-        "analytics-modeling"
+        "analytics-engineer"
       ]
     }
   ],
   "items": [
+    {
+      "id": "browser",
+      "kind": "app",
+      "source": "girru",
+      "name": "Browser",
+      "summary": "Browse the web with separate tabs for your agents.",
+      "description": "A full Chromium browser workspace under local evaluation, with Girru controls, agent-owned tabs and official Playwright MCP. Native distribution and embedded extension dialogs are not ready for Store installation.",
+      "icon": "globe",
+      "maker": "Girru",
+      "verified": true,
+      "version": null,
+      "updated": "2026-11-01",
+      "category": "productivity",
+      "permissions": [
+        "Opens websites you or an authorized agent choose",
+        "Keeps agent tabs and browsing sessions separate",
+        "Uses local browser automation only after an agent is connected"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      }
+    },
     {
       "id": "code",
       "kind": "app",

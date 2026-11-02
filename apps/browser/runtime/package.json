@@ -1,0 +1,23 @@
+{
+  "name": "@girru/browser",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Chromium browser workspace for Girru applications",
+  "author": "Mohamed Alarade",
+  "license": "MIT",
+  "main": "src/full-browser.cjs",
+  "scripts": {
+    "start": "node scripts/full-start.cjs",
+    "test": "node --test test/*.test.cjs",
+    "start:electron-preview": "node scripts/start.mjs",
+    "stage:native": "node scripts/stage-native.mjs"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.2",
+    "@playwright/mcp": "0.0.84",
+    "ws": "8.22.1"
+  },
+  "devDependencies": {
+    "electron": "44.9.3"
+  }
+}

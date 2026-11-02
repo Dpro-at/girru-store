@@ -1,0 +1,7 @@
+import {api,message} from './api.js';
+const $=id=>document.getElementById(id);try{const state=await api({action:'state'});const active=(await chrome.tabs.query({active:true,currentWindow:true}))[0];const targets=await chrome.debugger.getTargets();const target=targets.find(t=>t.tabId===active?.id);for(const tab of state.tabs.filter(t=>!t.url.startsWith('chrome-extension://')&&!t.url.startsWith('chrome://'))){const a=state.agents.find(a=>a.id===tab.agentId),o=new Option(a.name+(a.department?' · '+a.department:'')+' — '+tab.title,tab.id);$('target').append(o);if(tab.targetId===target?.id)$('target').value=tab.id;}}catch{message($('status'),'Browser tabs could not be read.',true);}
+$('preset').onchange=()=>{if($('preset').value==='custom')return;const [w,h,m]=$('preset').value.split(',');$('width').value=w;$('height').value=h;$('mobile').checked=m==='true';};
+$('rotate').onclick=()=>{const w=$('width').value;$('width').value=$('height').value;$('height').value=w;};
+for(const name of ['width','height'])$(name).oninput=()=>{$('preset').value='custom';};
+async function apply(reset=false){try{if(!$('target').value)throw Error('Open a website before choosing its device size.');await api({action:'viewport',id:$('target').value,width:Number($('width').value),height:Number($('height').value),mobile:$('mobile').checked,reset});message($('status'),reset?'Normal browser size restored.':'Device size applied.');}catch(error){message($('status'),error.message,true);}}
+$('apply').onclick=()=>apply();$('reset').onclick=()=>apply(true);

@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';import path from 'node:path';import {fileURLToPath} from 'node:url';import {execFileSync} from 'node:child_process';
+const appRoot=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..'),cache=path.join(appRoot,'.local-runtime'),build=path.join(cache,'native-build');
+const sdk=(await fs.readdir(path.join(cache,'cef-sdk'))).find(n=>n.endsWith('_minimal'));if(!sdk)throw Error('A verified CEF SDK is required.');
+const app=path.join(build,'GirruBrowser.app'),frameworks=path.join(app,'Contents/Frameworks');await fs.mkdir(path.join(app,'Contents/Resources'),{recursive:true});await fs.copyFile(path.join(appRoot,'native/Girru.icns'),path.join(app,'Contents/Resources/Girru.icns'));await fs.mkdir(frameworks,{recursive:true});
+await fs.cp(path.join(cache,'cef-sdk',sdk,'Release','Chromium Embedded Framework.framework'),path.join(frameworks,'Chromium Embedded Framework.framework'),{recursive:true,verbatimSymlinks:true,mode:2});
+const helper=path.join(build,'GirruBrowser Helper.app');
+for(const suffix of ['',' (GPU)',' (Renderer)',' (Plugin)']){const name='GirruBrowser Helper'+suffix,dest=path.join(frameworks,name+'.app');await fs.cp(helper,dest,{recursive:true,mode:2});if(suffix){await fs.rename(path.join(dest,'Contents/MacOS/GirruBrowser Helper'),path.join(dest,'Contents/MacOS',name));let plist=await fs.readFile(path.join(dest,'Contents/Info.plist'),'utf8');plist=plist.replaceAll('GirruBrowser Helper',name).replace('app.girru.browser.helper','app.girru.browser.helper.'+suffix.replace(/[^A-Za-z]/g,'').toLowerCase());await fs.writeFile(path.join(dest,'Contents/Info.plist'),plist);}execFileSync('codesign',['--force','--sign','-',dest],{stdio:'pipe'});}
+execFileSync('codesign',['--force','--sign','-',path.join(frameworks,'Chromium Embedded Framework.framework')],{stdio:'pipe'});
+execFileSync('codesign',['--force','--sign','-',app],{stdio:'pipe'});execFileSync('codesign',['--verify','--deep','--strict',app],{stdio:'pipe'});
+console.log('Staged and verified GirruBrowser.app with the full CEF Chrome runtime.');
