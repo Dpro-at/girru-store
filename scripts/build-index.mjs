@@ -11,7 +11,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 const KINDS = { apps: 'app', mcp: 'mcp', skills: 'skill', specialties: 'specialty' };
 const CATEGORIES = ['marketing', 'sales', 'developer', 'worlds', 'trading', 'productivity', 'more'];
 const PRICING = ['free']; // later: 'one-time', 'subscription' (paid apps, not open yet)
-const FIELDS = ['id', 'kind', 'name', 'summary', 'description', 'icon', 'maker', 'version', 'updated', 'category', 'permissions', 'worksWith', 'languages', 'pricing'];
+const FIELDS = ['id', 'kind', 'name', 'summary', 'description', 'icon', 'maker', 'version', 'updated', 'category', 'permissions', 'worksWith', 'languages', 'pricing', 'runtime'];
 const ID = /^(?=[a-z0-9-]{1,64}$)[a-z0-9]+(?:-[a-z0-9]+)*$/; // no "--": app table prefixes never overlap
 const ICON = /^[a-z][a-z-]{0,39}$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -74,6 +74,31 @@ const CREATE_INDEX = new RegExp(String.raw`^CREATE\s+(?:UNIQUE\s+)?INDEX\s+IF\s+
 const nameOf = (m, at) => (m[at] ?? m[at + 1] ?? m[at + 2] ?? m[at + 3]).toLowerCase();
 const CONTROL = /[\u0000-\u001f\u007f‪-‮⁦-⁩]/;
 
+// A runtime: an app whose program is too large for a package (the Code editor). One archive per
+// platform, each a release asset of this repository with its size and SHA-256. The same rules as
+// Girru's parseRuntime: Girru drops a runtime that breaks one.
+const PLATFORMS = ['darwin-arm64', 'darwin-x64', 'win32-x64', 'linux-x64'];
+const SEMVER = /^\d{1,6}\.\d{1,6}\.\d{1,6}(?:-[0-9A-Za-z.-]{1,40})?$/;
+// Release assets of this repository or of nabu-code (the Code editor, public), as Girru accepts.
+const RELEASE_URL = /^https:\/\/github\.com\/(?:Dpro-at\/girru-store|9mtm\/nabu-code)\/releases\/download\/[A-Za-z0-9_.+-]+\/[A-Za-z0-9_.+-]+\.tar\.gz$/;
+function readRuntime(where, r, version) {
+  if (!r || typeof r !== 'object' || Array.isArray(r)) fail(where, 'runtime must be an object');
+  for (const k of Object.keys(r)) if (!['version', 'protocolVersion', 'archives'].includes(k)) fail(where, `runtime has an unknown field "${k}"`);
+  if (typeof r.version !== 'string' || !SEMVER.test(r.version) || r.version !== version) fail(where, 'runtime.version must be like 1.0.0 and equal the manifest version');
+  if (r.protocolVersion !== 1) fail(where, 'runtime.protocolVersion must be 1');
+  if (!r.archives || typeof r.archives !== 'object' || Array.isArray(r.archives) || !Object.keys(r.archives).length) fail(where, 'runtime.archives must list at least one platform');
+  const archives = {};
+  for (const [p, a] of Object.entries(r.archives)) {
+    if (!PLATFORMS.includes(p)) fail(where, `runtime.archives.${p}: platforms are ${PLATFORMS.join(', ')}`);
+    if (!a || typeof a !== 'object' || Object.keys(a).sort().join(',') !== 'sha256,size,url') fail(where, `runtime.archives.${p} needs url, sha256 and size only`);
+    if (typeof a.url !== 'string' || a.url.length > 500 || !RELEASE_URL.test(a.url)) fail(where, `runtime.archives.${p}.url must be a .tar.gz release asset of github.com/Dpro-at/girru-store or github.com/9mtm/nabu-code`);
+    if (typeof a.sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(a.sha256)) fail(where, `runtime.archives.${p}.sha256 must be 64 lower-case hex`);
+    if (!Number.isSafeInteger(a.size) || a.size < 1 || a.size > 4 * 1024 ** 3) fail(where, `runtime.archives.${p}.size must be 1 byte to 4 GB`);
+    archives[p] = { url: a.url, sha256: a.sha256, size: a.size };
+  }
+  return { version: r.version, protocolVersion: 1, archives };
+}
+
 function fail(where, why) { throw new Error(`${where}: ${why}`); }
 const str = (v, max, where, name, need = true) => {
   if (typeof v !== 'string' || (need && !v.trim()) || v.length > max || CONTROL.test(v)) fail(where, `${name} must be text of at most ${max} characters`);
@@ -102,6 +127,9 @@ function readItem(folder, dir) {
     const plugin = JSON.parse(fs.readFileSync(path.join(ROOT, folder, dir, 'package', 'agentplayer.plugin.json'), 'utf8'));
     if (plugin.id !== m.id || plugin.version !== m.version) fail(where, 'package/agentplayer.plugin.json must have the same id and version');
   }
+  if (m.runtime !== undefined && folder !== 'apps') fail(where, 'only apps have a runtime');
+  if (m.runtime !== undefined && pkg) fail(where, 'an app has a package or a runtime, not both');
+  const runtime = m.runtime !== undefined ? readRuntime(where, m.runtime, m.version) : null;
   return {
     id: m.id, kind: m.kind, source: 'girru',
     name: str(m.name, 150, where, 'name'), summary: str(m.summary, 200, where, 'summary'), description: str(m.description, 3000, where, 'description'),
@@ -109,6 +137,7 @@ function readItem(folder, dir) {
     permissions: strs(m.permissions, 60, 200, where, 'permissions'), worksWith: strs(m.worksWith, 20, 120, where, 'worksWith'), languages: strs(m.languages, 20, 60, where, 'languages'),
     pricing: { model: m.pricing.model },
     ...(pkg ? { package: pkg } : {}),
+    ...(runtime ? { runtime } : {}),
   };
 }
 
