@@ -20,6 +20,7 @@
       "id": "new",
       "title": "New in the store",
       "items": [
+        "code",
         "browser",
         "seo",
         "server-monitor",
@@ -30,8 +31,7 @@
         "activity-and-habits-coach",
         "activity-coaching",
         "ai-application-developer",
-        "ai-application-engineering",
-        "analytics-engineer"
+        "ai-application-engineering"
       ]
     }
   ],
@@ -72,8 +72,8 @@
       "icon": "code",
       "maker": "Girru",
       "verified": true,
-      "version": null,
-      "updated": "2026-10-29",
+      "version": "1.0.0",
+      "updated": "2026-11-04",
       "category": "developer",
       "permissions": [
         "Opens only in the Girru desktop app",
@@ -85,6 +85,32 @@
       ],
       "pricing": {
         "model": "free"
+      },
+      "runtime": {
+        "version": "1.0.0",
+        "protocolVersion": 1,
+        "archives": {
+          "darwin-arm64": {
+            "url": "https://github.com/9mtm/nabu-code/releases/download/code-v1.0.0/girru-code-1.0.0-darwin-arm64.tar.gz",
+            "sha256": "75f7051786c9a7c3342dc3280d082092ab431c363c6f728fcb43411f0f1a3bc8",
+            "size": 441440213
+          },
+          "darwin-x64": {
+            "url": "https://github.com/9mtm/nabu-code/releases/download/code-v1.0.0/girru-code-1.0.0-darwin-x64.tar.gz",
+            "sha256": "26f67587c5a2eb7878c6713fdbf636a0c6c4fb2d05fec902c3ca3cbe42b8464c",
+            "size": 461414566
+          },
+          "win32-x64": {
+            "url": "https://github.com/9mtm/nabu-code/releases/download/code-v1.0.0/girru-code-1.0.0-win32-x64.tar.gz",
+            "sha256": "46fcdc132734138a3a9993e6c2b1565c311f73eebf9b1131e6a9551c9af3429e",
+            "size": 540950339
+          },
+          "linux-x64": {
+            "url": "https://github.com/9mtm/nabu-code/releases/download/code-v1.0.0/girru-code-1.0.0-linux-x64.tar.gz",
+            "sha256": "20ffa7a9ed227acd15eda8d65af3c4a7f1eb28a8bb559de711dd8c1eea03f25a",
+            "size": 449451140
+          }
+        }
       }
     },
     {
