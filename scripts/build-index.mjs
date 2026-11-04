@@ -79,7 +79,8 @@ const CONTROL = /[\u0000-\u001f\u007f‪-‮⁦-⁩]/;
 // Girru's parseRuntime: Girru drops a runtime that breaks one.
 const PLATFORMS = ['darwin-arm64', 'darwin-x64', 'win32-x64', 'linux-x64'];
 const SEMVER = /^\d{1,6}\.\d{1,6}\.\d{1,6}(?:-[0-9A-Za-z.-]{1,40})?$/;
-const RELEASE_URL = /^https:\/\/github\.com\/Dpro-at\/girru-store\/releases\/download\/[A-Za-z0-9_.+-]+\/[A-Za-z0-9_.+-]+\.tar\.gz$/;
+// Release assets of this repository or of nabu-code (the Code editor, public), as Girru accepts.
+const RELEASE_URL = /^https:\/\/github\.com\/(?:Dpro-at\/girru-store|9mtm\/nabu-code)\/releases\/download\/[A-Za-z0-9_.+-]+\/[A-Za-z0-9_.+-]+\.tar\.gz$/;
 function readRuntime(where, r, version) {
   if (!r || typeof r !== 'object' || Array.isArray(r)) fail(where, 'runtime must be an object');
   for (const k of Object.keys(r)) if (!['version', 'protocolVersion', 'archives'].includes(k)) fail(where, `runtime has an unknown field "${k}"`);
@@ -90,7 +91,7 @@ function readRuntime(where, r, version) {
   for (const [p, a] of Object.entries(r.archives)) {
     if (!PLATFORMS.includes(p)) fail(where, `runtime.archives.${p}: platforms are ${PLATFORMS.join(', ')}`);
     if (!a || typeof a !== 'object' || Object.keys(a).sort().join(',') !== 'sha256,size,url') fail(where, `runtime.archives.${p} needs url, sha256 and size only`);
-    if (typeof a.url !== 'string' || a.url.length > 500 || !RELEASE_URL.test(a.url)) fail(where, `runtime.archives.${p}.url must be a .tar.gz release asset of github.com/Dpro-at/girru-store`);
+    if (typeof a.url !== 'string' || a.url.length > 500 || !RELEASE_URL.test(a.url)) fail(where, `runtime.archives.${p}.url must be a .tar.gz release asset of github.com/Dpro-at/girru-store or github.com/9mtm/nabu-code`);
     if (typeof a.sha256 !== 'string' || !/^[a-f0-9]{64}$/.test(a.sha256)) fail(where, `runtime.archives.${p}.sha256 must be 64 lower-case hex`);
     if (!Number.isSafeInteger(a.size) || a.size < 1 || a.size > 4 * 1024 ** 3) fail(where, `runtime.archives.${p}.size must be 1 byte to 4 GB`);
     archives[p] = { url: a.url, sha256: a.sha256, size: a.size };

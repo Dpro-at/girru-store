@@ -72,7 +72,7 @@ MIT, see [LICENSE](LICENSE). Each item may carry its own licence in its folder.
 
 ## An app's runtime
 
-An app whose program is too large for a package (the Code editor) lists a `runtime` in its manifest instead: one `.tar.gz` per platform, published as a release asset of this repository (tag `<id>-v<version>`), with its size and SHA-256.
+An app whose program is too large for a package (the Code editor) lists a `runtime` in its manifest instead: one `.tar.gz` per platform, published as a release asset of this repository (tag `<id>-v<version>`) or, for Code, of [nabu-code](https://github.com/9mtm/nabu-code) (tag `code-v<version>`), with its size and SHA-256.
 
 ```json
 "version": "1.0.0",
@@ -80,9 +80,9 @@ An app whose program is too large for a package (the Code editor) lists a `runti
   "version": "1.0.0",
   "protocolVersion": 1,
   "archives": {
-    "darwin-arm64": { "url": "https://github.com/Dpro-at/girru-store/releases/download/code-v1.0.0/girru-code-1.0.0-darwin-arm64.tar.gz", "sha256": "<64 hex>", "size": 123456789 }
+    "darwin-arm64": { "url": "https://github.com/9mtm/nabu-code/releases/download/code-v1.0.0/girru-code-1.0.0-darwin-arm64.tar.gz", "sha256": "<64 hex>", "size": 123456789 }
   }
 }
 ```
 
-Platforms: `darwin-arm64`, `darwin-x64`, `win32-x64`, `linux-x64`. `runtime.version` equals the manifest `version`. Girru downloads only the archive for the computer it runs on, checks its size and SHA-256 before unpacking, unpacks plain files and folders only (no links, every path inside the folder) into its own app folder, and offers the newer version as an update. An app has a package or a runtime, never both. The archives are made by Girru's own packer (`packages/desktop/scripts/pack-code-runtime.cjs`), which writes each archive's size and SHA-256 next to it.
+Platforms: `darwin-arm64`, `darwin-x64`, `win32-x64`, `linux-x64`. `runtime.version` equals the manifest `version`. Girru downloads only the archive for the computer it runs on, checks its size and SHA-256 before unpacking, unpacks plain files and folders only (no links, every path inside the folder) into its own app folder, and offers the newer version as an update. An app has a package or a runtime, never both. The archives are made by Girru's own packer (`packages/desktop/scripts/pack-code-runtime.cjs`); nabu-code's release also carries `girru-store-runtime.json`, the exact `runtime` entry to copy into the manifest.
