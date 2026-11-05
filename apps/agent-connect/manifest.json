@@ -1,0 +1,24 @@
+{
+  "id": "agent-connect",
+  "kind": "app",
+  "name": "Agent Connect",
+  "summary": "Your messaging channels, added when you need them.",
+  "description": "Connect the 33 integrations provided by the existing Agent Connect package. Telegram and Discord use its Node transports; other channels retain their optional isolated Python setup. Adding the app does not sign in to a new account or install Python providers. Previously enabled channels can resume after restart. Your channel settings and history stay when you remove it.",
+  "icon": "message",
+  "maker": "Girru",
+  "version": "0.3.0",
+  "updated": "2026-11-05",
+  "category": "productivity",
+  "permissions": [
+    "Connects the channels you explicitly enable",
+    "Keeps existing channel settings and delivery history",
+    "Provides restricted channel send tools for your agents"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  }
+}
