@@ -3,14 +3,48 @@
   "kind": "app",
   "name": "GenVR",
   "summary": "3D worlds for your agents.",
-  "description": "Give your agents a place to live and work: build 3D spaces, walk through them with your team and publish them when you are ready. Uses your GenVR account connection.",
+  "description": "Build 3D spaces, walk through them with your team and publish them when you choose. GenVR is added to this computer from its reviewed app archive. Your worlds and account connection stay when the app is removed.",
   "icon": "globe",
   "maker": "Girru",
-  "version": null,
-  "updated": "2026-10-29",
+  "version": "0.3.0-preview.17",
+  "updated": "2026-11-05",
   "category": "worlds",
-  "permissions": ["Uses your GenVR account connection", "Publishes a space only when you choose to"],
+  "permissions": [
+    "Adds the GenVR app to this computer",
+    "Uses your GenVR account connection",
+    "Publishes a space only when you choose to"
+  ],
   "worksWith": [],
-  "languages": ["English"],
-  "pricing": { "model": "free" }
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  },
+  "runtime": {
+    "version": "0.3.0-preview.17",
+    "protocolVersion": 1,
+    "archives": {
+      "darwin-arm64": {
+        "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.17/3d-world-sdk-0.3.0-preview.17.tgz",
+        "sha256": "26fb74d784cae26a01368bbb005770d042e5a1a924df89d333d702def8309621",
+        "size": 181615763
+      },
+      "darwin-x64": {
+        "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.17/3d-world-sdk-0.3.0-preview.17.tgz",
+        "sha256": "26fb74d784cae26a01368bbb005770d042e5a1a924df89d333d702def8309621",
+        "size": 181615763
+      },
+      "win32-x64": {
+        "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.17/3d-world-sdk-0.3.0-preview.17.tgz",
+        "sha256": "26fb74d784cae26a01368bbb005770d042e5a1a924df89d333d702def8309621",
+        "size": 181615763
+      },
+      "linux-x64": {
+        "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.17/3d-world-sdk-0.3.0-preview.17.tgz",
+        "sha256": "26fb74d784cae26a01368bbb005770d042e5a1a924df89d333d702def8309621",
+        "size": 181615763
+      }
+    }
+  }
 }
