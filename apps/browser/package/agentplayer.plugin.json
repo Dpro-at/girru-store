@@ -1,0 +1,8 @@
+{
+  "id": "browser",
+  "name": "Browser automation",
+  "version": "1.0.0",
+  "type": "app",
+  "main": "index.js",
+  "permissions": []
+}

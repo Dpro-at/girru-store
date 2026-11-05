@@ -93,3 +93,21 @@ Platforms: `darwin-arm64`, `darwin-x64`, `win32-x64`, `linux-x64`. `runtime.vers
 Agent Connect uses the existing `agent-connect-dpro` 0.2.0 package and its 33 integrations. Its reviewed `runtime-packages.npm` descriptor pins the library and 35 dependencies to exact npm archive URLs, sizes and SHA-256 hashes. Girru extracts these archives into the app folder without invoking npm or running package scripts. The descriptor is a reserved root package file; older Girru clients list the catalogue but cannot add this app until they support that file.
 
 Get Agent Connect from the Store, restart Girru, then open Settings → Channels to enable it and configure a connection. Getting the app does not connect an account or install Python. Telegram and Discord use the existing Node transports; the other integrations need the package's existing optional Python environment. An in-place update preserves the owner's existing enabled setting. Removing the app stops its connections and keeps channel settings, credentials, history and provider state. Re-adding it leaves it disabled until the owner enables it again and restarts Girru.
+
+## Optional app host packages
+
+Call Center, Trading and Browser use `app-host.npm` protocol 1 and require an updated Girru host. Older clients keep the catalogue but ignore these packages. Dependency archives are pinned by name, version, path, byte size and SHA-256 and extracted without lifecycle scripts. They do not include a browser download.
+
+Call Center and Browser program files are maintained as JavaScript in their `package/` folders. Trading uses the existing UI source in the Girru repository; reproduce its renderer with the already installed build dependencies:
+
+```sh
+node /path/to/Girru/packages/core-ui/scripts/build-store-trading.cjs --store-dir /absolute/path/to/girru-store
+node scripts/build-index.mjs
+node scripts/build-index.mjs --check
+```
+
+Review the program before publishing. Backend programs have Node privileges, and the Trading renderer runs as trusted same-origin application code. Its client adapter is not a third-party sandbox. Get does not itself grant agent tools or paper execution consent. Removal keeps saved data and permission decisions; enabling, re-adding or removing an app may require restarting Girru.
+
+Browser is the existing Puppeteer API/tool engine. It uses an existing Puppeteer cache or an operator-configured absolute `GIRRU_BROWSER_EXECUTABLE`; it never imports an existing browsing profile. Native browser workspace and Playwright MCP distribution remain separate work.
+
+A manifest may set `"hidden": true` to omit an item temporarily from the generated catalogue and collections while retaining its package. Remove the flag to list it again.

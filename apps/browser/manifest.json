@@ -2,17 +2,18 @@
   "id": "browser",
   "kind": "app",
   "name": "Browser",
-  "summary": "Browse the web with separate tabs for your agents.",
-  "description": "A full Chromium browser workspace under local evaluation, with Girru controls, agent-owned tabs and official Playwright MCP. Native distribution and embedded extension dialogs are not ready for Store installation.",
+  "summary": "Optional local browser automation for authorized agents.",
+  "description": "The existing Puppeteer automation engine, installed separately from the core. Uses a compatible local Chrome executable or an existing Puppeteer cache; Get never downloads a browser or imports a browsing profile. Browser API and agent tools keep their existing access checks and public-network restrictions. Native browser workspace distribution and Playwright MCP remain under separate evaluation.",
   "icon": "globe",
   "maker": "Girru",
-  "version": null,
-  "updated": "2026-11-01",
+  "version": "1.0.0",
+  "updated": "2026-11-05",
   "category": "productivity",
   "permissions": [
-    "Opens websites you or an authorized agent choose",
-    "Keeps agent tabs and browsing sessions separate",
-    "Uses local browser automation only after an agent is connected"
+    "Runs browser automation only when this app is enabled",
+    "Agent browser tools keep their existing separate grants",
+    "Keeps screenshots and downloads in the local data folder",
+    "Does not import existing browser profiles, cookies or passwords"
   ],
   "worksWith": [],
   "languages": [

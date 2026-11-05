@@ -1,0 +1,1 @@
+let host;export function bindHost(value){if(host&&host!==value)throw Error('Browser host is already bound.');host=value;}export function corePort(){if(!host)throw Error('Browser host is missing.');return host;}

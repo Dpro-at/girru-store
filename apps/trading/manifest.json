@@ -3,14 +3,22 @@
   "kind": "app",
   "name": "Trading",
   "summary": "Practice trading with an agent team.",
-  "description": "Practice trading with fictional money and an agent team: watch the market, test ideas on past charts and see what your agents would do. No real orders are sent.",
+  "description": "The existing local Trading practice workspace as a separate Store app. Practice uses fictional money and illustrative prices; no broker is connected and no real orders are sent. Paper installation, account setup and automation keep their separate owner verification. Getting or enabling the app does not grant these capabilities. Earlier trading data and credentials stay untouched and are not used by this practice app.",
   "icon": "chart",
   "maker": "Girru",
-  "version": null,
-  "updated": "2026-10-29",
+  "version": "1.0.0",
+  "updated": "2026-11-05",
   "category": "trading",
-  "permissions": ["Reads market data", "Practice only: never sends real orders"],
+  "permissions": [
+    "Reads market data",
+    "Practice only: never sends real orders"
+  ],
   "worksWith": [],
-  "languages": ["English"],
-  "pricing": { "model": "free" }
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  },
+  "hidden": true
 }
