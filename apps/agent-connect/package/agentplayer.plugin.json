@@ -1,0 +1,20 @@
+{
+  "id": "agent-connect",
+  "name": "Agent Connect",
+  "description": "The existing Agent Connect package, installed separately. Configure channels in Settings \u203a Channels.",
+  "version": "0.3.0",
+  "type": "channel",
+  "author": "Dpro",
+  "main": "index.js",
+  "permissions": [
+    "network",
+    "database",
+    "tools"
+  ],
+  "settingsUI": {
+    "type": "form",
+    "title": "Agent Connect channel catalog",
+    "description": "Set up channels in Settings \u203a Channels. Turning a channel on also turns this extension on; restart Girru if asked.",
+    "fields": []
+  }
+}

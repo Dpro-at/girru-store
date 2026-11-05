@@ -52,7 +52,7 @@ apps/<id>/package/index.js                   its code (the plugin's "main")
 apps/<id>/package/migrations/001_*.sql       its tables, named app_<id>__... only
 ```
 
-`build-index` lists every file of the package with its size and SHA-256 in `index.json`. Girru gets each file, checks it against that list before writing anything, puts the app in the owner's data folder (never in the program), runs only the app's own migrations, and turns it on. A migration may only contain `CREATE TABLE IF NOT EXISTS` and `CREATE [UNIQUE] INDEX IF NOT EXISTS` for the app's own tables, named `app_<id>__...` (with `-` as `_`; ids never contain `--`), so an app can never change, read into or remove Girru's own data. Allowed files (lower-case extensions): `.js .mjs .json .sql .md .css .svg .png .txt`, at most 300 files and 5 MB.
+`build-index` lists every file of the package with its size and SHA-256 in `index.json`. Girru gets each file, checks it against that list before writing anything, puts the app in the owner's data folder (never in the program), runs only the app's own migrations, and turns it on. A migration may only contain `CREATE TABLE IF NOT EXISTS` and `CREATE [UNIQUE] INDEX IF NOT EXISTS` for the app's own tables, named `app_<id>__...` (with `-` as `_`; ids never contain `--`), so an app can never change, read into or remove Girru's own data. Allowed files (lower-case extensions): `.js .mjs .json .sql .md .css .svg .png .txt`, at most 300 files and 5 MB. The exact root file `runtime-packages.npm` is also accepted for the reviewed Agent Connect runtime descriptor described below.
 
 ## Build the index
 
@@ -85,4 +85,11 @@ An app whose program is too large for a package (the Code editor) lists a `runti
 }
 ```
 
-Platforms: `darwin-arm64`, `darwin-x64`, `win32-x64`, `linux-x64`. `runtime.version` equals the manifest `version`. Girru downloads only the archive for the computer it runs on, checks its size and SHA-256 before unpacking, unpacks plain files and folders only (no links, every path inside the folder) into its own app folder, and offers the newer version as an update. An app has a package or a runtime, never both. The archives are made by Girru's own packer (`packages/desktop/scripts/pack-code-runtime.cjs`); nabu-code's release also carries `girru-store-runtime.json`, the exact `runtime` entry to copy into the manifest.
+Platforms: `darwin-arm64`, `darwin-x64`, `win32-x64`, `linux-x64`. `runtime.version` equals the manifest `version`. Girru downloads only the archive for the computer it runs on, checks its size and SHA-256 before unpacking, unpacks plain files and folders only (no links, every path inside the folder) into its own app folder, and offers the newer version as an update. An app has a package or a manifest-level `runtime`, never both. Agent Connect’s reserved npm descriptor is part of its package, rather than a manifest-level `runtime`; the package file limits do not count the separately bounded pinned archives. The archives are made by Girru's own packer (`packages/desktop/scripts/pack-code-runtime.cjs`); nabu-code's release also carries `girru-store-runtime.json`, the exact `runtime` entry to copy into the manifest.
+
+
+## Agent Connect
+
+Agent Connect uses the existing `agent-connect-dpro` 0.2.0 package and its 33 integrations. Its reviewed `runtime-packages.npm` descriptor pins the library and 35 dependencies to exact npm archive URLs, sizes and SHA-256 hashes. Girru extracts these archives into the app folder without invoking npm or running package scripts. The descriptor is a reserved root package file; older Girru clients list the catalogue but cannot add this app until they support that file.
+
+Get Agent Connect from the Store, restart Girru, then open Settings → Channels to enable it and configure a connection. Getting the app does not connect an account or install Python. Telegram and Discord use the existing Node transports; the other integrations need the package's existing optional Python environment. An in-place update preserves the owner's existing enabled setting. Removing the app stops its connections and keeps channel settings, credentials, history and provider state. Re-adding it leaves it disabled until the owner enables it again and restarts Girru.

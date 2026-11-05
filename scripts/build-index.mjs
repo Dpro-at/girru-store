@@ -31,7 +31,7 @@ function readPackage(where, dir) {
       if (st.isSymbolicLink()) fail(where, `package/${r} is a link`);
       if (!SEGMENT.test(name)) fail(where, `package/${r}: names are letters, digits, . _ - only`);
       if (st.isDirectory()) { walk(r); continue; }
-      if (!PACKAGE_EXT.test(name)) fail(where, `package/${r}: only .js .mjs .json .sql .md .css .svg .png .txt files`);
+      if (!PACKAGE_EXT.test(name) && r!=='runtime-packages.npm') fail(where, `package/${r}: only .js .mjs .json .sql .md .css .svg .png .txt files`);
       const bytes = fs.readFileSync(path.join(dir, r));
       total += bytes.length;
       files.push({ path: r, sha256: sha(bytes), size: bytes.length });

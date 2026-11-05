@@ -1,0 +1,293 @@
+{
+  "schema": 1,
+  "packages": [
+    {
+      "name": "@discordjs/builders",
+      "version": "1.14.1",
+      "path": "node_modules/@discordjs/builders",
+      "url": "https://registry.npmjs.org/@discordjs/builders/-/builders-1.14.1.tgz",
+      "sha256": "3e3558eaf6e20f32f0261dc285fd617fb8dc018f7491bd8b0798f02dec3dd61f",
+      "size": 169096
+    },
+    {
+      "name": "@discordjs/collection",
+      "version": "1.5.3",
+      "path": "node_modules/@discordjs/collection",
+      "url": "https://registry.npmjs.org/@discordjs/collection/-/collection-1.5.3.tgz",
+      "sha256": "dcacbf4e0d1b3d77ed35a4c2021f3d2cf12b464334f1a299cfb3ae0f3bb5180c",
+      "size": 30010
+    },
+    {
+      "name": "@discordjs/formatters",
+      "version": "0.6.2",
+      "path": "node_modules/@discordjs/formatters",
+      "url": "https://registry.npmjs.org/@discordjs/formatters/-/formatters-0.6.2.tgz",
+      "sha256": "09b16425b62cc57d283e11c6a5af668c31087d6c2528b2f190cd6428f42edc58",
+      "size": 33060
+    },
+    {
+      "name": "@discordjs/rest",
+      "version": "2.6.3",
+      "path": "node_modules/@discordjs/rest",
+      "url": "https://registry.npmjs.org/@discordjs/rest/-/rest-2.6.3.tgz",
+      "sha256": "d28cc0bdc66dd29be551b5612b86360da0c3348c758b9d183b30dc858a3f8b93",
+      "size": 180426
+    },
+    {
+      "name": "@discordjs/collection",
+      "version": "2.1.1",
+      "path": "node_modules/@discordjs/rest/node_modules/@discordjs/collection",
+      "url": "https://registry.npmjs.org/@discordjs/collection/-/collection-2.1.1.tgz",
+      "sha256": "331bac8902d74dc93bd22b405d18021f134d3880bc9ba7f0a94e3fac3f0c200f",
+      "size": 32007
+    },
+    {
+      "name": "@discordjs/util",
+      "version": "1.2.0",
+      "path": "node_modules/@discordjs/util",
+      "url": "https://registry.npmjs.org/@discordjs/util/-/util-1.2.0.tgz",
+      "sha256": "5cd8ecc3da81eef642e18265ccf52512e18e4a313b952c46317a272d40f4227f",
+      "size": 12140
+    },
+    {
+      "name": "@discordjs/ws",
+      "version": "1.2.3",
+      "path": "node_modules/@discordjs/ws",
+      "url": "https://registry.npmjs.org/@discordjs/ws/-/ws-1.2.3.tgz",
+      "sha256": "fa880d3742ed138f939501bca0cb380edc3aca8cb125cc13c884de6008de1feb",
+      "size": 130548
+    },
+    {
+      "name": "@discordjs/collection",
+      "version": "2.1.1",
+      "path": "node_modules/@discordjs/ws/node_modules/@discordjs/collection",
+      "url": "https://registry.npmjs.org/@discordjs/collection/-/collection-2.1.1.tgz",
+      "sha256": "331bac8902d74dc93bd22b405d18021f134d3880bc9ba7f0a94e3fac3f0c200f",
+      "size": 32007
+    },
+    {
+      "name": "@grammyjs/types",
+      "version": "5.0.0",
+      "path": "node_modules/@grammyjs/types",
+      "url": "https://registry.npmjs.org/@grammyjs/types/-/types-5.0.0.tgz",
+      "sha256": "bd128caf48915fc9be919de1b05e37debd43258aca266140dde80fca0a9db928",
+      "size": 95954
+    },
+    {
+      "name": "@sapphire/async-queue",
+      "version": "1.5.5",
+      "path": "node_modules/@sapphire/async-queue",
+      "url": "https://registry.npmjs.org/@sapphire/async-queue/-/async-queue-1.5.5.tgz",
+      "sha256": "afc845231d005a663693992c7e743acbfdc67fa03be12f7ccce758f8fdfcfe2a",
+      "size": 10334
+    },
+    {
+      "name": "@sapphire/shapeshift",
+      "version": "4.0.0",
+      "path": "node_modules/@sapphire/shapeshift",
+      "url": "https://registry.npmjs.org/@sapphire/shapeshift/-/shapeshift-4.0.0.tgz",
+      "sha256": "7db5bc5206e1f0b7eb2ba3258035a6623051e55740292040eba3993fbce4d60b",
+      "size": 239027
+    },
+    {
+      "name": "@sapphire/snowflake",
+      "version": "3.5.5",
+      "path": "node_modules/@sapphire/snowflake",
+      "url": "https://registry.npmjs.org/@sapphire/snowflake/-/snowflake-3.5.5.tgz",
+      "sha256": "0a42cfdf9dc2b03031e03b3a6e119a8d9ef8e23cfea363f1d6fb15fc41101fa0",
+      "size": 18082
+    },
+    {
+      "name": "@types/node",
+      "version": "20.19.43",
+      "path": "node_modules/@types/node",
+      "url": "https://registry.npmjs.org/@types/node/-/node-20.19.43.tgz",
+      "sha256": "9963f2cb96d2b26dbf9cf86262c698815cbec9503af73c7ce75209d1d0658f3d",
+      "size": 417691
+    },
+    {
+      "name": "@types/ws",
+      "version": "8.18.2",
+      "path": "node_modules/@types/ws",
+      "url": "https://registry.npmjs.org/@types/ws/-/ws-8.18.2.tgz",
+      "sha256": "9d774304de5397f58da47b31f68b69cf0ff84ef7b1087cf4fea27729f8db83fe",
+      "size": 6029
+    },
+    {
+      "name": "@vladfrangu/async_event_emitter",
+      "version": "2.4.7",
+      "path": "node_modules/@vladfrangu/async_event_emitter",
+      "url": "https://registry.npmjs.org/@vladfrangu/async_event_emitter/-/async_event_emitter-2.4.7.tgz",
+      "sha256": "9c2f350ccfcab84529f813951fd4b541a45573b4a6eb423bda9e9d02b7fbef6b",
+      "size": 266106
+    },
+    {
+      "name": "abort-controller",
+      "version": "3.0.0",
+      "path": "node_modules/abort-controller",
+      "url": "https://registry.npmjs.org/abort-controller/-/abort-controller-3.0.0.tgz",
+      "sha256": "d2e249d5d010eb18e57c12c610d63e3ca3fa9dd0a5378009c1f465e21f50ab2f",
+      "size": 17548
+    },
+    {
+      "name": "agent-connect-dpro",
+      "version": "0.2.0",
+      "path": "node_modules/agent-connect-dpro",
+      "url": "https://registry.npmjs.org/agent-connect-dpro/-/agent-connect-dpro-0.2.0.tgz",
+      "sha256": "e9e875f0e5bc7182be0ac9a7c246d3c90ca0b3b61f08d086613791b5ba02b13f",
+      "size": 8499192
+    },
+    {
+      "name": "debug",
+      "version": "4.4.3",
+      "path": "node_modules/debug",
+      "url": "https://registry.npmjs.org/debug/-/debug-4.4.3.tgz",
+      "sha256": "89c1ac9c946ee8905a875837114528e97eeae35e03be3190584b2216af43e4a7",
+      "size": 13449
+    },
+    {
+      "name": "discord-api-types",
+      "version": "0.38.56",
+      "path": "node_modules/discord-api-types",
+      "url": "https://registry.npmjs.org/discord-api-types/-/discord-api-types-0.38.56.tgz",
+      "sha256": "a972cda9318e1aa51cf01b1bcc67ddbd1813ce47c735dd86615d29462efdf508",
+      "size": 422483
+    },
+    {
+      "name": "discord.js",
+      "version": "14.27.0",
+      "path": "node_modules/discord.js",
+      "url": "https://registry.npmjs.org/discord.js/-/discord.js-14.27.0.tgz",
+      "sha256": "f3dfe660ab52496c81d17fd1749c7b63487cfcdf97be64022011e4dd093912a7",
+      "size": 390489
+    },
+    {
+      "name": "event-target-shim",
+      "version": "5.0.1",
+      "path": "node_modules/event-target-shim",
+      "url": "https://registry.npmjs.org/event-target-shim/-/event-target-shim-5.0.1.tgz",
+      "sha256": "f0717da2cde5c703b92e66906623724959c23ac14e9439c436b84c8a4f5b26bc",
+      "size": 37216
+    },
+    {
+      "name": "fast-deep-equal",
+      "version": "3.1.3",
+      "path": "node_modules/fast-deep-equal",
+      "url": "https://registry.npmjs.org/fast-deep-equal/-/fast-deep-equal-3.1.3.tgz",
+      "sha256": "b019a0980f27638dc3f85836b0e478f188e00d7a6e5852c0819fa86f56e47b8f",
+      "size": 3656
+    },
+    {
+      "name": "grammy",
+      "version": "1.46.0",
+      "path": "node_modules/grammy",
+      "url": "https://registry.npmjs.org/grammy/-/grammy-1.46.0.tgz",
+      "sha256": "458f09c6841494e240e64c3b0d2fab86aa84387d9a4d1abb44909a39c1e857cb",
+      "size": 217039
+    },
+    {
+      "name": "node-fetch",
+      "version": "2.7.0",
+      "path": "node_modules/grammy/node_modules/node-fetch",
+      "url": "https://registry.npmjs.org/node-fetch/-/node-fetch-2.7.0.tgz",
+      "sha256": "a70348669b01db602faf140e984e61b01c4380f9b4bf5e460b7960902412832b",
+      "size": 44644
+    },
+    {
+      "name": "tr46",
+      "version": "0.0.3",
+      "path": "node_modules/grammy/node_modules/tr46",
+      "url": "https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz",
+      "sha256": "164ae1eb32cea353551bbc7f9358dcaae4ffabbe65ec37a92ca464a9570a2a0a",
+      "size": 64681
+    },
+    {
+      "name": "webidl-conversions",
+      "version": "3.0.1",
+      "path": "node_modules/grammy/node_modules/webidl-conversions",
+      "url": "https://registry.npmjs.org/webidl-conversions/-/webidl-conversions-3.0.1.tgz",
+      "sha256": "e4dfc34b40947c2cf0038cd95fa6de21f4dac93224a7ad8e169205f5c2e22da8",
+      "size": 4727
+    },
+    {
+      "name": "whatwg-url",
+      "version": "5.0.0",
+      "path": "node_modules/grammy/node_modules/whatwg-url",
+      "url": "https://registry.npmjs.org/whatwg-url/-/whatwg-url-5.0.0.tgz",
+      "sha256": "b09dc471f573a876eeac3902b8c1da62af5cdbbca2c6fba4a06f119f89cb7ed3",
+      "size": 11073
+    },
+    {
+      "name": "lodash",
+      "version": "4.18.1",
+      "path": "node_modules/lodash",
+      "url": "https://registry.npmjs.org/lodash/-/lodash-4.18.1.tgz",
+      "sha256": "696942c2a488c9d7428e9ca5f12ccf03b52de01dcdbfe4d4751d392f0491ae16",
+      "size": 315640
+    },
+    {
+      "name": "lodash.snakecase",
+      "version": "4.1.1",
+      "path": "node_modules/lodash.snakecase",
+      "url": "https://registry.npmjs.org/lodash.snakecase/-/lodash.snakecase-4.1.1.tgz",
+      "sha256": "53032c788083a49a22af5b896cafebd905dafad3510d70459a384afd5c302c2c",
+      "size": 6162
+    },
+    {
+      "name": "magic-bytes.js",
+      "version": "1.13.1",
+      "path": "node_modules/magic-bytes.js",
+      "url": "https://registry.npmjs.org/magic-bytes.js/-/magic-bytes.js-1.13.1.tgz",
+      "sha256": "9faab3d72eec1b9fa6847b86ce5bee8a1b658aeb2374c44b1ee78cf9c2f5d2d8",
+      "size": 13100
+    },
+    {
+      "name": "ms",
+      "version": "2.1.3",
+      "path": "node_modules/ms",
+      "url": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
+      "sha256": "f6616e15e530ed552f9daa2d3ce71963947c6bc7c98c9b64fd3e673fd02622c6",
+      "size": 2967
+    },
+    {
+      "name": "ts-mixer",
+      "version": "6.0.4",
+      "path": "node_modules/ts-mixer",
+      "url": "https://registry.npmjs.org/ts-mixer/-/ts-mixer-6.0.4.tgz",
+      "sha256": "d21ee7cf1bcf347e8ae95e9b532b824c474d9c10be075b938c903a0b47b15435",
+      "size": 18863
+    },
+    {
+      "name": "tslib",
+      "version": "2.8.1",
+      "path": "node_modules/tslib",
+      "url": "https://registry.npmjs.org/tslib/-/tslib-2.8.1.tgz",
+      "sha256": "66f635d5eeabae44807534976913a102cf615b9a045368359c9f79ae6ee2119e",
+      "size": 18477
+    },
+    {
+      "name": "undici",
+      "version": "6.29.1",
+      "path": "node_modules/undici",
+      "url": "https://registry.npmjs.org/undici/-/undici-6.29.1.tgz",
+      "sha256": "29c4b8e0b2d86cb8795571c1959012ce057a14ecfd34858335f47c31e770a04f",
+      "size": 297796
+    },
+    {
+      "name": "undici-types",
+      "version": "6.21.0",
+      "path": "node_modules/undici-types",
+      "url": "https://registry.npmjs.org/undici-types/-/undici-types-6.21.0.tgz",
+      "sha256": "cfa1a9a5e18988850e548f4f6b629c58da32dc32bebb116e58ea301e516fd16d",
+      "size": 21020
+    },
+    {
+      "name": "ws",
+      "version": "8.22.0",
+      "path": "node_modules/ws",
+      "url": "https://registry.npmjs.org/ws/-/ws-8.22.0.tgz",
+      "sha256": "ca9b3798b2e11ce8fac6713f50ef0501aa12b09b330623c1dc409dff94e7abc8",
+      "size": 35094
+    }
+  ]
+}

@@ -6,6 +6,7 @@
       "id": "made-by-girru",
       "title": "Made by Girru",
       "items": [
+        "agent-connect",
         "browser",
         "code",
         "genvr",
@@ -20,6 +21,7 @@
       "id": "new",
       "title": "New in the store",
       "items": [
+        "agent-connect",
         "genvr",
         "code",
         "browser",
@@ -30,12 +32,67 @@
         "account-manager",
         "accountant",
         "activity-and-habits-coach",
-        "activity-coaching",
-        "ai-application-developer"
+        "activity-coaching"
       ]
     }
   ],
   "items": [
+    {
+      "id": "agent-connect",
+      "kind": "app",
+      "source": "girru",
+      "name": "Agent Connect",
+      "summary": "Your messaging channels, added when you need them.",
+      "description": "Connect the 33 integrations provided by the existing Agent Connect package. Telegram and Discord use its Node transports; other channels retain their optional isolated Python setup. Adding the app does not sign in to a new account or install Python providers. Previously enabled channels can resume after restart. Your channel settings and history stay when you remove it.",
+      "icon": "message",
+      "maker": "Girru",
+      "verified": true,
+      "version": "0.3.0",
+      "updated": "2026-11-05",
+      "category": "productivity",
+      "permissions": [
+        "Connects the channels you explicitly enable",
+        "Keeps existing channel settings and delivery history",
+        "Provides restricted channel send tools for your agents"
+      ],
+      "worksWith": [],
+      "languages": [
+        "English"
+      ],
+      "pricing": {
+        "model": "free"
+      },
+      "package": {
+        "files": [
+          {
+            "path": "agentplayer.plugin.json",
+            "sha256": "e813b4d7eab1963276e65bf620c692b9f399d5ec5e960b8be5bdf73e1cc7886c",
+            "size": 581
+          },
+          {
+            "path": "index.js",
+            "sha256": "65f127557981c5a20faf866321fad3adeb23d191026f60cee431bc49e25eb81d",
+            "size": 3971
+          },
+          {
+            "path": "package.json",
+            "sha256": "1239d4d885dcad42201a27ed9324f8f0f760b78700d8db9ced39a511cffe7eae",
+            "size": 18
+          },
+          {
+            "path": "runtime-packages.npm",
+            "sha256": "2996b312d498696fa07331a7a654294f034913168067e2b800140dc239388a69",
+            "size": 10978
+          },
+          {
+            "path": "tools.js",
+            "sha256": "df04b5ee9bb91819e82bb03843f384876d02d9e7816a7a87df898b11e3f8f9cb",
+            "size": 1618
+          }
+        ],
+        "sha256": "085ccfddeefc0477921bbf28da61256527ce3c37bbe21a801bfb737959109ced"
+      }
+    },
     {
       "id": "browser",
       "kind": "app",
