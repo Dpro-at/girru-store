@@ -15,6 +15,11 @@
     "Has no tables, no agent tools and no background jobs"
   ],
   "worksWith": [],
-  "languages": ["English"],
-  "pricing": { "model": "free" }
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  },
+  "hidden": true
 }

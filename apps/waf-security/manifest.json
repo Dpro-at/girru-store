@@ -18,6 +18,11 @@
     "Adds a waf_scan tool that agents can use once you allow them"
   ],
   "worksWith": [],
-  "languages": ["English"],
-  "pricing": { "model": "free" }
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  },
+  "hidden": true
 }

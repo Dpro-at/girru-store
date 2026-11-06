@@ -1,0 +1,25 @@
+{
+  "id": "call-center",
+  "kind": "app",
+  "name": "Call Center",
+  "summary": "Phone calls through your own provider account.",
+  "description": "The existing Call Center integration as a separate app. Configure your own provider and explicitly enable it before handling calls. Provider charges may apply. Getting the app does not buy a number or make a call. Settings, numbers and call history are kept when you remove it. The existing API and agent tools are included; no new call-center screen is added.",
+  "icon": "phone",
+  "maker": "Girru",
+  "version": "1.1.0",
+  "updated": "2026-11-05",
+  "category": "sales",
+  "permissions": [
+    "Handles calls only with your configured provider",
+    "Keeps its own phone numbers, settings and call history",
+    "Provides call tools only to agents you authorize"
+  ],
+  "worksWith": [],
+  "languages": [
+    "English"
+  ],
+  "pricing": {
+    "model": "free"
+  },
+  "hidden": true
+}

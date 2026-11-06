@@ -11,7 +11,7 @@ const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..')
 const KINDS = { apps: 'app', mcp: 'mcp', skills: 'skill', specialties: 'specialty' };
 const CATEGORIES = ['marketing', 'sales', 'developer', 'worlds', 'trading', 'productivity', 'more'];
 const PRICING = ['free']; // later: 'one-time', 'subscription' (paid apps, not open yet)
-const FIELDS = ['id', 'kind', 'name', 'summary', 'description', 'icon', 'maker', 'version', 'updated', 'category', 'permissions', 'worksWith', 'languages', 'pricing', 'runtime'];
+const FIELDS = ['id', 'kind', 'name', 'summary', 'description', 'icon', 'maker', 'version', 'updated', 'category', 'permissions', 'worksWith', 'languages', 'pricing', 'runtime', 'hidden'];
 const ID = /^(?=[a-z0-9-]{1,64}$)[a-z0-9]+(?:-[a-z0-9]+)*$/; // no "--": app table prefixes never overlap
 const ICON = /^[a-z][a-z-]{0,39}$/;
 const DATE = /^\d{4}-\d{2}-\d{2}$/;
@@ -31,7 +31,7 @@ function readPackage(where, dir) {
       if (st.isSymbolicLink()) fail(where, `package/${r} is a link`);
       if (!SEGMENT.test(name)) fail(where, `package/${r}: names are letters, digits, . _ - only`);
       if (st.isDirectory()) { walk(r); continue; }
-      if (!PACKAGE_EXT.test(name) && r!=='runtime-packages.npm') fail(where, `package/${r}: only .js .mjs .json .sql .md .css .svg .png .txt files`);
+      if (!PACKAGE_EXT.test(name) && !['runtime-packages.npm','app-host.npm'].includes(r)) fail(where, `package/${r}: only .js .mjs .json .sql .md .css .svg .png .txt files`);
       const bytes = fs.readFileSync(path.join(dir, r));
       total += bytes.length;
       files.push({ path: r, sha256: sha(bytes), size: bytes.length });
@@ -115,6 +115,7 @@ function readItem(folder, dir) {
   let m;
   try { m = JSON.parse(fs.readFileSync(path.join(ROOT, folder, dir, 'manifest.json'), 'utf8')); } catch { fail(where, 'missing or not JSON'); }
   for (const k of Object.keys(m)) if (!FIELDS.includes(k)) fail(where, `unknown field "${k}"`);
+  if(m.hidden!==undefined&&typeof m.hidden!=='boolean')fail(where,'hidden must be a boolean');
   if (m.id !== dir || !ID.test(m.id)) fail(where, 'id must equal the folder name (a-z, 0-9, -)');
   if (m.kind !== KINDS[folder]) fail(where, `kind must be "${KINDS[folder]}" in ${folder}/`);
   if (!CATEGORIES.includes(m.category)) fail(where, `category must be one of ${CATEGORIES.join(', ')}`);
@@ -131,7 +132,7 @@ function readItem(folder, dir) {
   if (m.runtime !== undefined && folder !== 'apps') fail(where, 'only apps have a runtime');
   if (m.runtime !== undefined && pkg) fail(where, 'an app has a package or a runtime, not both');
   const runtime = m.runtime !== undefined ? readRuntime(where, m.runtime, m.version) : null;
-  return {
+  const item = {
     id: m.id, kind: m.kind, source: 'girru',
     name: str(m.name, 150, where, 'name'), summary: str(m.summary, 200, where, 'summary'), description: str(m.description, 3000, where, 'description'),
     icon: m.icon, maker: str(m.maker, 150, where, 'maker'), verified: true, version: m.version, updated: m.updated, category: m.category,
@@ -140,6 +141,7 @@ function readItem(folder, dir) {
     ...(pkg ? { package: pkg } : {}),
     ...(runtime ? { runtime } : {}),
   };
+  return m.hidden===true?null:item;
 }
 
 export function buildIndex() {
@@ -149,7 +151,7 @@ export function buildIndex() {
     for (const dir of fs.readdirSync(base).sort()) {
       if (dir.startsWith('.')) continue; // .gitkeep
       if (!fs.statSync(path.join(base, dir)).isDirectory()) fail(`${folder}/${dir}`, 'only item folders belong here');
-      items.push(readItem(folder, dir));
+      const item=readItem(folder,dir);if(item)items.push(item);
     }
   }
   const ids = new Set();

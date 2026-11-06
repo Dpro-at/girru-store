@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "host": "browser",
+  "protocolVersion": 1,
+  "packages": [
+    {
+      "name": "@puppeteer/browsers",
+      "version": "3.2.5",
+      "path": "node_modules/@puppeteer/browsers",
+      "url": "https://registry.npmjs.org/@puppeteer/browsers/-/browsers-3.2.5.tgz",
+      "sha256": "d1a477d07471357dd0816084f977ed267232b87cafaffbb75cc75a40528dec63",
+      "size": 96804
+    },
+    {
+      "name": "ansi-regex",
+      "version": "6.4.0",
+      "path": "node_modules/@puppeteer/browsers/node_modules/ansi-regex",
+      "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.4.0.tgz",
+      "sha256": "4cc0f907dd4cb056ff929ee28c031f4084c702ee4969973025a418a5e3fffca7",
+      "size": 3025
+    },
+    {
+      "name": "ansi-styles",
+      "version": "6.2.3",
+      "path": "node_modules/@puppeteer/browsers/node_modules/ansi-styles",
+      "url": "https://registry.npmjs.org/ansi-styles/-/ansi-styles-6.2.3.tgz",
+      "sha256": "e939cf5138d7a5d4e34100acd0153577b2953305931157a1cfe9faa56383911b",
+      "size": 5836
+    },
+    {
+      "name": "cliui",
+      "version": "9.0.1",
+      "path": "node_modules/@puppeteer/browsers/node_modules/cliui",
+      "url": "https://registry.npmjs.org/cliui/-/cliui-9.0.1.tgz",
+      "sha256": "26d72549682051eb3e6ae24514ab8d15d21e2d7a54f3a58b0ecb58fe4c5971cd",
+      "size": 19175
+    },
+    {
+      "name": "strip-ansi",
+      "version": "7.2.0",
+      "path": "node_modules/@puppeteer/browsers/node_modules/strip-ansi",
+      "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz",
+      "sha256": "2fa01de86a5022ef32773abbc4e84a53a1c5d31f5a5cbf03ed2575f10408543f",
+      "size": 2156
+    },
+    {
+      "name": "wrap-ansi",
+      "version": "9.0.2",
+      "path": "node_modules/@puppeteer/browsers/node_modules/wrap-ansi",
+      "url": "https://registry.npmjs.org/wrap-ansi/-/wrap-ansi-9.0.2.tgz",
+      "sha256": "0a42a5c5cee0936544691a75aa7aef11620971c961988473f99b5a6540f78e7e",
+      "size": 4316
+    },
+    {
+      "name": "yargs",
+      "version": "18.2.0",
+      "path": "node_modules/@puppeteer/browsers/node_modules/yargs",
+      "url": "https://registry.npmjs.org/yargs/-/yargs-18.2.0.tgz",
+      "sha256": "44ddd9d39e41a7d73dd794b6d229f2b92fd655d394ef59e2ca34d31df6181d13",
+      "size": 48841
+    },
+    {
+      "name": "yargs-parser",
+      "version": "22.0.0",
+      "path": "node_modules/@puppeteer/browsers/node_modules/yargs-parser",
+      "url": "https://registry.npmjs.org/yargs-parser/-/yargs-parser-22.0.0.tgz",
+      "sha256": "2b640247b9ca6f540c708dfea99bafeae59a46db66f491fb5b6d55fce1614d65",
+      "size": 21743
+    },
+    {
+      "name": "string-width",
+      "version": "8.3.0",
+      "path": "node_modules/@puppeteer/browsers/node_modules/yargs/node_modules/string-width",
+      "url": "https://registry.npmjs.org/string-width/-/string-width-8.3.0.tgz",
+      "sha256": "b9332abee5a45017221999b9133d77f092b81d0b1d747fc030abe1119a148339",
+      "size": 4510
+    },
+    {
+      "name": "chromium-bidi",
+      "version": "157.0.8090-0",
+      "path": "node_modules/chromium-bidi",
+      "url": "https://registry.npmjs.org/chromium-bidi/-/chromium-bidi-157.0.8090-0.tgz",
+      "sha256": "700e74e65c4244e1820fe3bb2392d35e4641d37b423be58ab7dd4b07b8fcb514",
+      "size": 998413
+    },
+    {
+      "name": "devtools-protocol",
+      "version": "0.0.1696802",
+      "path": "node_modules/devtools-protocol",
+      "url": "https://registry.npmjs.org/devtools-protocol/-/devtools-protocol-0.0.1696802.tgz",
+      "sha256": "cf6c932ca2d806ed53d2d22baa32d3e2435bd6c03fdca2fcd83d24efbde3b702",
+      "size": 551372
+    },
+    {
+      "name": "emoji-regex",
+      "version": "10.6.0",
+      "path": "node_modules/emoji-regex",
+      "url": "https://registry.npmjs.org/emoji-regex/-/emoji-regex-10.6.0.tgz",
+      "sha256": "9f40e54c0586f30882ece0ee0d22654394b89321e89cb55e8faf12ed8ccff981",
+      "size": 5610
+    },
+    {
+      "name": "escalade",
+      "version": "3.2.0",
+      "path": "node_modules/escalade",
+      "url": "https://registry.npmjs.org/escalade/-/escalade-3.2.0.tgz",
+      "sha256": "ba2755afc0e6c6705326711fd218ebe107a527eccbd6485155fde98ed000bee7",
+      "size": 4483
+    },
+    {
+      "name": "get-caller-file",
+      "version": "2.0.5",
+      "path": "node_modules/get-caller-file",
+      "url": "https://registry.npmjs.org/get-caller-file/-/get-caller-file-2.0.5.tgz",
+      "sha256": "7b13e1c81949ff4c1baae4ac4e34990492d5e8a86dab7e3b90027b1f5126935f",
+      "size": 2383
+    },
+    {
+      "name": "get-east-asian-width",
+      "version": "1.7.0",
+      "path": "node_modules/get-east-asian-width",
+      "url": "https://registry.npmjs.org/get-east-asian-width/-/get-east-asian-width-1.7.0.tgz",
+      "sha256": "371c7b094731ec5848025a7139eb05facc23cf18bd56ed8f755364e4b90ebd35",
+      "size": 5431
+    },
+    {
+      "name": "lilconfig",
+      "version": "3.1.4",
+      "path": "node_modules/lilconfig",
+      "url": "https://registry.npmjs.org/lilconfig/-/lilconfig-3.1.4.tgz",
+      "sha256": "68c06115e5092434dfd5ff2f87a6d119a38a480ffe2cf25a018b15d9c8b92213",
+      "size": 5239
+    },
+    {
+      "name": "mitt",
+      "version": "3.0.1",
+      "path": "node_modules/mitt",
+      "url": "https://registry.npmjs.org/mitt/-/mitt-3.0.1.tgz",
+      "sha256": "2ef69c669574ad5b86fdb8b30aed8c8c1705931f19a68bc4b1b234c6d26d7306",
+      "size": 6147
+    },
+    {
+      "name": "modern-tar",
+      "version": "0.8.6",
+      "path": "node_modules/modern-tar",
+      "url": "https://registry.npmjs.org/modern-tar/-/modern-tar-0.8.6.tgz",
+      "sha256": "01e33277ed2cb17b4f55f3d24c58663eda6b1970c8b1c0f9d9627aea0a4ae75c",
+      "size": 26236
+    },
+    {
+      "name": "puppeteer",
+      "version": "25.14.0",
+      "path": "node_modules/puppeteer",
+      "url": "https://registry.npmjs.org/puppeteer/-/puppeteer-25.14.0.tgz",
+      "sha256": "caf4c517a59cdf875b1049760da9581fe4a57aeb0a84d68350bcf90bc510e9bc",
+      "size": 11697
+    },
+    {
+      "name": "puppeteer-core",
+      "version": "25.14.0",
+      "path": "node_modules/puppeteer-core",
+      "url": "https://registry.npmjs.org/puppeteer-core/-/puppeteer-core-25.14.0.tgz",
+      "sha256": "aa52b6919ec4cfce7086969131cd104a045041fdf28040ba17697b970ee8599c",
+      "size": 1182280
+    },
+    {
+      "name": "string-width",
+      "version": "7.2.0",
+      "path": "node_modules/string-width",
+      "url": "https://registry.npmjs.org/string-width/-/string-width-7.2.0.tgz",
+      "sha256": "3e90901a98cadef6986fe2953e6d181f49730d81c7855776a6337fef93bbf1f3",
+      "size": 2989
+    },
+    {
+      "name": "ansi-regex",
+      "version": "6.4.0",
+      "path": "node_modules/string-width/node_modules/ansi-regex",
+      "url": "https://registry.npmjs.org/ansi-regex/-/ansi-regex-6.4.0.tgz",
+      "sha256": "4cc0f907dd4cb056ff929ee28c031f4084c702ee4969973025a418a5e3fffca7",
+      "size": 3025
+    },
+    {
+      "name": "strip-ansi",
+      "version": "7.2.0",
+      "path": "node_modules/string-width/node_modules/strip-ansi",
+      "url": "https://registry.npmjs.org/strip-ansi/-/strip-ansi-7.2.0.tgz",
+      "sha256": "2fa01de86a5022ef32773abbc4e84a53a1c5d31f5a5cbf03ed2575f10408543f",
+      "size": 2156
+    },
+    {
+      "name": "typed-query-selector",
+      "version": "2.12.3",
+      "path": "node_modules/typed-query-selector",
+      "url": "https://registry.npmjs.org/typed-query-selector/-/typed-query-selector-2.12.3.tgz",
+      "sha256": "615e810b2ecd226e7bd51d6e534cfa2b791892a12375f82c2f68a45ca8e0b3c3",
+      "size": 6554
+    },
+    {
+      "name": "webdriver-bidi-protocol",
+      "version": "1.0.1",
+      "path": "node_modules/webdriver-bidi-protocol",
+      "url": "https://registry.npmjs.org/webdriver-bidi-protocol/-/webdriver-bidi-protocol-1.0.1.tgz",
+      "sha256": "c2032e52b6b42ce6f2560d1ab6e0490037e8399400b3438784a6dcc2fbdccb54",
+      "size": 38632
+    },
+    {
+      "name": "ws",
+      "version": "8.22.0",
+      "path": "node_modules/ws",
+      "url": "https://registry.npmjs.org/ws/-/ws-8.22.0.tgz",
+      "sha256": "ca9b3798b2e11ce8fac6713f50ef0501aa12b09b330623c1dc409dff94e7abc8",
+      "size": 35094
+    },
+    {
+      "name": "y18n",
+      "version": "5.0.8",
+      "path": "node_modules/y18n",
+      "url": "https://registry.npmjs.org/y18n/-/y18n-5.0.8.tgz",
+      "sha256": "d43743bad3a7cb3af5d3b6bf70fd32fe3923ea86e4148109c6dd0126deada769",
+      "size": 6157
+    },
+    {
+      "name": "zod",
+      "version": "4.6.7",
+      "path": "node_modules/zod",
+      "url": "https://registry.npmjs.org/zod/-/zod-4.6.7.tgz",
+      "sha256": "84efd155bed93270286e793fc951be270b536cbd5b0eeb111f0fa3967201d698",
+      "size": 1141941
+    }
+  ]
+}
