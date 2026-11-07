@@ -94,8 +94,8 @@
       "kind": "app",
       "source": "girru",
       "name": "Browser",
-      "summary": "Optional local browser automation for authorized agents.",
-      "description": "The existing Puppeteer automation engine, installed separately from the core. Uses a compatible local Chrome executable or an existing Puppeteer cache; Get never downloads a browser or imports a browsing profile. Browser API and agent tools keep their existing access checks and public-network restrictions. Native browser workspace distribution and Playwright MCP remain under separate evaluation.",
+      "summary": "A full Chromium browser workspace for Girru.",
+      "description": "A Chromium browser workspace that opens from the Girru application menu. On supported desktop platforms, installation requires a reviewed full native runtime archive. Existing browser profiles, cookies, passwords and keychains are never imported automatically. Agent automation remains separately enabled and requires its existing access grants. Full workspace availability depends on the installed desktop host and published platform runtime; an automation-only installation does not provide the workspace.",
       "icon": "globe",
       "maker": "Girru",
       "verified": true,
@@ -103,7 +103,8 @@
       "updated": "2026-11-05",
       "category": "productivity",
       "permissions": [
-        "Runs browser automation only when this app is enabled",
+        "Downloads and runs a full Chromium workspace when a reviewed desktop runtime is available",
+        "Agent automation remains separately enabled and keeps its existing access grants",
         "Agent browser tools keep their existing separate grants",
         "Keeps screenshots and downloads in the local data folder",
         "Does not import existing browser profiles, cookies or passwords"
