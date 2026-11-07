@@ -130,7 +130,7 @@ function readItem(folder, dir) {
     if (plugin.id !== m.id || plugin.version !== m.version) fail(where, 'package/agentplayer.plugin.json must have the same id and version');
   }
   if (m.runtime !== undefined && folder !== 'apps') fail(where, 'only apps have a runtime');
-  if (m.runtime !== undefined && pkg) fail(where, 'an app has a package or a runtime, not both');
+  if (m.runtime !== undefined && pkg && m.id !== 'browser') fail(where, 'only Browser may pair its automation package with a native runtime');
   const runtime = m.runtime !== undefined ? readRuntime(where, m.runtime, m.version) : null;
   const item = {
     id: m.id, kind: m.kind, source: 'girru',
