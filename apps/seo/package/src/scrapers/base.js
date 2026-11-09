@@ -7,11 +7,18 @@
  */
 
 export class BaseScraper {
-  constructor(apiKey) {
+  constructor(apiKey, hostApi = null) {
     if (!apiKey) {
       throw new Error('API key is required');
     }
     this.apiKey = apiKey;
+    this.hostHtmlToText = typeof hostApi?.htmlToText === 'function' ? hostApi.htmlToText.bind(hostApi) : null;
+  }
+
+  /** HTML scrapers require the host's bounded parser; this never grants HTML rendering trust. */
+  requireHtmlToText() {
+    if (!this.hostHtmlToText) throw new Error('SEO HTML search requires a Girru host with htmlToText support');
+    return this.hostHtmlToText;
   }
 
   /**
