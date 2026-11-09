@@ -36,12 +36,12 @@ export const scraperRegistry = {
  * @param {string} apiKey - API key
  * @returns {BaseScraper} Scraper instance
  */
-export function getScraper(type, apiKey) {
+export function getScraper(type, apiKey, hostApi = null) {
   const ScraperClass = scraperRegistry[type];
   if (!ScraperClass) {
     throw new Error(`Unknown scraper type: ${type}`);
   }
-  return new ScraperClass(apiKey);
+  return new ScraperClass(apiKey, hostApi);
 }
 
 /**

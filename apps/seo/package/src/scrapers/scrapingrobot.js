@@ -8,6 +8,7 @@ import { BaseScraper } from './base.js';
 
 export class ScrapingRobotScraper extends BaseScraper {
   async scrape(keyword, { country = 'US', device = 'desktop', city = null, language = 'en' }) {
+    this.requireHtmlToText();
     const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(keyword)}&num=100&gl=${country.toLowerCase()}&hl=${language}`;
 
     const url = 'https://api.scrapingrobot.com';
@@ -28,6 +29,10 @@ export class ScrapingRobotScraper extends BaseScraper {
   }
 
   extractResults(htmlContent) {
+    const htmlToText = this.requireHtmlToText();
+    if (typeof htmlContent !== 'string' || Buffer.byteLength(htmlContent, 'utf8') > 2 * 1024 * 1024) {
+      throw new TypeError('SEO HTML response must be a string of at most 2 MiB');
+    }
     const results = [];
     const regex = /<div class="g"[\s\S]*?<a href="([^"]+)"[\s\S]*?<h3[^>]*>([\s\S]*?)<\/h3>[\s\S]*?<div[^>]*>([\s\S]*?)<\/div>/gi;
     let match;
@@ -37,8 +42,8 @@ export class ScrapingRobotScraper extends BaseScraper {
       results.push({
         position: position++,
         url: match[1],
-        title: match[2].replace(/<[^>]*>/g, ''),
-        snippet: match[3].replace(/<[^>]*>/g, ''),
+        title: htmlToText(match[2]),
+        snippet: htmlToText(match[3]),
         domain: this.extractDomain(match[1]),
       });
     }

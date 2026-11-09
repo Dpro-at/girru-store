@@ -22,6 +22,8 @@ An app for Girru: track where your sites rank for the keywords you choose, check
 - Google sign-in and token addresses (accounts.google.com, oauth2.googleapis.com) only when you connect Search Console.
 - Your search API keys in Girru's credentials, read when it calls the API.
 
+ScrapingAnt and ScrapingRobot require Girru’s `htmlToText` host capability. Without it, these providers refuse before making a paid request. Parsed titles and snippets remain untrusted text; they must never be rendered as trusted HTML.
+
 ## Its data
 
 Its own tables only, all named `app_seo__...`:

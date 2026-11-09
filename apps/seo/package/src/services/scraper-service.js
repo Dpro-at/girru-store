@@ -71,7 +71,7 @@ export class ScraperService {
 
         // Instantiate scraper
         const ScraperClass = scraperRegistry[scraperType];
-        const scraper = new ScraperClass(apiKey);
+        const scraper = new ScraperClass(apiKey, this.api);
 
         // Execute scrape
         const startTime = Date.now();
