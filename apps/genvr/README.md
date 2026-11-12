@@ -4,7 +4,7 @@ Girru adds the reviewed GenVR SDK archive through the Store. The JavaScript and 
 
 Removing GenVR removes its program files. Existing worlds, account connection, voice data and project records stay in their existing locations. Adding it again makes those projects available again.
 
-The SDK is licensed under AGPL-3.0-only; its archive includes LICENSE. Corresponding source for this version is available as the [preview.21 source archive](https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.21/3d-world-sdk-0.3.0-preview.21-source.tgz), SHA-256 `1113f346a2d976d49ee6e82c80ee539801d1679891565b110c6a63c40caf600f`.
+The SDK is licensed under AGPL-3.0-only; its archive includes LICENSE. Corresponding source for this version is available as the [preview.22 source archive](https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.22/3d-world-sdk-0.3.0-preview.22-source.tgz), SHA-256 `412537774e507e7084ada87115e090f3194b8fc9a299f5da2d16cdd7b10921e8`.
 
 This runtime needs a compatible Girru version with GenVR Store support. Earlier Girru versions that include GenVR continue to use their included copy.
 
