@@ -223,7 +223,7 @@
       "icon": "globe",
       "maker": "Girru",
       "verified": true,
-      "version": "0.3.0-preview.19",
+      "version": "0.3.0-preview.20",
       "updated": "2026-11-05",
       "category": "worlds",
       "permissions": [
@@ -239,28 +239,28 @@
         "model": "free"
       },
       "runtime": {
-        "version": "0.3.0-preview.19",
+        "version": "0.3.0-preview.20",
         "protocolVersion": 1,
         "archives": {
           "darwin-arm64": {
-            "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.19/3d-world-sdk-0.3.0-preview.19.tgz",
-            "sha256": "b167093d4f5be8219b2fd65d789f271a80ad5fac4b06d8b343b2d08d93605d12",
-            "size": 181643769
+            "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.20/3d-world-sdk-0.3.0-preview.20.tgz",
+            "sha256": "ebd1ee2a85238f41e27578d9ba2aa41d39453e3aa02d28fbe3d16a64b7ca56f8",
+            "size": 181643499
           },
           "darwin-x64": {
-            "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.19/3d-world-sdk-0.3.0-preview.19.tgz",
-            "sha256": "b167093d4f5be8219b2fd65d789f271a80ad5fac4b06d8b343b2d08d93605d12",
-            "size": 181643769
+            "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.20/3d-world-sdk-0.3.0-preview.20.tgz",
+            "sha256": "ebd1ee2a85238f41e27578d9ba2aa41d39453e3aa02d28fbe3d16a64b7ca56f8",
+            "size": 181643499
           },
           "win32-x64": {
-            "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.19/3d-world-sdk-0.3.0-preview.19.tgz",
-            "sha256": "b167093d4f5be8219b2fd65d789f271a80ad5fac4b06d8b343b2d08d93605d12",
-            "size": 181643769
+            "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.20/3d-world-sdk-0.3.0-preview.20.tgz",
+            "sha256": "ebd1ee2a85238f41e27578d9ba2aa41d39453e3aa02d28fbe3d16a64b7ca56f8",
+            "size": 181643499
           },
           "linux-x64": {
-            "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.19/3d-world-sdk-0.3.0-preview.19.tgz",
-            "sha256": "b167093d4f5be8219b2fd65d789f271a80ad5fac4b06d8b343b2d08d93605d12",
-            "size": 181643769
+            "url": "https://github.com/Dpro-at/genvr-world-sdk/releases/download/v0.3.0-preview.20/3d-world-sdk-0.3.0-preview.20.tgz",
+            "sha256": "ebd1ee2a85238f41e27578d9ba2aa41d39453e3aa02d28fbe3d16a64b7ca56f8",
+            "size": 181643499
           }
         }
       }
