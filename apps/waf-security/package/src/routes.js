@@ -1,265 +1,331 @@
 /**
- * WAF Security API Routes - Pure JavaScript
- * All routes mounted at /api/ext/waf-security/. Girru lets only an active owner or admin reach
- * them and tells each request who it is (request.authUserId); each user sees only their own
- * scans and campaigns.
+ * API routes, mounted at /api/ext/waf-security/.
+ *
+ * Girru lets only an active owner or admin reach these (routeAccess: 'owner-admin'), except the
+ * one public route the server sensor pushes alerts to, which is authenticated by its own token.
+ * Each user sees only their own assets, findings, scans and campaigns.
+ *
+ * Places (match the approved structure): Overview, Servers, Sites, Findings, Campaigns,
+ * This Girru (self-audit), Settings.
  */
 
-import {
-  detectWAF,
-  selfAudit,
-  getPayloadCategories,
-} from './engine.js';
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
+import { detectWAF, selfAudit, getPayloadCategories } from './engine.js';
 import { checkTarget, TargetError } from './target.js';
 import { startScan } from './scanner.js';
-import {
-  createCampaign,
-  getCampaign,
-  listCampaigns,
-  runCampaign,
-  deleteCampaign,
-} from './campaign-service.js';
+import { createCampaign, getCampaign, listCampaigns, runCampaign, deleteCampaign } from './campaign-service.js';
 import { calculateSecurityScore, generateRecommendations } from './scoring.js';
-import { allowPrivateTargets, saveSettings, SettingsError } from './settings.js';
+import { allowPrivateTargets, noiseProfile, saveSettings, currentSettings, SettingsError } from './settings.js';
+import { addAsset, listAssets, getAsset, removeAsset, requireInScope, ScopeError } from './scope.js';
+import { coverageSummaryForAsset, coverageForScan } from './coverage.js';
+import { listFindings, findingDetail, retestFinding, setFindingStatus, FindingError } from './findings.js';
+import { runAssetScan } from './scan-engine.js';
+import { WafRateLimiter } from './rate-limiter.js';
+import { pairSensor, listSensors, revokeSensor, sensorForToken, ingestAlert, listAlerts, SensorError } from './sensor.js';
+import { explainFinding } from './explain.js';
 
-/**
- * User of this request, as verified by Girru's route guard.
- * (Used to decode the token without checking its signature.)
- * @throws {Error} without one
- */
 function getUserIdFromRequest(request) {
   if (!request.authUserId) throw new Error('Unauthorized: no signed-in user');
   return String(request.authUserId);
 }
 
-/** 401 / 429 / 400 for what the caller can fix, 500 otherwise. */
 function statusOf(err, fallback) {
-  if (err instanceof TargetError) return 400;
+  if (err instanceof TargetError || err instanceof ScopeError || err instanceof FindingError || err instanceof SensorError) return 400;
   if (err.message.includes('Unauthorized')) return 401;
   if (err.message.includes('Rate limit')) return 429;
   if (err.message.startsWith('Invalid')) return 400;
   return fallback;
 }
 
-/**
- * Validate scan request parameters
- * @throws {Error} if validation fails
- */
-function validateScanRequest(body) {
-  const { url, mode, categories } = body || {};
-
-  if (!url || typeof url !== 'string') {
-    throw new Error('Invalid URL: must be a non-empty string');
-  }
-
-  if (mode && !['quick', 'full'].includes(mode)) {
-    throw new Error('Invalid mode: must be "quick" or "full"');
-  }
-
-  if (categories && (!Array.isArray(categories) || categories.length > 20 || categories.some((c) => typeof c !== 'string'))) {
-    throw new Error('Invalid categories: must be a list of group names');
-  }
-
-  return {
-    url,
-    mode: mode || 'quick',
-    categories: categories || []
-  };
-}
-
-/** The address of this Girru's own backend, for the self-audit. */
 export function ownBackendUrl() {
   return process.env.BACKEND_URL || `http://${process.env.HOST || 'localhost'}:${process.env.PORT || '41522'}`;
+}
+
+function validateScanRequest(body) {
+  const { url, mode, categories } = body || {};
+  if (!url || typeof url !== 'string') throw new Error('Invalid URL: must be a non-empty string');
+  if (mode && !['quick', 'full'].includes(mode)) throw new Error('Invalid mode: must be "quick" or "full"');
+  if (categories && (!Array.isArray(categories) || categories.length > 20 || categories.some((c) => typeof c !== 'string'))) throw new Error('Invalid categories: must be a list of group names');
+  return { url, mode: mode || 'quick', categories: categories || [] };
 }
 
 export function createWafRoutes(api) {
   return async function registerWafRoutes(fastify) {
     const db = api.db;
+    const send = (reply, err, fallback = 500) => reply.status(statusOf(err, fallback)).send({ error: err.message });
 
-    /**
-     * GET /payloads - List all payload categories
-     */
-    fastify.get('/payloads', async () => {
-      const categories = getPayloadCategories(db);
-      return { categories };
+    // ===================== UI (the app's own frontend, shipped in package/ui/) =====================
+    // Static page + assets, served from this app so the frontend downloads WITH the app. These three
+    // routes are public (declared in publicRoutes): they carry no secrets. Every data route below
+    // still needs an active owner/admin, so the page is useless without a signed-in owner session.
+    // The store package may only hold .js/.css/.json/... (no .html), so the page shell is returned
+    // inline here and the two static assets (app.js, app.css) ship as files in package/ui/.
+    const UI_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'ui');
+    const UI_BASE = '/api/ext/waf-security/ui';
+    const PAGE =
+      '<!doctype html><html lang="en"><head><meta charset="utf-8"/>' +
+      '<meta name="viewport" content="width=device-width, initial-scale=1"/>' +
+      '<title>Security</title><link rel="stylesheet" href="' + UI_BASE + '/app.css"/></head>' +
+      '<body><div class="win" id="app"><aside class="sidebar" id="sidebar" aria-label="Security places"></aside>' +
+      '<main class="main" id="main"></main></div>' +
+      '<div class="footer" id="footer">● Ready · owned/authorized targets only · defensive scanning</div>' +
+      '<script src="' + UI_BASE + '/app.js"></script></body></html>';
+    const serveUi = (file, type) => (_request, reply) => {
+      try { reply.header('Content-Type', type); reply.header('X-Content-Type-Options', 'nosniff'); return readFileSync(join(UI_DIR, file)); }
+      catch { return reply.status(404).send({ error: 'UI file not found' }); }
+    };
+    fastify.get('/ui', async (_request, reply) => {
+      reply.header('Content-Type', 'text/html; charset=utf-8');
+      reply.header('X-Content-Type-Options', 'nosniff');
+      // Only the Girru shell (same origin) may embed this page — blocks clickjacking of the
+      // cookie-authenticated UI by a foreign site.
+      reply.header('Content-Security-Policy', "frame-ancestors 'self'");
+      reply.header('X-Frame-Options', 'SAMEORIGIN');
+      return PAGE;
+    });
+    fastify.get('/ui/app.js', serveUi('app.js', 'text/javascript; charset=utf-8'));
+    fastify.get('/ui/app.css', serveUi('app.css', 'text/css; charset=utf-8'));
+
+    // ===================== Overview =====================
+    fastify.get('/overview', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const needsYou = [];
+        const crit = db.prepare("SELECT id, title, severity, where_url, last_seen_at FROM app_waf_security__findings WHERE user_id = ? AND status IN ('open','reproduced') AND severity IN ('critical','high') ORDER BY last_seen_at DESC LIMIT 20").all(userId);
+        for (const f of crit) needsYou.push({ kind: 'finding', id: f.id, severity: f.severity, text: f.title, where: f.where_url, at: f.last_seen_at });
+        const offline = db.prepare("SELECT id, name FROM app_waf_security__sensors WHERE user_id = ? AND status = 'offline'").all(userId);
+        for (const s of offline) needsYou.push({ kind: 'sensor', id: s.id, severity: 'medium', text: `${s.name} is offline` });
+        const alerts = db.prepare("SELECT id, title, severity, received_at FROM app_waf_security__sensor_alerts WHERE user_id = ? ORDER BY received_at DESC LIMIT 10").all(userId);
+        for (const a of alerts) needsYou.push({ kind: 'alert', id: a.id, severity: a.severity, text: a.title, at: a.received_at });
+        return { needsYou };
+      } catch (err) { return send(reply, err); }
     });
 
-    /**
-     * GET /settings, PUT /settings - Whether scans may reach local and private network addresses
-     */
-    fastify.get('/settings', async () => ({ allowPrivateTargets: allowPrivateTargets(api) }));
-
-    fastify.put('/settings', async (request, reply) => {
+    // ===================== Servers & Sites (assets) =====================
+    fastify.get('/assets', async (request, reply) => {
       try {
-        return saveSettings(api, getUserIdFromRequest(request), { allowPrivateTargets: request.body?.allowPrivateTargets });
-      } catch (err) {
+        const userId = getUserIdFromRequest(request);
+        const kind = request.query?.kind === 'server' || request.query?.kind === 'site' ? request.query.kind : null;
+        const assets = listAssets(db, userId, kind).map((a) => ({ ...a, coverage: coverageSummaryForAsset(db, userId, a.id) }));
+        return { assets };
+      } catch (err) { return send(reply, err); }
+    });
+
+    fastify.get('/assets/:id', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const asset = getAsset(db, userId, request.params.id);
+        if (!asset) return reply.status(404).send({ error: 'Not found' });
+        const coverage = coverageSummaryForAsset(db, userId, asset.id);
+        const coverageRows = coverage.scanId ? coverageForScan(db, coverage.scanId) : [];
+        const findings = listFindings(db, userId, { assetId: asset.id, limit: 100 });
+        return { ...asset, coverage, coverageRows, findings };
+      } catch (err) { return send(reply, err); }
+    });
+
+    fastify.post('/assets', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const asset = addAsset(db, userId, userId, request.body || {});
+        return asset;
+      } catch (err) { return send(reply, err, 400); }
+    });
+
+    fastify.delete('/assets/:id', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        return removeAsset(db, userId, userId, request.params.id);
+      } catch (err) { return send(reply, err, 400); }
+    });
+
+    // The SSH servers Girru already found on this computer (from ~/.ssh/config), so "Add server"
+    // offers a known server instead of a blank form. Names and addresses only — never a key or password.
+    fastify.get('/ssh-hosts', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const hosts = (await api.sshHosts(userId)).map((h) => ({ alias: h.alias, host: h.host, port: h.port }));
+        return { hosts };
+      } catch (err) { return send(reply, err); }
+    });
+
+    fastify.post('/assets/:id/scan', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const asset = requireInScope(db, userId, userId, request.params.id); // scope/target gate
+        const allowPrivate = allowPrivateTargets(api);
+        if (asset.is_private && !allowPrivate) return reply.status(400).send({ error: 'This target is a private address; turn on private targets in Settings to scan it.' });
+        // Same rate gate as the website /scan and campaign paths: cap concurrent scans per user.
+        const limiter = new WafRateLimiter(db);
+        await limiter.checkLimit(userId);
+        try {
+          return await runAssetScan(db, api, { userId, asset, allowPrivate, profile: noiseProfile(api) });
+        } finally {
+          await limiter.releaseScan(userId);
+        }
+      } catch (err) { return send(reply, err, 400); }
+    });
+
+    // ===================== Findings =====================
+    fastify.get('/findings', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const status = request.query?.status || null;
+        const assetId = request.query?.assetId || null;
+        return { findings: listFindings(db, userId, { status, assetId }) };
+      } catch (err) { return send(reply, err); }
+    });
+
+    fastify.get('/findings/:id', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const detail = findingDetail(db, userId, request.params.id);
+        if (!detail) return reply.status(404).send({ error: 'Not found' });
+        return detail;
+      } catch (err) { return send(reply, err); }
+    });
+
+    fastify.post('/findings/:id/retest', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const { verdict, oppositeCheck } = request.body || {};
+        return retestFinding(db, userId, request.params.id, { verdict, oppositeCheck, decidedBy: userId });
+      } catch (err) { return send(reply, err, 400); }
+    });
+
+    fastify.post('/findings/:id/ignore', async (request, reply) => {
+      try { return setFindingStatus(db, getUserIdFromRequest(request), request.params.id, 'ignored'); }
+      catch (err) { return send(reply, err, 400); }
+    });
+    fastify.post('/findings/:id/reopen', async (request, reply) => {
+      try { return setFindingStatus(db, getUserIdFromRequest(request), request.params.id, 'open'); }
+      catch (err) { return send(reply, err, 400); }
+    });
+
+    fastify.post('/findings/:id/explain', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        return await explainFinding(db, api, userId, request.params.id);
+      } catch (err) { return send(reply, err, 400); }
+    });
+
+    // ===================== This Girru (self-audit) =====================
+    fastify.post('/self', async (request, reply) => {
+      try { getUserIdFromRequest(request); return await selfAudit(ownBackendUrl()); }
+      catch (err) { return send(reply, err); }
+    });
+
+    // ===================== Settings =====================
+    fastify.get('/settings', async () => currentSettings(api));
+    fastify.put('/settings', async (request, reply) => {
+      try { return saveSettings(api, getUserIdFromRequest(request), request.body || {}); }
+      catch (err) {
         if (err instanceof SettingsError) return reply.status(err.message.startsWith('Only') ? 403 : 400).send({ error: err.message });
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
+        return send(reply, err);
       }
     });
+    fastify.get('/payloads', async () => ({ categories: getPayloadCategories(db) }));
 
-    /**
-     * POST /detect - Detect WAF on target URL
-     */
+    // ===================== Sensors =====================
+    fastify.get('/sensors', async (request, reply) => {
+      try { return { sensors: listSensors(db, getUserIdFromRequest(request)) }; }
+      catch (err) { return send(reply, err); }
+    });
+    fastify.post('/sensors', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const { assetId, name } = request.body || {};
+        return pairSensor(db, userId, { assetId, name }); // returns { sensor, token } — token shown once
+      } catch (err) { return send(reply, err, 400); }
+    });
+    fastify.delete('/sensors/:id', async (request, reply) => {
+      try { return revokeSensor(db, getUserIdFromRequest(request), request.params.id); }
+      catch (err) { return send(reply, err, 400); }
+    });
+    fastify.get('/alerts', async (request, reply) => {
+      try { return { alerts: listAlerts(db, getUserIdFromRequest(request)) }; }
+      catch (err) { return send(reply, err); }
+    });
+
+    // PUBLIC (manifest publicRoutes): a paired sensor pushes alerts here, authenticated by its token.
+    // Outbound-only from the server's side; Dpro never calls back to the server.
+    fastify.post('/sensor/push', async (request, reply) => {
+      try {
+        const auth = request.headers['authorization'] || '';
+        const token = auth.startsWith('Bearer ') ? auth.slice(7).trim() : (request.body?.token || '');
+        const sensor = sensorForToken(db, token);
+        if (!sensor) return reply.status(401).send({ error: 'Unknown or revoked sensor token' });
+        const result = await ingestAlert(db, api, sensor, request.body || {});
+        return { ok: true, ...result };
+      } catch (err) { return reply.status(400).send({ error: err.message }); }
+    });
+
+    // ===================== Back-compat scan routes (used by waf_scan tool) =====================
     fastify.post('/detect', async (request, reply) => {
       try {
         getUserIdFromRequest(request);
         const allowPrivate = allowPrivateTargets(api);
         const url = await checkTarget(request.body?.url, { allowPrivate });
         return await detectWAF(url, { allowPrivate });
-      } catch (err) {
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
-      }
+      } catch (err) { return send(reply, err); }
     });
-
-    /**
-     * POST /scan - Start a full WAF scan
-     */
     fastify.post('/scan', async (request, reply) => {
       try {
         const userId = getUserIdFromRequest(request);
         const { url, categories, mode } = validateScanRequest(request.body);
         const { scanId } = await startScan(db, { userId, url, mode, categories, allowPrivate: allowPrivateTargets(api) });
         return { scanId, status: 'started' };
-      } catch (err) {
-        return reply.status(statusOf(err, 400)).send({ error: err.message });
-      }
+      } catch (err) { return send(reply, err, 400); }
     });
-
-    /**
-     * GET /scan/:id - Get scan results
-     */
     fastify.get('/scan/:id', async (request, reply) => {
       try {
         const userId = getUserIdFromRequest(request);
         const scan = db.prepare('SELECT * FROM app_waf_security__waf_scans WHERE id = ? AND user_id = ?').get(request.params.id, userId);
-        if (!scan) {
-          return reply.status(404).send({ error: 'Scan not found' });
-        }
-        if (scan.results_json) {
-          try { scan.results = JSON.parse(scan.results_json); } catch { scan.results = null; }
-          delete scan.results_json;
-        }
+        if (!scan) return reply.status(404).send({ error: 'Scan not found' });
+        if (scan.results_json) { try { scan.results = JSON.parse(scan.results_json); } catch { scan.results = null; } delete scan.results_json; }
         return scan;
-      } catch (err) {
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
-      }
+      } catch (err) { return send(reply, err); }
     });
-
-    /**
-     * GET /scans - List the user's scans
-     */
     fastify.get('/scans', async (request, reply) => {
       try {
         const userId = getUserIdFromRequest(request);
-        const scans = db.prepare(`
-          SELECT id, target_url, scan_type, waf_detected, waf_type, waf_confidence,
-                 total_payloads, blocked_count, passed_count, bypass_rate,
-                 risk_level, status, started_at, ended_at, created_at
-          FROM app_waf_security__waf_scans
-          WHERE user_id = ?
-          ORDER BY created_at DESC
-          LIMIT 50
-        `).all(userId);
-        return { scans };
-      } catch (err) {
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
-      }
+        return { scans: db.prepare('SELECT id, target_url, scan_type, waf_detected, waf_type, risk_level, status, started_at, ended_at, created_at FROM app_waf_security__waf_scans WHERE user_id = ? ORDER BY created_at DESC LIMIT 50').all(userId) };
+      } catch (err) { return send(reply, err); }
     });
-
-    /**
-     * DELETE /scans/:id - Delete a scan
-     */
     fastify.delete('/scans/:id', async (request, reply) => {
       try {
         const userId = getUserIdFromRequest(request);
-        const result = db.prepare('DELETE FROM app_waf_security__waf_scans WHERE id = ? AND user_id = ?').run(request.params.id, userId);
-        if (result.changes === 0) {
-          return reply.status(404).send({ error: 'Scan not found' });
-        }
+        const r = db.prepare('DELETE FROM app_waf_security__waf_scans WHERE id = ? AND user_id = ?').run(request.params.id, userId);
+        if (r.changes === 0) return reply.status(404).send({ error: 'Scan not found' });
         return { success: true };
-      } catch (err) {
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
-      }
+      } catch (err) { return send(reply, err); }
     });
 
-    /**
-     * POST /self - Self-audit of this Girru (its own address only)
-     */
-    fastify.post('/self', async (request, reply) => {
-      try {
-        getUserIdFromRequest(request);
-        return await selfAudit(ownBackendUrl());
-      } catch (err) {
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
-      }
-    });
-
-    // ==========================================================================
-    // CAMPAIGN ROUTES
-    // ==========================================================================
-
-    /** The campaign when it is this user's, else a reply was sent. */
+    // ===================== Campaigns (kept) =====================
     const ownCampaign = (request, reply) => {
       const userId = getUserIdFromRequest(request);
       const campaign = getCampaign(db, request.params.id);
-      if (!campaign || campaign.user_id !== userId) {
-        reply.status(404).send({ error: 'Campaign not found' });
-        return null;
-      }
+      if (!campaign || campaign.user_id !== userId) { reply.status(404).send({ error: 'Campaign not found' }); return null; }
       return campaign;
     };
-
-    /**
-     * POST /campaigns - Create new campaign
-     */
     fastify.post('/campaigns', async (request, reply) => {
-      try {
-        const userId = getUserIdFromRequest(request);
-        return await createCampaign(db, userId, request.body || {}, { allowPrivate: allowPrivateTargets(api) });
-      } catch (err) {
-        return reply.status(statusOf(err, 400)).send({ error: err.message });
-      }
+      try { return await createCampaign(db, getUserIdFromRequest(request), request.body || {}, { allowPrivate: allowPrivateTargets(api) }); }
+      catch (err) { return send(reply, err, 400); }
     });
-
-    /**
-     * GET /campaigns - List all campaigns
-     */
     fastify.get('/campaigns', async (request, reply) => {
-      try {
-        const userId = getUserIdFromRequest(request);
-        return { campaigns: listCampaigns(db, userId) };
-      } catch (err) {
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
-      }
+      try { return { campaigns: listCampaigns(db, getUserIdFromRequest(request)) }; }
+      catch (err) { return send(reply, err); }
     });
-
-    /**
-     * GET /campaigns/:id - Get campaign details
-     */
     fastify.get('/campaigns/:id', async (request, reply) => {
       try {
         const campaign = ownCampaign(request, reply);
         if (!campaign) return reply;
-        const scans = db.prepare(`
-          SELECT * FROM app_waf_security__waf_campaign_scans
-          WHERE campaign_id = ?
-          ORDER BY run_number DESC, stage ASC
-        `).all(campaign.id);
-        const comparisons = db.prepare(`
-          SELECT * FROM app_waf_security__waf_campaign_comparisons
-          WHERE campaign_id = ?
-          ORDER BY created_at DESC
-        `).all(campaign.id);
+        const scans = db.prepare('SELECT * FROM app_waf_security__waf_campaign_scans WHERE campaign_id = ? ORDER BY run_number DESC, stage ASC').all(campaign.id);
+        const comparisons = db.prepare('SELECT * FROM app_waf_security__waf_campaign_comparisons WHERE campaign_id = ? ORDER BY created_at DESC').all(campaign.id);
         return { ...campaign, scans, comparisons };
-      } catch (err) {
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
-      }
+      } catch (err) { return send(reply, err); }
     });
-
-    /**
-     * POST /campaigns/:id/run - Run campaign
-     */
     fastify.post('/campaigns/:id/run', async (request, reply) => {
       try {
         const campaign = ownCampaign(request, reply);
@@ -267,54 +333,23 @@ export function createWafRoutes(api) {
         if (campaign.status === 'running') return reply.status(409).send({ error: 'Campaign is already running' });
         const allowPrivate = allowPrivateTargets(api);
         await checkTarget(campaign.target_domain, { allowPrivate });
-        runCampaign(db, campaign.id, { allowPrivate }).catch(err => {
-          console.error('[Campaign Run] Error:', err.message);
-        });
-        return { campaignId: campaign.id, status: 'started', message: 'Campaign execution started' };
-      } catch (err) {
-        return reply.status(statusOf(err, 400)).send({ error: err.message });
-      }
+        runCampaign(db, campaign.id, { allowPrivate }).catch((err) => console.error('[Campaign Run] Error:', err.message));
+        return { campaignId: campaign.id, status: 'started' };
+      } catch (err) { return send(reply, err, 400); }
     });
-
-    /**
-     * DELETE /campaigns/:id - Delete campaign
-     */
     fastify.delete('/campaigns/:id', async (request, reply) => {
-      try {
-        const campaign = ownCampaign(request, reply);
-        if (!campaign) return reply;
-        deleteCampaign(db, campaign.id);
-        return { success: true };
-      } catch (err) {
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
-      }
+      try { const campaign = ownCampaign(request, reply); if (!campaign) return reply; deleteCampaign(db, campaign.id); return { success: true }; }
+      catch (err) { return send(reply, err); }
     });
-
-    /**
-     * GET /campaigns/:id/score - Get detailed security score
-     */
     fastify.get('/campaigns/:id/score', async (request, reply) => {
       try {
         const campaign = ownCampaign(request, reply);
         if (!campaign) return reply;
-        const latestScan = db.prepare(`
-          SELECT cs.*, s.results_json
-          FROM app_waf_security__waf_campaign_scans cs
-          INNER JOIN app_waf_security__waf_scans s ON cs.scan_id = s.id
-          WHERE cs.campaign_id = ? AND cs.stage = 4
-          ORDER BY cs.run_number DESC
-          LIMIT 1
-        `).get(campaign.id);
-        if (!latestScan || !latestScan.results_json) {
-          return reply.status(404).send({ error: 'No completed scans found' });
-        }
+        const latestScan = db.prepare("SELECT cs.*, s.results_json FROM app_waf_security__waf_campaign_scans cs INNER JOIN app_waf_security__waf_scans s ON cs.scan_id = s.id WHERE cs.campaign_id = ? AND cs.stage = 4 ORDER BY cs.run_number DESC LIMIT 1").get(campaign.id);
+        if (!latestScan || !latestScan.results_json) return reply.status(404).send({ error: 'No completed scans found' });
         const scanResults = JSON.parse(latestScan.results_json);
-        const score = calculateSecurityScore(scanResults);
-        const recommendations = generateRecommendations(scanResults, score);
-        return { score, recommendations, scanId: latestScan.scan_id, runNumber: latestScan.run_number };
-      } catch (err) {
-        return reply.status(statusOf(err, 500)).send({ error: err.message });
-      }
+        return { score: calculateSecurityScore(scanResults), recommendations: generateRecommendations(scanResults, calculateSecurityScore(scanResults)), scanId: latestScan.scan_id, runNumber: latestScan.run_number };
+      } catch (err) { return send(reply, err); }
     });
   };
 }

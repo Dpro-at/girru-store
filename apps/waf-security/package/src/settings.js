@@ -1,15 +1,25 @@
 /**
- * The app's one setting, kept in its Girru extension config: whether scans may reach local and
- * private network addresses. Off unless the owner turns it on; anything unreadable counts as off.
- * Only Girru's active owner may change it; each change is logged and kept with who made it.
+ * The app's settings, kept in its Girru extension config:
+ *  - allowPrivateTargets: whether scans may reach local/private network addresses (off by default);
+ *  - noiseProfile: how politely the app paces its own checks (quiet | balanced | aggressive).
+ *
+ * Only Girru's active owner may change a setting; each change is logged with who made it. Anything
+ * unreadable counts as the safe default (private off, quiet pacing).
  */
 
+import { profileNames } from './noise.js';
+
+export function readConfig(api) {
+  try { return api.getConfig() || {}; } catch { return {}; }
+}
+
 export function allowPrivateTargets(api) {
-  try {
-    return api.getConfig()?.allowPrivateTargets === true;
-  } catch {
-    return false;
-  }
+  return readConfig(api).allowPrivateTargets === true;
+}
+
+export function noiseProfile(api) {
+  const p = readConfig(api).noiseProfile;
+  return profileNames().includes(p) ? p : 'quiet';
 }
 
 /** True only for Girru's active owner (not an admin); any doubt means no. */
@@ -27,7 +37,7 @@ export function isActiveOwner(api, userId) {
 export function mayUseApp(api, userId) {
   if (!userId || typeof api.authorizeChannelUser !== 'function') return false;
   try {
-    api.authorizeChannelUser(String(userId)); // throws unless an active owner or admin
+    api.authorizeChannelUser(String(userId));
     return true;
   } catch {
     return false;
@@ -36,15 +46,34 @@ export function mayUseApp(api, userId) {
 
 export class SettingsError extends Error {}
 
-export function saveSettings(api, userId, { allowPrivateTargets }) {
-  if (typeof allowPrivateTargets !== 'boolean') throw new SettingsError('allowPrivateTargets must be true or false');
-  if (!isActiveOwner(api, userId)) throw new SettingsError('Only the owner can change this setting');
-  let config = {};
-  try { config = api.getConfig() || {}; } catch { config = {}; }
-  const before = config.allowPrivateTargets === true;
-  if (before !== allowPrivateTargets) {
-    api.setConfig({ ...config, allowPrivateTargets, allowPrivateTargetsChangedBy: String(userId), allowPrivateTargetsChangedAt: new Date().toISOString() });
-    api.log('warn', `Scans to local and private network addresses turned ${allowPrivateTargets ? 'on' : 'off'}`, { userId: String(userId) });
+/** Save settings. Only the active owner may. Each changed value is logged with who changed it. */
+export function saveSettings(api, userId, patch = {}) {
+  if (!isActiveOwner(api, userId)) throw new SettingsError('Only the owner can change these settings');
+  const config = readConfig(api);
+  const next = { ...config };
+  const now = new Date().toISOString();
+
+  if (typeof patch.allowPrivateTargets === 'boolean' && patch.allowPrivateTargets !== (config.allowPrivateTargets === true)) {
+    next.allowPrivateTargets = patch.allowPrivateTargets;
+    next.allowPrivateTargetsChangedBy = String(userId);
+    next.allowPrivateTargetsChangedAt = now;
+    api.log('warn', `Scans to local and private network addresses turned ${patch.allowPrivateTargets ? 'on' : 'off'}`, { userId: String(userId) });
   }
-  return { allowPrivateTargets };
+
+  if (typeof patch.noiseProfile === 'string') {
+    if (!profileNames().includes(patch.noiseProfile)) throw new SettingsError('noiseProfile must be quiet, balanced or aggressive');
+    if (patch.noiseProfile !== (config.noiseProfile || 'quiet')) {
+      next.noiseProfile = patch.noiseProfile;
+      next.noiseProfileChangedBy = String(userId);
+      next.noiseProfileChangedAt = now;
+      api.log('info', `Scan pacing set to ${patch.noiseProfile}`, { userId: String(userId) });
+    }
+  }
+
+  api.setConfig(next);
+  return currentSettings(api);
+}
+
+export function currentSettings(api) {
+  return { allowPrivateTargets: allowPrivateTargets(api), noiseProfile: noiseProfile(api) };
 }
