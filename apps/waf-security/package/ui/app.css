@@ -41,3 +41,14 @@ pre.pre { white-space:pre-wrap; word-break:break-all; font-size:11px; margin:6px
 .footer { display:flex; align-items:center; gap:8px; height:28px; padding:0 14px; border-top:1px solid var(--line); font-size:11px; color:var(--quiet); }
 .notice { padding:10px 16px; font-size:12px; color:var(--quiet); border-bottom:1px solid var(--line); background:var(--sel); }
 svg { flex:0 0 auto; }
+
+/* Add-server / add-site form (Servers = pick from discovered SSH hosts) */
+.pick-list { display: flex; flex-direction: column; gap: 4px; margin: 6px 0 10px; }
+.pick { display: flex; align-items: center; gap: 8px; width: 100%; text-align: left; padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); cursor: pointer; }
+.pick:hover { border-color: var(--accent); background: var(--sel); }
+.pick .row-main { font-weight: 600; }
+.fld { display: block; margin: 8px 0; }
+.fld > span { display: block; font-size: 12px; color: var(--quiet); margin-bottom: 3px; }
+.fld > input { width: 100%; box-sizing: border-box; padding: 7px 9px; border: 1px solid var(--line); border-radius: 8px; background: var(--bg); color: var(--text); }
+.fld > input:focus { outline: none; border-color: var(--accent); }
+.chk { display: flex; align-items: center; gap: 7px; margin: 10px 0; font-size: 13px; color: var(--text); }

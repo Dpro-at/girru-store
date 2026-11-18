@@ -61,7 +61,7 @@
   var PLACES = [['overview', 'Overview', 'home'], ['servers', 'Servers', 'server'], ['sites', 'Sites', 'globe'], ['findings', 'Findings', 'bug'], ['campaigns', 'Campaigns', 'calendar'], ['this-girru', 'This Girru', 'shield'], ['settings', 'Settings', 'gear']];
   var SEV_ORDER = ['critical', 'high', 'medium', 'low', 'info'];
 
-  var state = { place: 'overview', needs: [], findings: [], assets: [], selAsset: null, selFinding: null, detail: null, self: null, settings: null, error: '', busy: false };
+  var state = { place: 'overview', needs: [], findings: [], assets: [], selAsset: null, selFinding: null, detail: null, self: null, settings: null, error: '', busy: false, adding: null, sshHosts: [] };
 
   function sidebar() {
     var h = '<p class="section-label">Security</p>';
@@ -96,10 +96,36 @@
     }
     h += '</section><aside class="inspector">';
     var a = state.selAsset;
-    if (a) {
+    if (state.adding === kind) h += addForm(kind);
+    else if (a) {
       h += '<h3 class="insp-title">' + esc(a.label) + '</h3><p class="quiet">' + esc(a.base_url || a.host) + (a.is_private ? ' · private address' : '') + '</p><dl class="dl"><dt>Last checked</dt><dd>' + esc(a.last_checked_at || 'never') + '</dd><dt>Coverage</dt><dd>' + (a.coverage ? (a.coverage.total + ' checks · ' + a.coverage.ok + ' clean · ' + a.coverage.issue + ' issue(s) · ' + a.coverage.notTested + ' not tested') : '—') + '</dd></dl><div class="insp-actions"><button class="primary" data-scan="' + esc(a.id) + '"' + (state.busy ? ' disabled' : '') + '>' + icon('play') + ' ' + (state.busy ? 'Scanning…' : 'Scan now') + '</button><button class="ghost" data-forget="' + esc(a.id) + '">Forget</button></div>';
     } else h += empty('search', 'Select an item to see its details.');
     return h + '</aside></div>';
+  }
+  // Add-server / add-site form. For a server it offers the SSH servers Girru already found
+  // (from ~/.ssh/config) as one-click fills; the fields stay editable and nothing is stored but
+  // what the owner confirms. The form reads its values straight from the inputs on save.
+  function addForm(kind) {
+    var h = '<h3 class="insp-title">' + (kind === 'server' ? 'Add a server' : 'Add a site') + '</h3>';
+    if (kind === 'server') {
+      if (state.sshHosts && state.sshHosts.length) {
+        h += '<p class="quiet">Pick one Girru already found in your SSH settings:</p><div class="pick-list">';
+        state.sshHosts.forEach(function (s) {
+          h += '<button class="pick" data-pick="' + esc(s.alias) + '">' + icon('server') + '<span class="row-main">' + esc(s.alias) + '</span><span class="quiet">' + esc((s.host || s.alias) + (s.port ? ':' + s.port : '')) + '</span></button>';
+        });
+        h += '</div><p class="quiet">…or type one below.</p>';
+      } else h += '<p class="quiet">No SSH servers found in your settings yet — type one below.</p>';
+    }
+    h += '<label class="fld"><span>Name</span><input id="f-label" type="text" placeholder="' + (kind === 'server' ? 'My server' : 'My site') + '"/></label>';
+    if (kind === 'server') {
+      h += '<label class="fld"><span>Host</span><input id="f-host" type="text" placeholder="example.com or 203.0.113.4"/></label>';
+      h += '<label class="fld"><span>Port</span><input id="f-port" type="number" placeholder="optional"/></label>';
+    } else {
+      h += '<label class="fld"><span>Address</span><input id="f-url" type="text" placeholder="https://example.com"/></label>';
+    }
+    h += '<label class="chk"><input id="f-confirm" type="checkbox"/> I own this ' + kind + ', or I am allowed to test it.</label>';
+    h += '<div class="insp-actions"><button class="primary" data-addsave="' + kind + '">' + icon('plus') + ' Add</button><button class="ghost" data-addcancel="1">Cancel</button></div>';
+    return h;
   }
   function viewFindings() {
     var fs = state.findings.slice().sort(function (a, b) { return SEV_ORDER.indexOf(a.severity) - SEV_ORDER.indexOf(b.severity); });
@@ -159,11 +185,11 @@
     render();
   }
 
-  function go(place) { state.place = place; state.selAsset = null; state.selFinding = null; state.detail = null; state.self = null; render(); loadPlace(); }
+  function go(place) { state.place = place; state.selAsset = null; state.selFinding = null; state.detail = null; state.self = null; state.adding = null; render(); loadPlace(); }
 
   /* ---- interactions ---- */
   document.addEventListener('click', async function (e) {
-    var t = e.target.closest('[data-place],[data-goto],[data-asset],[data-finding],[data-scan],[data-forget],[data-add],[data-retest],[data-self]');
+    var t = e.target.closest('[data-place],[data-goto],[data-asset],[data-finding],[data-scan],[data-forget],[data-add],[data-pick],[data-addsave],[data-addcancel],[data-retest],[data-self]');
     if (!t) return;
     if (t.dataset.place) return go(t.dataset.place);
     if (t.dataset.goto) return go(t.dataset.goto);
@@ -173,7 +199,32 @@
     if (t.dataset.forget) { try { await del('/assets/' + t.dataset.forget); state.selAsset = null; await loadPlace(); } catch (err) { state.error = err.message; render(); } return; }
     if (t.dataset.retest && state.selFinding) { try { await post('/findings/' + state.selFinding.id + '/retest', { verdict: t.dataset.retest, oppositeCheck: 'Manual retest from the inspector.' }); state.detail = await get('/findings/' + state.selFinding.id); await loadBadges(); render(); } catch (err) { state.error = err.message; render(); } return; }
     if (t.dataset.self) { state.busy = true; render(); try { state.self = await post('/self', {}); } catch (err) { state.error = err.message; } state.busy = false; render(); return; }
-    if (t.dataset.add) { alert('Use the inspector form to add a ' + t.dataset.add + ' (coming in the add step).'); return; }
+    if (t.dataset.add) {
+      state.adding = t.dataset.add; state.selAsset = null; state.error = '';
+      if (t.dataset.add === 'server') { try { var r = await get('/ssh-hosts'); state.sshHosts = (r && r.hosts) || []; } catch (_) { state.sshHosts = []; } }
+      return render();
+    }
+    if (t.dataset.pick) {
+      var s = (state.sshHosts || []).filter(function (x) { return x.alias === t.dataset.pick; })[0];
+      if (s) {
+        var lb = document.getElementById('f-label'), ho = document.getElementById('f-host'), po = document.getElementById('f-port');
+        if (ho) ho.value = s.host || s.alias;
+        if (po) po.value = s.port != null ? s.port : '';
+        if (lb && !lb.value) lb.value = s.alias;
+      }
+      return;
+    }
+    if (t.dataset.addcancel) { state.adding = null; state.error = ''; return render(); }
+    if (t.dataset.addsave) {
+      var kind = t.dataset.addsave;
+      var val = function (id) { var el = document.getElementById(id); return el ? el.value : ''; };
+      var body = { kind: kind, label: (val('f-label') || '').trim(), owner_confirmed: !!(document.getElementById('f-confirm') || {}).checked };
+      if (kind === 'server') { body.host = (val('f-host') || '').trim(); var pv = (val('f-port') || '').trim(); if (pv) body.port = parseInt(pv, 10); }
+      else { body.base_url = (val('f-url') || '').trim(); }
+      try { await post('/assets', body); state.adding = null; state.error = ''; await loadPlace(); }
+      catch (err) { state.error = err.message; render(); }
+      return;
+    }
   });
   document.addEventListener('change', async function (e) {
     var t = e.target.closest('[data-set]'); if (!t) return;

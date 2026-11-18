@@ -140,6 +140,16 @@ export function createWafRoutes(api) {
       } catch (err) { return send(reply, err, 400); }
     });
 
+    // The SSH servers Girru already found on this computer (from ~/.ssh/config), so "Add server"
+    // offers a known server instead of a blank form. Names and addresses only — never a key or password.
+    fastify.get('/ssh-hosts', async (request, reply) => {
+      try {
+        const userId = getUserIdFromRequest(request);
+        const hosts = (await api.sshHosts(userId)).map((h) => ({ alias: h.alias, host: h.host, port: h.port }));
+        return { hosts };
+      } catch (err) { return send(reply, err); }
+    });
+
     fastify.post('/assets/:id/scan', async (request, reply) => {
       try {
         const userId = getUserIdFromRequest(request);

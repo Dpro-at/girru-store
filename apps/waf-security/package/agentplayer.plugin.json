@@ -11,7 +11,8 @@
     "network",
     "database",
     "tools",
-    "cron"
+    "cron",
+    "ssh-hosts"
   ],
   "routeAccess": "owner-admin",
   "publicRoutes": [
