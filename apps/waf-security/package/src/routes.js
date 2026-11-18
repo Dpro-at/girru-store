@@ -9,6 +9,9 @@
  * This Girru (self-audit), Settings.
  */
 
+import { readFileSync } from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import { dirname, join } from 'node:path';
 import { detectWAF, selfAudit, getPayloadCategories } from './engine.js';
 import { checkTarget, TargetError } from './target.js';
 import { startScan } from './scanner.js';
@@ -52,6 +55,30 @@ export function createWafRoutes(api) {
   return async function registerWafRoutes(fastify) {
     const db = api.db;
     const send = (reply, err, fallback = 500) => reply.status(statusOf(err, fallback)).send({ error: err.message });
+
+    // ===================== UI (the app's own frontend, shipped in package/ui/) =====================
+    // Static page + assets, served from this app so the frontend downloads WITH the app. These three
+    // routes are public (declared in publicRoutes): they carry no secrets. Every data route below
+    // still needs an active owner/admin, so the page is useless without a signed-in owner session.
+    // The store package may only hold .js/.css/.json/... (no .html), so the page shell is returned
+    // inline here and the two static assets (app.js, app.css) ship as files in package/ui/.
+    const UI_DIR = join(dirname(fileURLToPath(import.meta.url)), '..', 'ui');
+    const UI_BASE = '/api/ext/waf-security/ui';
+    const PAGE =
+      '<!doctype html><html lang="en"><head><meta charset="utf-8"/>' +
+      '<meta name="viewport" content="width=device-width, initial-scale=1"/>' +
+      '<title>Security</title><link rel="stylesheet" href="' + UI_BASE + '/app.css"/></head>' +
+      '<body><div class="win" id="app"><aside class="sidebar" id="sidebar" aria-label="Security places"></aside>' +
+      '<main class="main" id="main"></main></div>' +
+      '<div class="footer" id="footer">● Ready · owned/authorized targets only · defensive scanning</div>' +
+      '<script src="' + UI_BASE + '/app.js"></script></body></html>';
+    const serveUi = (file, type) => (_request, reply) => {
+      try { reply.header('Content-Type', type); reply.header('X-Content-Type-Options', 'nosniff'); return readFileSync(join(UI_DIR, file)); }
+      catch { return reply.status(404).send({ error: 'UI file not found' }); }
+    };
+    fastify.get('/ui', async (_request, reply) => { reply.header('Content-Type', 'text/html; charset=utf-8'); reply.header('X-Content-Type-Options', 'nosniff'); return PAGE; });
+    fastify.get('/ui/app.js', serveUi('app.js', 'text/javascript; charset=utf-8'));
+    fastify.get('/ui/app.css', serveUi('app.css', 'text/css; charset=utf-8'));
 
     // ===================== Overview =====================
     fastify.get('/overview', async (request, reply) => {

@@ -15,7 +15,10 @@
   ],
   "routeAccess": "owner-admin",
   "publicRoutes": [
-    "sensor/push"
+    "/sensor/push",
+    "/ui",
+    "/ui/app.js",
+    "/ui/app.css"
   ],
   "frontendRoutes": [
     {
