@@ -1,21 +1,21 @@
 {
   "id": "waf-security",
   "kind": "app",
-  "name": "WAF Security",
-  "summary": "Test how a website's firewall handles common attacks.",
-  "description": "Sends a set of harmless test requests that look like common attacks (SQL injection, cross-site scripting, path traversal and eight more groups) to a website you name, and shows which ones its firewall (WAF) blocked and which got through. It also tries to tell which firewall the site uses. Campaigns repeat the test in four stages, now or on a daily, weekly or monthly schedule, and compare each run with the one before. A self-audit checks this Girru's own security headers, sign-in protection and rate limits. Only test sites you own or may test.",
+  "name": "Security",
+  "summary": "Watch the security of the servers and sites you own \u2014 scans, findings and a server overview.",
+  "description": "One place for the security of what you own. Add a server or a site you own and Security checks its open ports and services, TLS and certificate, security headers and CORS, and firewall behaviour, then lists findings with evidence and a fix hint and lets you retest. A self-audit checks this Girru\u2019s own headers, sign-in and rate limits. Campaigns repeat a check on a schedule and track its score over time. Defensive only: it tests owned or authorized targets, never attacks, and never scans anything you have not added. Replaces the separate Server Monitor and WAF Security previews.",
   "icon": "shield",
   "maker": "Girru",
-  "version": "1.1.0",
-  "updated": "2026-10-30",
+  "version": "2.0.0",
+  "updated": "2026-11-18",
   "category": "developer",
   "permissions": [
-    "Sends attack-like test requests to the websites you enter, when you start a scan or a campaign runs",
-    "Refuses local and private network addresses unless you allow them in its settings",
-    "Runs your scheduled campaigns in the background, checked once an hour",
-    "Sends requests to this Girru's own address when you run a self-audit",
-    "Keeps scans, campaigns and its test library in its own tables",
-    "Adds a waf_scan tool that agents can use once you allow them"
+    "Scans only the servers and sites you add and confirm you own or may test",
+    "Refuses local and private network addresses unless you allow them in Settings",
+    "Keeps your assets, findings, evidence and campaigns in its own tables",
+    "Runs your scheduled campaigns in the background",
+    "Sends requests to this Girru\u2019s own address when you run a self-audit",
+    "Adds a waf_scan tool your agents can use once you allow them"
   ],
   "worksWith": [],
   "languages": [
@@ -24,5 +24,5 @@
   "pricing": {
     "model": "free"
   },
-  "hidden": true
+  "hidden": false
 }

@@ -1,17 +1,27 @@
 {
   "id": "waf-security",
-  "name": "WAF Security Scanner",
-  "description": "Test how a website's firewall (WAF) handles common attack requests, run scheduled test campaigns, and check this Girru's own security headers",
-  "version": "1.1.0",
+  "name": "Security",
+  "description": "Watch and test the security of the servers and sites you own: open ports and services, TLS and certificates, security headers, WAF behaviour, and this Girru's own settings. Defensive only.",
+  "version": "2.0.0",
   "type": "tool",
   "author": "Girru",
+  "license": "MIT",
   "main": "index.js",
-  "permissions": ["network", "database", "tools", "cron"],
+  "permissions": [
+    "network",
+    "database",
+    "tools",
+    "cron"
+  ],
+  "routeAccess": "owner-admin",
+  "publicRoutes": [
+    "sensor/push"
+  ],
   "frontendRoutes": [
     {
       "path": "/dashboard/ext/waf-security",
-      "name": "WAF Security",
-      "icon": "Shield",
+      "name": "Security",
+      "icon": "shield",
       "position": "developer"
     }
   ]
