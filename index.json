@@ -411,8 +411,8 @@
           },
           {
             "path": "src/explain.js",
-            "sha256": "82821c2c29f53735408d5053257ce346f046efb784b600d3b6ef8429b3918d72",
-            "size": 2162
+            "sha256": "19d16a1a44048a1d46c9ad7e75b2e0f64d21dc61df19cd720ff89e81ecd50f5e",
+            "size": 3144
           },
           {
             "path": "src/findings.js",
@@ -446,8 +446,8 @@
           },
           {
             "path": "src/routes.js",
-            "sha256": "d3affe580a7c416fc1c6ab0983021aec0f026b24999fa152ae5ecba528d22fb9",
-            "size": 16656
+            "sha256": "e0e44685b4d9af0073877e9fab39bd5d4386a8aa00333c43e7373619b8286b78",
+            "size": 16931
           },
           {
             "path": "src/scan-engine.js",
@@ -500,7 +500,7 @@
             "size": 5247
           }
         ],
-        "sha256": "a282336b0964f1735a8592f657ac3ef5847089c1bdd914de2e2ba1a29d1d43fc"
+        "sha256": "5121d62fa48682acd43d61f3f37c84121d356c8729a308c46fe51c0bb97c9a88"
       }
     },
     {

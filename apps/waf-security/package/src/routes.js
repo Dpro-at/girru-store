@@ -19,6 +19,7 @@ import { addAsset, listAssets, getAsset, removeAsset, requireInScope, ScopeError
 import { coverageSummaryForAsset, coverageForScan } from './coverage.js';
 import { listFindings, findingDetail, retestFinding, setFindingStatus, FindingError } from './findings.js';
 import { runAssetScan } from './scan-engine.js';
+import { WafRateLimiter } from './rate-limiter.js';
 import { pairSensor, listSensors, revokeSensor, sensorForToken, ingestAlert, listAlerts, SensorError } from './sensor.js';
 import { explainFinding } from './explain.js';
 
@@ -110,8 +111,14 @@ export function createWafRoutes(api) {
         const asset = requireInScope(db, userId, userId, request.params.id); // scope/target gate
         const allowPrivate = allowPrivateTargets(api);
         if (asset.is_private && !allowPrivate) return reply.status(400).send({ error: 'This target is a private address; turn on private targets in Settings to scan it.' });
-        const result = await runAssetScan(db, api, { userId, asset, allowPrivate, profile: noiseProfile(api) });
-        return result;
+        // Same rate gate as the website /scan and campaign paths: cap concurrent scans per user.
+        const limiter = new WafRateLimiter(db);
+        await limiter.checkLimit(userId);
+        try {
+          return await runAssetScan(db, api, { userId, asset, allowPrivate, profile: noiseProfile(api) });
+        } finally {
+          await limiter.releaseScan(userId);
+        }
       } catch (err) { return send(reply, err, 400); }
     });
 
@@ -154,7 +161,7 @@ export function createWafRoutes(api) {
     fastify.post('/findings/:id/explain', async (request, reply) => {
       try {
         const userId = getUserIdFromRequest(request);
-        return await explainFinding(db, api, userId, request.params.id, request.body?.sessionId);
+        return await explainFinding(db, api, userId, request.params.id);
       } catch (err) { return send(reply, err, 400); }
     });
 
