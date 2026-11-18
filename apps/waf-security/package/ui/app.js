@@ -30,6 +30,9 @@
   async function api(method, path, body) {
     var res = await fetch(API + path, {
       method: method,
+      // Same-origin only: the Girru window bridge admits /api fetches whose
+      // Sec-Fetch-Mode is same-origin (not the default 'cors'), and nothing else.
+      mode: 'same-origin',
       headers: headers(),
       credentials: 'same-origin',
       body: body === undefined ? undefined : JSON.stringify(body),
