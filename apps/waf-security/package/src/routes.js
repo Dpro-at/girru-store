@@ -76,7 +76,15 @@ export function createWafRoutes(api) {
       try { reply.header('Content-Type', type); reply.header('X-Content-Type-Options', 'nosniff'); return readFileSync(join(UI_DIR, file)); }
       catch { return reply.status(404).send({ error: 'UI file not found' }); }
     };
-    fastify.get('/ui', async (_request, reply) => { reply.header('Content-Type', 'text/html; charset=utf-8'); reply.header('X-Content-Type-Options', 'nosniff'); return PAGE; });
+    fastify.get('/ui', async (_request, reply) => {
+      reply.header('Content-Type', 'text/html; charset=utf-8');
+      reply.header('X-Content-Type-Options', 'nosniff');
+      // Only the Girru shell (same origin) may embed this page — blocks clickjacking of the
+      // cookie-authenticated UI by a foreign site.
+      reply.header('Content-Security-Policy', "frame-ancestors 'self'");
+      reply.header('X-Frame-Options', 'SAMEORIGIN');
+      return PAGE;
+    });
     fastify.get('/ui/app.js', serveUi('app.js', 'text/javascript; charset=utf-8'));
     fastify.get('/ui/app.css', serveUi('app.css', 'text/css; charset=utf-8'));
 

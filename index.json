@@ -446,8 +446,8 @@
           },
           {
             "path": "src/routes.js",
-            "sha256": "f094320bf4c2ec14b3528cfab8d919f142cef4499b786b1632a6dd709ec562d0",
-            "size": 19024
+            "sha256": "abdd29a9faf4f8ecc75bfb6cafe9af4798459017ad6a89d711e2033a81c76588",
+            "size": 19319
           },
           {
             "path": "src/scan-engine.js",
@@ -506,11 +506,11 @@
           },
           {
             "path": "ui/app.js",
-            "sha256": "0e0e5d115c54f3cff6a9ccdc583995366357c6a09daae621ad8cf95701aa6144",
-            "size": 15377
+            "sha256": "e9c8a6b62930e4bec41664702b63c956a9de829109990968095cab4ebab2768c",
+            "size": 15664
           }
         ],
-        "sha256": "5e657a7de44c65e97fe79b551d40327ffc6cc64a38697ffe76182bc67573042a"
+        "sha256": "af385e7269c58a833d40fbabd6ca8dd89fd3a7389df1e969d8cb82a9add7693b"
       }
     },
     {

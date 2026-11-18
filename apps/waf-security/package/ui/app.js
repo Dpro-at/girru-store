@@ -16,11 +16,14 @@
     if (theme === 'dark' || theme === 'light') document.documentElement.setAttribute('data-theme', theme);
   }
   window.addEventListener('message', function (e) {
+    // Only the shell that embeds this page (same origin, the parent frame) may hand us a token or
+    // theme — never another frame or origin. The page and its backend are same-origin by design.
+    if (e.source !== window.parent || e.origin !== location.origin) return;
     var d = e.data || {};
     if (d.type === 'girru:token') { token = d.token || null; applyTheme(d.theme); render(); }
     else if (d.type === 'girru:theme') applyTheme(d.theme);
   });
-  try { if (window.parent && window.parent !== window) window.parent.postMessage({ type: 'girru:need-token' }, '*'); } catch (_) {}
+  try { if (window.parent && window.parent !== window) window.parent.postMessage({ type: 'girru:need-token' }, location.origin); } catch (_) {}
 
   /* ---- fetch helpers ---- */
   function headers() { var h = { 'Content-Type': 'application/json' }; if (token) h.Authorization = 'Bearer ' + token; return h; }
