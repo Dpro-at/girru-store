@@ -331,8 +331,8 @@
           },
           {
             "path": "agentplayer.plugin.json",
-            "sha256": "562344a848695d0f061a7d24d6ed023ad8de48881d36c2bd98ae6ff47c1f3afe",
-            "size": 728
+            "sha256": "1e328b2ddf564bf3e9f8bdb0507953e3b3529cd734ee6f165bd7bd5ea7cb58b5",
+            "size": 745
           },
           {
             "path": "index.js",
@@ -446,8 +446,8 @@
           },
           {
             "path": "src/routes.js",
-            "sha256": "abdd29a9faf4f8ecc75bfb6cafe9af4798459017ad6a89d711e2033a81c76588",
-            "size": 19319
+            "sha256": "7c7361aa76616d5802c664760631aac84410ce7b9f699070d8ee27faf32fdb49",
+            "size": 19846
           },
           {
             "path": "src/scan-engine.js",
@@ -501,16 +501,16 @@
           },
           {
             "path": "ui/app.css",
-            "sha256": "36d874b995b39a861101cec5fe161f76f4d4b8d3e16b21641b36f9694a8efb44",
-            "size": 4138
+            "sha256": "67bcec59f6e3af66716b1b1116137445efbf057c1560b8a0aa094f778f3fa7d4",
+            "size": 5093
           },
           {
             "path": "ui/app.js",
-            "sha256": "e9c8a6b62930e4bec41664702b63c956a9de829109990968095cab4ebab2768c",
-            "size": 15664
+            "sha256": "b2e4eaaa92e26c3a5e6c7ffb1f3c93815d25c1e0610124507717d6158a2d41b7",
+            "size": 19404
           }
         ],
-        "sha256": "af385e7269c58a833d40fbabd6ca8dd89fd3a7389df1e969d8cb82a9add7693b"
+        "sha256": "88b2c8b79b293e65e73a316ebee97c3c01879bbf22012c9c2e39854861c0496d"
       }
     },
     {
